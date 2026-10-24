@@ -13,7 +13,7 @@
 
 - 安装时由官方 scys-mcp 的 `skillhubInstallGuide` 返回：版本号、整包 sha256、一个约 1 小时有效的 OSS 签名下载链接、解压计划；
 - 本次 19 个技能 **全部为 `hosted`（平台托管原创）、`isOriginal=true`、无任何上游 Git 仓库链接**，因此没有 fork 对象，统一整包 zip 归档；
-- 19 个技能均无外部依赖、无脚本执行、无任意网络/MCP 授权（`dependsOn=[]`、`allowShell=false`、`scriptsPresent=false`），属于纯知识/提示词类技能。
+- 19 个技能均无外部依赖、安装阶段不自动执行脚本、无任意网络/MCP 授权（`dependsOn=[]`、`allowShell=false`、`scriptsPresent=false`）。其中 9 个包内含 `scripts/` **辅助脚本**（报告渲染、转录、排版等），由使用时按 SKILL.md 手动调用，非安装钩子；详见 [`docs/VERIFICATION.md`](docs/VERIFICATION.md)。
 
 ## 目录结构
 
@@ -24,17 +24,20 @@ scys-skills-backup/
 ├── catalog/
 │   ├── skills-catalog.md     # 19 技能人读总表（标题/作者/版本/安装数/说明/位置）
 │   └── skills-catalog.json   # 19 技能结构化目录（含 sha256、标签、兼容客户端等）
-├── skills/<code>/            # 每个技能一个目录（T33 填充）
-│   ├── <code>-<version>.zip  #   包原件（与 artifactSha256 一致）
-│   ├── meta.json             #   该技能 MCP 元数据 + 市场卡片信息
-│   ├── README.md             #   该技能说明（做什么、何时触发、作者、怎么装）
+├── skills/<code>/            # 每个技能一个目录（19 个，已全部入库）
+│   ├── <code>-<version>.zip  #   包原件（与 artifactSha256 一致，19/19 已校验）
+│   ├── meta.json             #   该技能 MCP 元数据 + 市场卡片信息 + 归档校验
+│   ├── README.md             #   该技能说明（做什么、何时触发、作者、怎么装、文件清单）
 │   └── extracted/            #   解包内容（SKILL.md / manifest.json / references…）
 ├── docs/
 │   ├── skillhub-install-guide.md   # 官方安装指南原文（2026-10-24 归档）
+│   ├── VERIFICATION.md             # 完整性与离线核验报告（19/19 整包、127/127 文件级）
 │   ├── source-market-list.json     # 市场清单原始数据（T27）
 │   └── source-metadata.json        # MCP 元数据原始数据（T31）
 └── scripts/
-    └── build_catalog.py      # 由 docs/ 两份源数据重建 catalog/
+    ├── build_catalog.py      # 由 docs/ 源数据 + 实际文件幂等重建 catalog/
+    ├── fetch_package.py      # 下载 + sha256 校验 + 解压单包（供复现/更新）
+    └── finalize_skills.py    # 为每个技能生成 meta.json + README.md
 ```
 
 ## 19 个技能速览
@@ -57,6 +60,6 @@ scys-skills-backup/
 
 ## 完整性与来源
 
-- 每个 zip 入库前都按官方返回的 `artifactSha256` 校验，校验结果记录在 `catalog/skills-catalog.json` 的 `sha256Verified` 与各技能 `meta.json`。
+- 每个 zip 入库前都按官方返回的 `artifactSha256` 校验：**19/19 整包一致**；12 个含文件级清单的包共 **127 个文件逐项 sha256 一致**，19/19 SKILL.md 可打开。完整核验过程与从 GitHub 干净 clone 的复现方法见 [`docs/VERIFICATION.md`](docs/VERIFICATION.md)。
 - 采集通道：市场清单来自只读浏览（外部 Chrome 登录态），元数据来自官方 scys-mcp 只读调用；全程未执行 install、未写入 `~/.scys-market` 或任何客户端 skills 目录。
 - 原始证据与通道验证记录保留在采集工作底稿（不随本仓公开）：官方指南原文已归档于 `docs/skillhub-install-guide.md`。
