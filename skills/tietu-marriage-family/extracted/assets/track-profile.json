@@ -1,0 +1,372 @@
+{
+  "schemaVersion": 1,
+  "skillName": "tietu-marriage-family",
+  "trackId": "marriage-family",
+  "trackName": "贴图号·婚姻家庭",
+  "persona": {
+    "age": 42,
+    "gender": "女性",
+    "identity": "社区行政文员",
+    "marriageYears": 17,
+    "children": "有一个上初中的孩子",
+    "values": [
+      "尊重具体处境",
+      "不制造性别对立",
+      "事实与感受分开"
+    ]
+  },
+  "body": {
+    "countUnit": "CJK ideographs",
+    "absoluteMaxChineseChars": 1000,
+    "modes": {
+      "standard": {
+        "label": "标准模式",
+        "minChineseChars": 80,
+        "maxChineseChars": 1000,
+        "preferredMinChineseChars": 200,
+        "preferredMaxChineseChars": 300
+      },
+      "story": {
+        "label": "故事模式",
+        "minChineseChars": 80,
+        "maxChineseChars": 1000,
+        "preferredMinChineseChars": 600,
+        "preferredMaxChineseChars": 900
+      }
+    }
+  },
+  "images": {
+    "visualStrategy": {
+      "selectionBasis": "topic-first",
+      "dynamicSelection": true,
+      "family": "documentary",
+      "defaultMode": "documentary_illustration",
+      "allowedModes": [
+        "source_photo",
+        "source_crop",
+        "documentary_illustration",
+        "text_card"
+      ],
+      "defaultSourcePriority": "can_generate",
+      "routingRule": "采用匿名家庭纪实场景和生活物件表达关系，不还原真实当事人，不用夸张冲突摆拍。"
+    },
+    "finishedOutput": {
+      "directBitmap": true,
+      "format": "png",
+      "defaultOverlayMode": "title",
+      "allowedOverlayModes": [
+        "none",
+        "title",
+        "title_and_annotations"
+      ],
+      "overlayDecisionRule": "先判断本图靠真实画面成立，还是必须靠一句文字成立；实拍证据图选 none，观点或情绪入口才选 title，需要解释局部才选 title_and_annotations。默认值只是兜底，不得覆盖本次主题判断。"
+    },
+    "defaultMin": 1,
+    "defaultMax": 2,
+    "extendedMax": 5,
+    "exceptionKinds": [
+      "real_life_sequence",
+      "conversation_context",
+      "family_routine"
+    ],
+    "visualHook": {
+      "stopReason": "用人物距离、目光和手的方向，再加一个没做完的家务或家庭物件，表现关系正卡在哪一步。",
+      "hookVariants": [
+        {
+          "id": "relationship-distance",
+          "useWhen": "主题讲沟通、冷淡、争执后的停顿或修复",
+          "visualHook": "人物之间的空间、朝向和一个被打断动作承担冲突。"
+        },
+        {
+          "id": "shared-work",
+          "useWhen": "主题讲家庭分工、亲子学习或照料",
+          "visualHook": "谁在做什么、另一个人在哪里，通过锅、作业本、书包等物件看见。"
+        },
+        {
+          "id": "boundary-object",
+          "useWhen": "主题讲婆媳、钱、手机或家庭边界",
+          "visualHook": "一个共同物件放在两人之间，手的去向比表情更重要。"
+        }
+      ],
+      "prioritySignals": [
+        "人物之间的实际距离",
+        "目光、手和身体朝向",
+        "一个未完成的家庭动作",
+        "作业本、饭菜、钥匙或手机等关系证据",
+        "孩子或老人照料留下的物件",
+        "谁在做哪一步的分工信息"
+      ],
+      "preferredMoments": [
+        "一方端走碗而另一方仍看作业本",
+        "钥匙递到一半却没有接",
+        "手机被扣在桌面后两人停住",
+        "门口只剩一双刚换下的鞋",
+        "家长会材料刚整理到一半"
+      ],
+      "compositionBias": [
+        "两个人不必同时露脸，物件放在关系中心",
+        "利用距离和朝向，不靠夸张表情",
+        "标题区不能盖住手、饭菜、作业本等关键证据"
+      ],
+      "authenticityTraces": [
+        "放凉的汤",
+        "没收好的书包",
+        "鞋柜杂物",
+        "餐桌水印与碗筷",
+        "衣物褶皱和轻微运动模糊"
+      ],
+      "avoidGenericScenes": [
+        "影楼情侣照和精致家庭合影",
+        "沙发两端的固定冷战模板",
+        "夸张哭喊、摔东西和脸谱化恶人",
+        "所有家庭都用暖黄灯和豪华客厅",
+        "用性别化服装和姿态暗示谁对谁错"
+      ],
+      "topicAdaptationRule": "先从当前主题选择一段关系动作和一个家庭证据，再决定人物数量、距离与环境；不同主题切换餐桌、玄关、楼道、接送或社区场景。",
+      "colorRule": "使用家庭当下真实光线和普通肤色，不用偶像剧调色或影楼磨皮。",
+      "overlayBias": "情绪关系常需代码叠一行标题；如果动作和物件已足够清楚则纯图。",
+      "promptAssemblyOrder": [
+        "topicHook",
+        "subjectState",
+        "singleAction",
+        "evidenceDetail",
+        "ordinaryEnvironment",
+        "authenticityTraces",
+        "compositionGoal",
+        "overlayDecision",
+        "factBoundary",
+        "negativeConstraints"
+      ]
+    },
+    "referenceImageRouting": {
+      "modes": [
+        "use_original",
+        "light_transform",
+        "style_reference",
+        "similar_search"
+      ],
+      "defaultMode": "style_reference",
+      "decisionRule": "用户明确选择优先；未说明授权时不直接复用网络对标图，默认提取视觉规律后重新生成。",
+      "originalUseBoundary": "原图使用仅限用户自有、已授权或明确允许复用的素材。",
+      "similarSearchRule": "拆成主体、动作、环境、质感和构图检索词，保留来源与授权信息，再由用户选择。"
+    },
+    "typography": {
+      "defaultStyle": "top-gradient",
+      "allowedStyles": [
+        "top-gradient",
+        "white-bars",
+        "outlined-center",
+        "keyword-accent",
+        "note-card"
+      ],
+      "recommendedStyles": [
+        "note-card",
+        "top-gradient"
+      ],
+      "userSelectable": true,
+      "customReferenceStyle": true,
+      "styleOptions": [
+        "placement",
+        "align",
+        "fontScale",
+        "titleColor",
+        "accentColor",
+        "cardColor"
+      ],
+      "rule": "只有 overlayMode 不是 none 时才选择文字样式；先避开主体，再匹配标题长度和情绪，不按赛道机械固定。"
+    },
+    "promptVisibility": {
+      "default": "internal_only",
+      "allowed": [
+        "internal_only",
+        "admin_debug"
+      ],
+      "returnInUserOutput": false,
+      "publicImageFields": [
+        "role",
+        "purpose",
+        "sourceNotice",
+        "overlayMode",
+        "finalImage"
+      ],
+      "rule": "画图提示词只用于内部调用生图模型和质量校验；普通用户只看到完成图、来源说明和必要失败原因。"
+    }
+  },
+  "emotion": {
+    "maxChineseChars": 8,
+    "examples": [
+      "委屈",
+      "心酸",
+      "释然",
+      "犹豫",
+      "心疼",
+      "松一口气",
+      "失望",
+      "庆幸"
+    ]
+  },
+  "visualPrompt": {
+    "requiredCoverSlots": {
+      "subject": [
+        "夫妻",
+        "家庭",
+        "母亲",
+        "父亲",
+        "孩子",
+        "家人"
+      ],
+      "action": [
+        "正在",
+        "坐",
+        "等",
+        "收拾",
+        "下班",
+        "沟通",
+        "吃饭",
+        "写作业",
+        "递",
+        "看"
+      ],
+      "lifeEvidence": [
+        "餐桌",
+        "书包",
+        "作业本",
+        "手机",
+        "钥匙",
+        "水杯",
+        "便当",
+        "校服"
+      ],
+      "environment": [
+        "家中",
+        "厨房",
+        "客厅",
+        "楼道",
+        "社区",
+        "办公室",
+        "公交站"
+      ],
+      "light": [
+        "自然光",
+        "窗光",
+        "室内光",
+        "傍晚",
+        "清晨",
+        "白天"
+      ],
+      "lifeTraces": [
+        "水渍",
+        "便签",
+        "杂物",
+        "使用痕迹",
+        "未收拾",
+        "褶皱",
+        "书本",
+        "灯光"
+      ],
+      "titleSpace": [
+        "留白",
+        "标题区",
+        "标题区域"
+      ],
+      "negative": [
+        "不要",
+        "避免",
+        "不生成",
+        "无字",
+        "无文字",
+        "无中文"
+      ]
+    },
+    "noTextSignals": [
+      "无字",
+      "无文字",
+      "不生成文字",
+      "不生成中文",
+      "不要文字"
+    ]
+  },
+  "aiTone": {
+    "blockedPatterns": [
+      {
+        "label": "真正……从来不是……而是……的绝对化模板",
+        "pattern": "真正[^。！？\\n]{0,28}从来不是[^。！？\\n]{0,60}而是"
+      },
+      {
+        "label": "不仅是……更是……的整齐升华",
+        "pattern": "不仅是[^。！？\\n]{0,32}更是"
+      }
+    ],
+    "warningPatterns": [
+      {
+        "label": "模板祝福或治愈",
+        "pattern": "(?:愿(?:你|我们|每个|每一个|所有人)|治愈了?所有|温柔了?时光)"
+      },
+      {
+        "label": "性别或家庭群体泛化",
+        "pattern": "(?:男人都|女人都|男人永远|女人就该|所有男人|所有女人|家家户户|人人都)"
+      }
+    ]
+  },
+  "contentRisks": {
+    "blockedPatterns": [
+      {
+        "label": "性别战争或群体羞辱",
+        "pattern": "(?:男人都|女人都|男人永远|女人就该|所有男人|所有女人|嫁人就是|男人没一个好)"
+      },
+      {
+        "label": "强行复合或替他人做决定",
+        "pattern": "(?:不管[^。！？\\n]{0,20}(?:都要|必须|一定要)[^。！？\\n]{0,20}复合|为了孩子[^。！？\\n]{0,15}复合|赶紧复合|必须原谅)"
+      },
+      {
+        "label": "伪造私生活与未授权细节",
+        "pattern": "(?:我老公昨晚|我丈夫昨晚|我婆婆亲口|我和老公[^。！？\\n]{0,12}(?:跪|打|出轨))"
+      }
+    ],
+    "warningPatterns": [
+      {
+        "label": "未经素材支持的全知建议",
+        "pattern": "(?:你应该|你必须|一定要离婚|千万别离|聪明的女人)"
+      },
+      {
+        "label": "把个案泛化为婚姻共识",
+        "pattern": "(?:婚姻都|夫妻都|结婚后都|每个家庭)"
+      }
+    ]
+  },
+  "cover": {
+    "width": 1200,
+    "height": 1600,
+    "defaultPalette": "slate",
+    "palettes": {
+      "market": {
+        "backgroundStart": "#26343A",
+        "backgroundEnd": "#64706E",
+        "accent": "#F2B84B",
+        "text": "#FFF9ED",
+        "muted": "#DCE7DE"
+      },
+      "clay": {
+        "backgroundStart": "#44261D",
+        "backgroundEnd": "#9C6044",
+        "accent": "#F1C36C",
+        "text": "#FFF8E8",
+        "muted": "#EFD4B7"
+      },
+      "leaf": {
+        "backgroundStart": "#263B2D",
+        "backgroundEnd": "#70865A",
+        "accent": "#F5C85A",
+        "text": "#FAF7E9",
+        "muted": "#D9E2C7"
+      },
+      "slate": {
+        "backgroundStart": "#20292D",
+        "backgroundEnd": "#66777A",
+        "accent": "#E7B663",
+        "text": "#FAF7EF",
+        "muted": "#D6DFDE"
+      }
+    }
+  }
+}

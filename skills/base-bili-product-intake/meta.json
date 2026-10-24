@@ -1,0 +1,57 @@
+{
+  "packageId": "skl_base-bili-product-intake",
+  "code": "base-bili-product-intake",
+  "title": "B站带货商品信息整理",
+  "author": "Lynn",
+  "uploaderUnionUserId": "848893",
+  "version": "0.1.0",
+  "guideStatus": "hosted",
+  "isOriginal": true,
+  "summary": "把 1 到 5 个数码家电商品的零散资料整理成统一信息表，区分事实与推测、标出缺失项，为视频选品排序提供输入。",
+  "tags": {
+    "visible": [
+      "短视频创作与带货",
+      "商品与选品",
+      "B站"
+    ],
+    "category": [
+      "短视频创作与带货"
+    ],
+    "task": [
+      "商品与选品"
+    ],
+    "platform": [
+      "B站"
+    ],
+    "other": [],
+    "hiddenTagCount": 0
+  },
+  "installsOnMarket": 6,
+  "commentsOnMarket": 0,
+  "marketDate": "10-09",
+  "detailUrl": "https://scys.com/skillhub/skills/skl_base-bili-product-intake",
+  "runtimeTargets": [],
+  "artifactSha256": "db2adbf0b5f963b4e14fd88e9a75daa09d33e84ecc56c522f1931bfc513f8013",
+  "ossPathAccount": "u848893",
+  "dependencies": [],
+  "capabilityCard": {
+    "allowShell": false,
+    "allowedTools": [],
+    "allowArbitraryHttp": false,
+    "allowArbitraryMcp": false,
+    "scriptsPresent": false
+  },
+  "archive": {
+    "zipFile": "base-bili-product-intake-0.1.0.zip",
+    "extractedDir": "extracted/",
+    "fileCount": 2,
+    "hasScriptsDir": false,
+    "hasManifest": true,
+    "sha256Verified": true,
+    "archivedAt": "2026-10-24 21:44 +0800"
+  },
+  "files": [
+    "SKILL.md",
+    "manifest.json"
+  ]
+}

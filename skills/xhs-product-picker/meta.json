@@ -1,0 +1,63 @@
+{
+  "packageId": "skl_xhs-product-picker",
+  "code": "xhs-product-picker",
+  "title": "小红书虚拟产品选品助手",
+  "author": "松月",
+  "uploaderUnionUserId": "456738",
+  "version": "1.0.0",
+  "guideStatus": "hosted",
+  "isOriginal": true,
+  "summary": "把你的工作和生活经验，经过 5 轮对话变成一个有付费场景、能上架验证的小红书虚拟产品方案。",
+  "tags": {
+    "visible": [
+      "小红书经营与虚拟产品",
+      "商品与选品",
+      "小红书"
+    ],
+    "category": [
+      "小红书经营与虚拟产品"
+    ],
+    "task": [
+      "商品与选品"
+    ],
+    "platform": [
+      "小红书"
+    ],
+    "other": [],
+    "hiddenTagCount": 1
+  },
+  "installsOnMarket": 13,
+  "commentsOnMarket": 0,
+  "marketDate": "09-30",
+  "detailUrl": "https://scys.com/skillhub/skills/skl_xhs-product-picker",
+  "runtimeTargets": [
+    "claude_code",
+    "codex",
+    "hermes"
+  ],
+  "artifactSha256": "2863d3245cc44f74371dea527630179e168172cc7a1be974fac7f985d0fc8847",
+  "ossPathAccount": "u456738",
+  "dependencies": [],
+  "capabilityCard": {
+    "allowShell": false,
+    "allowedTools": [],
+    "allowArbitraryHttp": false,
+    "allowArbitraryMcp": false,
+    "scriptsPresent": false
+  },
+  "archive": {
+    "zipFile": "xhs-product-picker-1.0.0.zip",
+    "extractedDir": "extracted/",
+    "fileCount": 4,
+    "hasScriptsDir": false,
+    "hasManifest": true,
+    "sha256Verified": true,
+    "archivedAt": "2026-10-24 21:44 +0800"
+  },
+  "files": [
+    "SKILL.md",
+    "manifest.json",
+    "references/case-data.md",
+    "references/setup-guide.md"
+  ]
+}

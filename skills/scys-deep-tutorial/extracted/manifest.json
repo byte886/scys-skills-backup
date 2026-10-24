@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "skl_scys-deep-tutorial",
+  "type": "skill",
+  "code": "scys-deep-tutorial",
+  "displayName": "生财深度教程生成器",
+  "description": "生财深度调研教程工作流。把用户提出的一个问题/方向/人物/航海手册/项目案例，用生财 MCP（scys-mcp）检索站内一手资料，结合世界知识与必要的联网补充，结构化为「概念→逻辑关系→事实与概念知识→实操SOP→实战案例→总结」的图文并茂单文件 HTML 教程，并强制经过 AI 亦仁（商业判断）+ AI 刘小排（AI/产品/增长）双导师详细点评、逐条修订出终版。当用户说「把 XX 做成教程」「调研 XX 产出教程」「把XX生财资料整理成图文教程」「案例拆解教程」「深度调研教程」，或描述了「检索生财 + 结构化 + 双导师点评 + 图文产出」这类组合流程时使用。",
+  "publisher": "飞猫",
+  "version": "1.0.0",
+  "uploaderUnionUserId": 122662,
+  "isOriginal": true,
+  "visibility": "public",
+  "runtimeTargets": [
+    "claude_code",
+    "codex",
+    "hermes"
+  ],
+  "examplePrompts": [
+    "我想做 AI 编程接单这个副业，把生财站内相关的打法、案例和坑整理成一份图文教程，最好带可执行 SOP。",
+    "把生财圈友「XXX」的精华帖做成一份教程，我想系统学他做项目的完整思路",
+    "我正在参加《微信小程序产品打造》航海，把这本手册整理成一份能一步步跟着做的教程，重点补齐实操细节和止损线"
+  ],
+  "itCanHelpYou": [
+    "提一个问题，自动检索生财资料写成图文教程，再经 AI 亦仁 + AI 刘小排双导师点评修订出终版。"
+  ],
+  "useCases": [],
+  "changelog": "首次发布，概括地说就是把你心中的对赚钱的疑问或者想学习的课题，结合生财的信息给你整理成教程。",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "0ded1e5af85a43e3ffe371130cf2e14ec26914d1bf910cfe0f47e6a71fded84e"
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "6c52ec4834472aac073e05bfab411dfda5b790bfb68ae8d7253f865b7dff2db5"
+    },
+    {
+      "path": "assets/tutorial-skeleton.html",
+      "sha256": "6636bb4dbe8e388b528ae43cb6f8cb0ec0c1dea5e3d83983e976d1a7ea8be578"
+    },
+    {
+      "path": "references/tutorial-structure.md",
+      "sha256": "28daebcaa58fd77192035aa9c8de58580ff2fbde9d92914c105f066edc468d1d"
+    },
+    {
+      "path": "references/mentor-review.md",
+      "sha256": "407a7f575136fe7419e1990fe3977de602ec1c9fef9be52b6ae14dbc2a590d3e"
+    },
+    {
+      "path": "references/research.md",
+      "sha256": "6830189578651be6865861a1e8f2736a1335bd751422010011c4f9e75f51f94a"
+    },
+    {
+      "path": "references/acceptance-and-pitfalls.md",
+      "sha256": "0a57c87503add2afe44270231d9526142a5e4414b32e25929f06d3b394436a03"
+    }
+  ]
+}

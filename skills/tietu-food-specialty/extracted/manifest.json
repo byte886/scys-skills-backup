@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "id": "skl_tietu-food-specialty",
+  "type": "skill",
+  "code": "tietu-food-specialty",
+  "displayName": "美食贴图skill",
+  "description": "Use when 用户要创作、改写或检查贴图号美食特产内容，素材涉及地方小吃、冷门食材、时令瓜果、制作过程、产销故事、家庭烹饪或日常食安；不用于无来源的医疗、功效或价格承诺。",
+  "publisher": "⃰苇⃰岸⃰",
+  "version": "1.0.0",
+  "uploaderUnionUserId": 818409,
+  "isOriginal": true,
+  "visibility": "public",
+  "examplePrompts": [
+    "帮我写一条xx的美食贴图笔记",
+    "帮我制作美食图片",
+    "帮我完成美食文案"
+  ],
+  "itCanHelpYou": [
+    "制作美食贴图"
+  ],
+  "useCases": [],
+  "changelog": "首次发布",
+  "files": [
+    {
+      "path": "references/persona-and-audience.md",
+      "sha256": "28b3de250306ae2e0ad7a715356720ed8f53033f00ee223f02c3086f820fb096"
+    },
+    {
+      "path": "references/finished-image-execution.md",
+      "sha256": "df8dbbd941f647b54ee135337e04d2d9ad5c574f67eab7a4b8070acdf352a1ee"
+    },
+    {
+      "path": "references/writing-and-emotion.md",
+      "sha256": "c03827e736f479ea13725b109b59eb98f306204b03be413fff501bdee9a3c7f8"
+    },
+    {
+      "path": "references/table-source-links.md",
+      "sha256": "dea84624a433a1c658d7bcdafe764d246c5d9fe2ee19239f2db669c02783137e"
+    },
+    {
+      "path": "references/topic-keywords-and-titles.md",
+      "sha256": "71d3286c164d3d582806fbd0d2193d9aea5cbda97552ab2ea6d3a66c7708e5d8"
+    },
+    {
+      "path": "references/visual-prompt-engine.md",
+      "sha256": "83a442f49609ec7fe84fd9f36cdfad98bff0ee3821ce1716bcea0fd38df25267"
+    },
+    {
+      "path": "references/output-contract-and-checklist.md",
+      "sha256": "ddb9aeb74790c2cb5b40d2c02a10fe8ff63cdc9bfa3afd1b071010635766bbe1"
+    },
+    {
+      "path": "references/prompt-sealing-and-adjustments.md",
+      "sha256": "d2c090f0fb8f1d8420be6309063a5e5a86339f636d723370eb5e2aa7093dd194"
+    },
+    {
+      "path": "references/reference-image-and-typography.md",
+      "sha256": "66573628e4c953b15e33effbd51dffd2077ebe77c3214337263b00529101404b"
+    },
+    {
+      "path": "references/human-tone-and-anti-ai.md",
+      "sha256": "b18071b27ec5357a16b5dde5788f3107a12d23abc77aa64942508698708f3aff"
+    },
+    {
+      "path": "tests/render-finished-image.test.mjs",
+      "sha256": "e4f096faa8dbd7b5fbfbb18f87d45edc7ce976bff5e287ff43c7642dbeb28772"
+    },
+    {
+      "path": "tests/validate-output.test.mjs",
+      "sha256": "b130e44540b68501652247ec276bee02ed067f68b745cd64709e0ea3ffb9aa42"
+    },
+    {
+      "path": "tests/typography-styles.test.mjs",
+      "sha256": "d4986507c83f5203d4ed213e66626ff0c029e409b36a789eecf3f774699b446a"
+    },
+    {
+      "path": "tests/render-title-cover.test.mjs",
+      "sha256": "1d4ad7aedf2b5153070b6cb37a693a66fe223ffcf3cdf705a822ef39a2ae08f2"
+    },
+    {
+      "path": "tests/visual-routing.test.mjs",
+      "sha256": "abf55331c96d805ff9eba062d54469d761d1af1f61ecc9be77d231f6c66715ee"
+    },
+    {
+      "path": "tests/render-compatibility.test.mjs",
+      "sha256": "c5a5bd3e32f2f84148bb7a1aadf5d479c0a8469a55b0c1509b520fb24b858467"
+    },
+    {
+      "path": "tests/visual-hook-matrix.test.mjs",
+      "sha256": "93e14a875647f2fa560ffdd01fa912151a7e864a97879ee3a44c2e2ce69f7e36"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "85c08609858ae83885d38366ed9cc7ebf495d8466ced0863d13bc76bf956bb76"
+    },
+    {
+      "path": "examples/invalid-cover-input.json",
+      "sha256": "c35139d834b4d5cca03523a312d934f1a99c45b8c11518c33bf7b38cbfd4a532"
+    },
+    {
+      "path": "examples/valid-output.json",
+      "sha256": "2eeb6d02a13364a1f147c5a96b8455b2fdc443364d759d6dd26cecdcb5bec643"
+    },
+    {
+      "path": "examples/invalid-image-exception.json",
+      "sha256": "54226aa07deab5eda22e9414113707a711d461363892be693ebae53473f4069e"
+    },
+    {
+      "path": "examples/cover-input.json",
+      "sha256": "12d934852bef521ab1693ffdcdb472f049432a3e43a01184065375ea188a4d50"
+    },
+    {
+      "path": "examples/acceptance-cases.md",
+      "sha256": "f0b37bb0c45dc8c3096332bfb6f162b66596e77147f67fc90231138d2dbd9679"
+    },
+    {
+      "path": "examples/invalid-output.json",
+      "sha256": "6f6ee75a6bc72a3d571b11bc48176584a15bc8383a7c96845a2c1a99fb4146e4"
+    },
+    {
+      "path": "scripts/render_finished_image.mjs",
+      "sha256": "3a6435e9bdbad1f15415d3fd46b403d5da8a71809524b4dcbe83ce2a7b896c1f"
+    },
+    {
+      "path": "scripts/validate_output.mjs",
+      "sha256": "48df861f9d70850fb8a24d628ab47c4623181bc478e86ad2daecdf0a859139fe"
+    },
+    {
+      "path": "scripts/render_title_cover.mjs",
+      "sha256": "ca303b42f5780bbdd84f7c2283c34d71dd16e7cb1992ee1b4ad72860fc657822"
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "3f9701f3a71765524c929f83c92c7e9b0a8ae37630e59a72519bc7cb56615218"
+    },
+    {
+      "path": "assets/typography-styles.json",
+      "sha256": "df9adec5c30e178354ba18457b03da9c3dd5d086d13a35b574eb5aa7b2779072"
+    },
+    {
+      "path": "assets/track-profile.json",
+      "sha256": "2125f5f3649089c6d65e81d4ac86ad6132ace264ee84cc720d3c7aaf154779c8"
+    },
+    {
+      "path": "assets/adjustment-schema.json",
+      "sha256": "7fef0473e96d6ebde252b3ea29c86d0fe4404610e64391392b44c3bb0c9861b1"
+    },
+    {
+      "path": "assets/reference-layouts/example.json",
+      "sha256": "e9409a089922cd0efcd2b6f1334a5f76e3ea2b7a55d9a1f5c825800655013ab0"
+    },
+    {
+      "path": "assets/reference-layouts/README.md",
+      "sha256": "814d5de54b0c49c0abbfcffb48b0dcdbf04fbb6e067856f8169de4b5aa690459"
+    }
+  ]
+}

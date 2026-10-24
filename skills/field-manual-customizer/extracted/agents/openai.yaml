@@ -1,0 +1,4 @@
+interface:
+  display_name: "实战手册定制"
+  short_description: "按目标、阶段和条件定制或更新实战手册，补足操作依据并标明关键缺口"
+  default_prompt: "使用 $field-manual-customizer，结合我已给的目标和条件，只补问影响路线的缺项，为我定制或更新实战手册，说明操作依据与仍需核对的关键步骤。"

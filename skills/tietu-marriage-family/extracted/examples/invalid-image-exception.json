@@ -1,0 +1,17 @@
+{
+  "mode":"standard",
+  "sourceBasis":{"visible":["餐桌和作业本"],"reported":["素材称夫妻结婚17年"],"uncertain":["没有完整对话"],"riskNotes":[]},
+  "keywords":["婚姻","餐桌","作业本","沟通","婚龄"],
+  "titleCandidates":["结婚17年的餐桌","先问孩子作业","夫妻沟通一刻","家长会前的沉默","十分钟回应"],
+  "title":"结婚17年的餐桌",
+  "emotion":"心酸",
+  "perspective":"42岁、结婚17年的社区行政文员，有一个上初中的孩子",
+  "body":"素材只有餐桌一幕，不能为了更丰富而堆图。",
+  "images":[
+    {"role":"cover","hasTitle":true,"continuityKey":"family-1","purpose":"首图","source":{"type":"visual_illustration","isHistoricalEvidence":false,"description":"家庭生活画面示意"},"prompt":"夫妻与作业本在餐桌旁，家中自然光，留白；无字底图，不生成中文或其他文字，不生成标题，不生成标签，不生成箭头文字。","overlay":{"method":"code","text":"结婚17年的餐桌","position":"top-left","palette":"slate"}},
+    {"role":"detail","hasTitle":false,"continuityKey":"family-1","purpose":"细节","source":{"type":"visual_illustration","isHistoricalEvidence":false,"description":"关系动作画面示意"},"prompt":"同一餐桌和作业本；无字底图，不生成中文或其他文字，不生成标题，不生成标签，不生成箭头文字。"},
+    {"role":"process","hasTitle":false,"continuityKey":"family-1","purpose":"节点","source":{"type":"visual_illustration","isHistoricalEvidence":false,"description":"关系动作画面示意"},"prompt":"同一家庭动作；无字底图，不生成中文或其他文字，不生成标题，不生成标签，不生成箭头文字。"}
+  ],
+  "imageException":{"kind":"real_life_sequence","reason":"为了更丰富所以增加三张图"},
+  "failureNotes":[]
+}

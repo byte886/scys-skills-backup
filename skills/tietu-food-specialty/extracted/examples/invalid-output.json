@@ -1,0 +1,11 @@
+{
+  "mode": "standard",
+  "title": "北方人都没见过的广西最正宗艾粑",
+  "emotion": "好奇、温暖",
+  "body": "我第一次在摊主家吃过艾粑，入口软糯香甜，听说还能补硒降糖。广西人家家户户都这样做，十元一份，大家都说好吃。真正的美食从来不是食材，而是家乡的味道。塑料袋放烤架旁边也能挡油烟，照着做就行。",
+  "images": [
+    {"role": "detail", "hasTitle": false, "purpose": "随便放图", "prompt": "请生成中文标题和标签的精美广告图", "source": {"type": "visual_illustration", "isHistoricalEvidence": true, "description": ""}},
+    {"role": "cover", "hasTitle": true, "purpose": "重复封面", "prompt": "无字底图", "source": {"type": "source_material", "historicalAuthenticity": "verified", "note": ""}},
+    {"role": "detail", "hasTitle": false, "purpose": "凑图", "prompt": "暖黄商业棚拍，无字底图，不生成中文，不生成标题，不生成标签，不生成箭头文字", "source": {"type": "source_material", "historicalAuthenticity": "verified", "note": "重复"}}
+  ]
+}

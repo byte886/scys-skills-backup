@@ -1,0 +1,923 @@
+{
+  "generatedAt": "2026-10-24 21:44 +0800",
+  "source": {
+    "marketList": "docs/source-market-list.json（外部 Chrome 只读浏览市场，T27）",
+    "mcpMetadata": "docs/source-metadata.json（scys-mcp installguide 逐个取，T31）",
+    "officialInstallGuide": "docs/skillhub-install-guide.md"
+  },
+  "distribution": {
+    "total": 19,
+    "hosted": 19,
+    "external": 0,
+    "artifact_missing": 0,
+    "withRepository": 0
+  },
+  "authors": {
+    "河林": 2,
+    "竹子。": 1,
+    "亦仁": 3,
+    "乐阳": 1,
+    "Lynn": 6,
+    "⃰辰风": 3,
+    "松月": 2,
+    "飞猫": 1
+  },
+  "total": 19,
+  "verifiedCount": 19,
+  "totalExtractedFiles": 170,
+  "skillsWithScriptsDir": 9,
+  "skills": [
+    {
+      "packageId": "skl_helin-analyze-livestream-commerce",
+      "code": "helin-analyze-livestream-commerce",
+      "title": "河林直播拆解",
+      "author": "河林",
+      "uploaderUnionUserId": "215990",
+      "version": "2.1.0",
+      "guideStatus": "hosted",
+      "isOriginal": true,
+      "summary": "把直播回放转写稿拆成五模块报告：货盘与出场台账、排品动线与憋卡踢促循环、主推品话术、带合规提示的可复用话术框架、操盘点评；适配视频号、抖音、小红书。",
+      "tagsVisible": [
+        "电商经营与获客",
+        "数据分析与复盘",
+        "小红书"
+      ],
+      "categoryTags": [
+        "电商经营与获客"
+      ],
+      "taskTags": [
+        "数据分析与复盘"
+      ],
+      "platformTags": [
+        "小红书"
+      ],
+      "otherTags": [],
+      "hiddenTagCount": 2,
+      "installs": 8,
+      "comments": 0,
+      "marketDate": "10-17",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_helin-analyze-livestream-commerce",
+      "runtimeTargets": [],
+      "artifactSha256": "8aadbb3d48d0788c34d620d1aefeccb510954af52616fbbbd4126fdfa6211eff",
+      "ossPathAccount": "u215990",
+      "dependencyLock": [],
+      "dependsOn": [],
+      "allowShell": false,
+      "allowedTools": [],
+      "allowArbitraryHttp": false,
+      "allowArbitraryMcp": false,
+      "scriptsPresent": false,
+      "backupDir": "skills/helin-analyze-livestream-commerce",
+      "zipFile": "skills/helin-analyze-livestream-commerce/helin-analyze-livestream-commerce-2.1.0.zip",
+      "fileCount": 8,
+      "hasScriptsDir": true,
+      "sha256Verified": true,
+      "archivedAt": "2026-10-24 21:44 +0800"
+    },
+    {
+      "packageId": "skl_helin-livestream-planning-master",
+      "code": "helin-livestream-planning-master",
+      "title": "河林直播策划大师",
+      "author": "河林",
+      "uploaderUnionUserId": "215990",
+      "version": "2.1.0",
+      "guideStatus": "hosted",
+      "isOriginal": true,
+      "summary": "为抖音、视频号、小红书的带货直播和知识付费/线索直播出整场策划或单模块方案：流量、排品、玩法、话术、投流（策划层）、私域、节奏分工，附保本 ROI 与坑产测算和合规红线。",
+      "tagsVisible": [
+        "电商经营与获客",
+        "客户与成交",
+        "小红书"
+      ],
+      "categoryTags": [
+        "电商经营与获客"
+      ],
+      "taskTags": [
+        "客户与成交"
+      ],
+      "platformTags": [
+        "小红书"
+      ],
+      "otherTags": [],
+      "hiddenTagCount": 3,
+      "installs": 5,
+      "comments": 0,
+      "marketDate": "10-17",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_helin-livestream-planning-master",
+      "runtimeTargets": [],
+      "artifactSha256": "217ab3bcf8b6d5edf919e350ccf45b44d73e92dbd122ab5525d86d5859ed83b8",
+      "ossPathAccount": "u215990",
+      "dependencyLock": [],
+      "dependsOn": [],
+      "allowShell": false,
+      "allowedTools": [],
+      "allowArbitraryHttp": false,
+      "allowArbitraryMcp": false,
+      "scriptsPresent": false,
+      "backupDir": "skills/helin-livestream-planning-master",
+      "zipFile": "skills/helin-livestream-planning-master/helin-livestream-planning-master-2.1.0.zip",
+      "fileCount": 16,
+      "hasScriptsDir": true,
+      "sha256Verified": true,
+      "archivedAt": "2026-10-24 21:44 +0800"
+    },
+    {
+      "packageId": "skl_ai-self-media-coach",
+      "code": "ai-self-media-coach",
+      "title": "自媒体商业定位教练skill",
+      "author": "竹子。",
+      "uploaderUnionUserId": "724673",
+      "version": "3.0.0",
+      "guideStatus": "hosted",
+      "isOriginal": true,
+      "summary": "AI 自媒体商业定位教练。通过一对一采访，帮助想做自媒体、个人 IP、知识型 IP 但不确定定位的人，梳理个人优势、判断定位机会、输出完整的自媒体商业定位诊断报告。触发场景一（本人在线采访）：用户说「开始定位采访」「帮我做自媒体定位」「帮我找自媒体方向」「我不知道自己适合做什么账号」「帮我分析我的个人IP定位」「帮我设计一个可以变现的自媒体账号」。触发场景二（材料诊断）：用户不上来一问一答，而是直接给一份材料——可能是自己的自我介绍、简历、账号数据，也可能是教练手上的客户调研表、问卷、微信沟通记录、转介信息，要求「根据这些材料给一个定位和产品方向」，此时不启动采访，改走材料诊断模式。默认只输出一份给用户本人看的报告；内部判断与跟进版仅在明确索取时额外生成。",
+      "tagsVisible": [
+        "内容创作与个人 IP",
+        "判断与决策"
+      ],
+      "categoryTags": [
+        "内容创作与个人 IP"
+      ],
+      "taskTags": [
+        "判断与决策"
+      ],
+      "platformTags": [],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 19,
+      "comments": 0,
+      "marketDate": "10-12",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_ai-self-media-coach",
+      "runtimeTargets": [],
+      "artifactSha256": "24b2c2d809c3cf198e229fcc3eb2ef1c2b844cc982a5ebb2388b67d0ee57c785",
+      "ossPathAccount": "u724673",
+      "dependencyLock": [],
+      "dependsOn": [],
+      "allowShell": false,
+      "allowedTools": [],
+      "allowArbitraryHttp": false,
+      "allowArbitraryMcp": false,
+      "scriptsPresent": false,
+      "backupDir": "skills/ai-self-media-coach",
+      "zipFile": "skills/ai-self-media-coach/ai-self-media-coach-3.0.0.zip",
+      "fileCount": 2,
+      "hasScriptsDir": false,
+      "sha256Verified": true,
+      "archivedAt": "2026-10-24 21:44 +0800"
+    },
+    {
+      "packageId": "skl_field-manual-customizer",
+      "code": "field-manual-customizer",
+      "title": "实战手册定制",
+      "author": "亦仁",
+      "uploaderUnionUserId": "36389",
+      "version": "0.10.1",
+      "guideStatus": "hosted",
+      "isOriginal": true,
+      "summary": "告诉它你想做的项目和手头条件，它结合生财站内经验和平台规则，给你定制一份能照着做的实战手册。",
+      "tagsVisible": [
+        "研究与选题",
+        "判断与决策"
+      ],
+      "categoryTags": [],
+      "taskTags": [
+        "研究与选题",
+        "判断与决策"
+      ],
+      "platformTags": [],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 56,
+      "comments": 0,
+      "marketDate": "10-05",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_field-manual-customizer",
+      "runtimeTargets": [
+        "claude_code",
+        "codex"
+      ],
+      "artifactSha256": "899342d07c3c83db09e1af71e20076c5fcf91677bbb11521e68078f7267ed614",
+      "ossPathAccount": "u451723",
+      "dependencyLock": [],
+      "dependsOn": [],
+      "allowShell": false,
+      "allowedTools": [],
+      "allowArbitraryHttp": false,
+      "allowArbitraryMcp": false,
+      "scriptsPresent": false,
+      "backupDir": "skills/field-manual-customizer",
+      "zipFile": "skills/field-manual-customizer/field-manual-customizer-0.10.1.zip",
+      "fileCount": 19,
+      "hasScriptsDir": true,
+      "sha256Verified": true,
+      "archivedAt": "2026-10-24 21:44 +0800"
+    },
+    {
+      "packageId": "skl_assess-ai-enterprise-fde-fit",
+      "code": "assess-ai-enterprise-fde-fit",
+      "title": "乐阳AI企业服务FDE方向选择测评报告",
+      "author": "乐阳",
+      "uploaderUnionUserId": "54111",
+      "version": "2.1.0",
+      "guideStatus": "hosted",
+      "isOriginal": true,
+      "summary": "根据乐阳老师的方法论，判定使用者在AI企服FDE方向的能力定位、测评评分、产品选择与行动方案。",
+      "tagsVisible": [
+        "AI 自动化与工作流",
+        "判断与决策"
+      ],
+      "categoryTags": [
+        "AI 自动化与工作流"
+      ],
+      "taskTags": [
+        "判断与决策"
+      ],
+      "platformTags": [],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 6,
+      "comments": 0,
+      "marketDate": "10-12",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_assess-ai-enterprise-fde-fit",
+      "runtimeTargets": [],
+      "artifactSha256": "79414bbeebed66d82306d4438b0ff84d347c3747522269235e347a5aec7f4154",
+      "ossPathAccount": "u54111",
+      "dependencyLock": [],
+      "dependsOn": [],
+      "allowShell": false,
+      "allowedTools": [],
+      "allowArbitraryHttp": false,
+      "allowArbitraryMcp": false,
+      "scriptsPresent": false,
+      "backupDir": "skills/assess-ai-enterprise-fde-fit",
+      "zipFile": "skills/assess-ai-enterprise-fde-fit/assess-ai-enterprise-fde-fit-2.1.0.zip",
+      "fileCount": 9,
+      "hasScriptsDir": true,
+      "sha256Verified": true,
+      "archivedAt": "2026-10-24 21:44 +0800"
+    },
+    {
+      "packageId": "skl_media-transcriber",
+      "code": "media-transcriber",
+      "title": "音视频转录与长文整理",
+      "author": "亦仁",
+      "uploaderUnionUserId": "36389",
+      "version": "1.1.0",
+      "guideStatus": "hosted",
+      "isOriginal": true,
+      "summary": "把音视频、播客、字幕或逐字稿整理成保留案例、数字和推理过程的中文长稿，可按需提供摘要、真实时间戳和原始逐字稿。",
+      "tagsVisible": [
+        "内容创作与个人 IP",
+        "内容制作"
+      ],
+      "categoryTags": [
+        "内容创作与个人 IP"
+      ],
+      "taskTags": [
+        "内容制作"
+      ],
+      "platformTags": [],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 564,
+      "comments": 0,
+      "marketDate": "09-22",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_media-transcriber",
+      "runtimeTargets": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "F"
+      ],
+      "artifactSha256": "13be2aab46f1029a8eb697577203100c2d4099dd559403cdae45c0c8bfb18831",
+      "ossPathAccount": "u36389",
+      "dependencyLock": [],
+      "dependsOn": [],
+      "allowShell": false,
+      "allowedTools": [],
+      "allowArbitraryHttp": false,
+      "allowArbitraryMcp": false,
+      "scriptsPresent": false,
+      "backupDir": "skills/media-transcriber",
+      "zipFile": "skills/media-transcriber/media-transcriber-1.1.0.zip",
+      "fileCount": 10,
+      "hasScriptsDir": true,
+      "sha256Verified": true,
+      "archivedAt": "2026-10-24 21:44 +0800"
+    },
+    {
+      "packageId": "skl_base-bili-script-writing",
+      "code": "base-bili-script-writing",
+      "title": "B站带货中文口播稿生成",
+      "author": "Lynn",
+      "uploaderUnionUserId": "848893",
+      "version": "0.1.0",
+      "guideStatus": "hosted",
+      "isOriginal": true,
+      "summary": "把已排序的数码家电商品资料写成包含开场、商品段落和收尾的中文口播稿，保留使用场景、购买提醒及待确认信息。",
+      "tagsVisible": [
+        "短视频创作与带货",
+        "内容制作",
+        "B站"
+      ],
+      "categoryTags": [
+        "短视频创作与带货"
+      ],
+      "taskTags": [
+        "内容制作"
+      ],
+      "platformTags": [
+        "B站"
+      ],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 6,
+      "comments": 0,
+      "marketDate": "10-09",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_base-bili-script-writing",
+      "runtimeTargets": [],
+      "artifactSha256": "8c1bf709311bfc399eed20b20df95a2a67a5a98db567b739c5f1b00d365e39cc",
+      "ossPathAccount": "u848893",
+      "dependencyLock": [],
+      "dependsOn": [],
+      "allowShell": false,
+      "allowedTools": [],
+      "allowArbitraryHttp": false,
+      "allowArbitraryMcp": false,
+      "scriptsPresent": false,
+      "backupDir": "skills/base-bili-script-writing",
+      "zipFile": "skills/base-bili-script-writing/base-bili-script-writing-0.1.0.zip",
+      "fileCount": 2,
+      "hasScriptsDir": false,
+      "sha256Verified": true,
+      "archivedAt": "2026-10-24 21:44 +0800"
+    },
+    {
+      "packageId": "skl_base-bili-product-intake",
+      "code": "base-bili-product-intake",
+      "title": "B站带货商品信息整理",
+      "author": "Lynn",
+      "uploaderUnionUserId": "848893",
+      "version": "0.1.0",
+      "guideStatus": "hosted",
+      "isOriginal": true,
+      "summary": "把 1 到 5 个数码家电商品的零散资料整理成统一信息表，区分事实与推测、标出缺失项，为视频选品排序提供输入。",
+      "tagsVisible": [
+        "短视频创作与带货",
+        "商品与选品",
+        "B站"
+      ],
+      "categoryTags": [
+        "短视频创作与带货"
+      ],
+      "taskTags": [
+        "商品与选品"
+      ],
+      "platformTags": [
+        "B站"
+      ],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 6,
+      "comments": 0,
+      "marketDate": "10-09",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_base-bili-product-intake",
+      "runtimeTargets": [],
+      "artifactSha256": "db2adbf0b5f963b4e14fd88e9a75daa09d33e84ecc56c522f1931bfc513f8013",
+      "ossPathAccount": "u848893",
+      "dependencyLock": [],
+      "dependsOn": [],
+      "allowShell": false,
+      "allowedTools": [],
+      "allowArbitraryHttp": false,
+      "allowArbitraryMcp": false,
+      "scriptsPresent": false,
+      "backupDir": "skills/base-bili-product-intake",
+      "zipFile": "skills/base-bili-product-intake/base-bili-product-intake-0.1.0.zip",
+      "fileCount": 2,
+      "hasScriptsDir": false,
+      "sha256Verified": true,
+      "archivedAt": "2026-10-24 21:44 +0800"
+    },
+    {
+      "packageId": "skl_base-bili-publish-review",
+      "code": "base-bili-publish-review",
+      "title": "B站带货发布检查与复盘",
+      "author": "Lynn",
+      "uploaderUnionUserId": "848893",
+      "version": "0.1.0",
+      "guideStatus": "hosted",
+      "isOriginal": true,
+      "summary": "检查带货视频的标题、封面、口播和商品链接顺序是否一致，并结合发布数据与评论，形成下一条视频的具体优化动作。",
+      "tagsVisible": [
+        "短视频创作与带货",
+        "发布与分发",
+        "数据分析与复盘"
+      ],
+      "categoryTags": [
+        "短视频创作与带货"
+      ],
+      "taskTags": [
+        "发布与分发",
+        "数据分析与复盘"
+      ],
+      "platformTags": [],
+      "otherTags": [],
+      "hiddenTagCount": 1,
+      "installs": 5,
+      "comments": 0,
+      "marketDate": "10-09",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_base-bili-publish-review",
+      "runtimeTargets": [],
+      "artifactSha256": "ca29b8e5c4723199d7a5e4bfb68ddaf036d213af0c574e2e6a7e6f4d79286fde",
+      "ossPathAccount": "u848893",
+      "dependencyLock": [],
+      "dependsOn": [],
+      "allowShell": false,
+      "allowedTools": [],
+      "allowArbitraryHttp": false,
+      "allowArbitraryMcp": false,
+      "scriptsPresent": false,
+      "backupDir": "skills/base-bili-publish-review",
+      "zipFile": "skills/base-bili-publish-review/base-bili-publish-review-0.1.0.zip",
+      "fileCount": 2,
+      "hasScriptsDir": false,
+      "sha256Verified": true,
+      "archivedAt": "2026-10-24 21:44 +0800"
+    },
+    {
+      "packageId": "skl_base-bili-visual-planning",
+      "code": "base-bili-visual-planning",
+      "title": "B站带货分镜与封面规划",
+      "author": "Lynn",
+      "uploaderUnionUserId": "848893",
+      "version": "0.1.0",
+      "guideStatus": "hosted",
+      "isOriginal": true,
+      "summary": "将数码家电口播稿转成 PPT 或分镜表，为各段规划画面、标题和素材，并提供封面方向及素材缺口清单。",
+      "tagsVisible": [
+        "短视频创作与带货",
+        "视觉与素材",
+        "B站"
+      ],
+      "categoryTags": [
+        "短视频创作与带货"
+      ],
+      "taskTags": [
+        "视觉与素材"
+      ],
+      "platformTags": [
+        "B站"
+      ],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 5,
+      "comments": 0,
+      "marketDate": "10-09",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_base-bili-visual-planning",
+      "runtimeTargets": [],
+      "artifactSha256": "e8e7e0f3fe609ac80d052987e0b943c91ae69daf80dde1ed66ca880c165dc14c",
+      "ossPathAccount": "u848893",
+      "dependencyLock": [],
+      "dependsOn": [],
+      "allowShell": false,
+      "allowedTools": [],
+      "allowArbitraryHttp": false,
+      "allowArbitraryMcp": false,
+      "scriptsPresent": false,
+      "backupDir": "skills/base-bili-visual-planning",
+      "zipFile": "skills/base-bili-visual-planning/base-bili-visual-planning-0.1.0.zip",
+      "fileCount": 2,
+      "hasScriptsDir": false,
+      "sha256Verified": true,
+      "archivedAt": "2026-10-24 21:44 +0800"
+    },
+    {
+      "packageId": "skl_base-bili-script-review",
+      "code": "base-bili-script-review",
+      "title": "B站带货口播稿检查",
+      "author": "Lynn",
+      "uploaderUnionUserId": "848893",
+      "version": "0.1.0",
+      "guideStatus": "hosted",
+      "isOriginal": true,
+      "summary": "对照商品事实和排序表检查口播稿中的价格、参数、顺序与夸大表述，输出问题清单、可替换句子和使用结论。",
+      "tagsVisible": [
+        "短视频创作与带货",
+        "内容制作",
+        "B站"
+      ],
+      "categoryTags": [
+        "短视频创作与带货"
+      ],
+      "taskTags": [
+        "内容制作"
+      ],
+      "platformTags": [
+        "B站"
+      ],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 5,
+      "comments": 0,
+      "marketDate": "10-09",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_base-bili-script-review",
+      "runtimeTargets": [],
+      "artifactSha256": "27f020d9b5acd97de4ceb21e12f0c0a77b38e6ac470a70c96b49b01db6a94b8e",
+      "ossPathAccount": "u848893",
+      "dependencyLock": [],
+      "dependsOn": [],
+      "allowShell": false,
+      "allowedTools": [],
+      "allowArbitraryHttp": false,
+      "allowArbitraryMcp": false,
+      "scriptsPresent": false,
+      "backupDir": "skills/base-bili-script-review",
+      "zipFile": "skills/base-bili-script-review/base-bili-script-review-0.1.0.zip",
+      "fileCount": 2,
+      "hasScriptsDir": false,
+      "sha256Verified": true,
+      "archivedAt": "2026-10-24 21:44 +0800"
+    },
+    {
+      "packageId": "skl_base-bili-product-ranking",
+      "code": "base-bili-product-ranking",
+      "title": "B站带货商品讲解排序",
+      "author": "Lynn",
+      "uploaderUnionUserId": "848893",
+      "version": "0.1.0",
+      "guideStatus": "hosted",
+      "isOriginal": true,
+      "summary": "根据商品信息、视频主题和观众需求，从痛点、差异、价格、画面和风险五个维度评估商品，给出讲解顺序及取舍理由。",
+      "tagsVisible": [
+        "短视频创作与带货",
+        "商品与选品",
+        "B站"
+      ],
+      "categoryTags": [
+        "短视频创作与带货"
+      ],
+      "taskTags": [
+        "商品与选品"
+      ],
+      "platformTags": [
+        "B站"
+      ],
+      "otherTags": [],
+      "hiddenTagCount": 1,
+      "installs": 5,
+      "comments": 0,
+      "marketDate": "10-09",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_base-bili-product-ranking",
+      "runtimeTargets": [],
+      "artifactSha256": "890e42316b421ce6c9949649777fc1c84a7930b1bc661a249c8ada980da602b8",
+      "ossPathAccount": "u848893",
+      "dependencyLock": [],
+      "dependsOn": [],
+      "allowShell": false,
+      "allowedTools": [],
+      "allowArbitraryHttp": false,
+      "allowArbitraryMcp": false,
+      "scriptsPresent": false,
+      "backupDir": "skills/base-bili-product-ranking",
+      "zipFile": "skills/base-bili-product-ranking/base-bili-product-ranking-0.1.0.zip",
+      "fileCount": 2,
+      "hasScriptsDir": false,
+      "sha256Verified": true,
+      "archivedAt": "2026-10-24 21:44 +0800"
+    },
+    {
+      "packageId": "skl_tietu-food-specialty",
+      "code": "tietu-food-specialty",
+      "title": "美食贴图skill",
+      "author": "⃰辰风",
+      "uploaderUnionUserId": "818409",
+      "version": "1.0.0",
+      "guideStatus": "hosted",
+      "isOriginal": true,
+      "summary": "Use when 用户要创作、改写或检查贴图号美食特产内容，素材涉及地方小吃、冷门食材、时令瓜果、制作过程、产销故事、家庭烹饪或日常食安；不用于无来源的医疗、功效或价格承诺。",
+      "tagsVisible": [
+        "内容创作与个人 IP",
+        "内容制作",
+        "视觉与素材"
+      ],
+      "categoryTags": [
+        "内容创作与个人 IP"
+      ],
+      "taskTags": [
+        "内容制作",
+        "视觉与素材"
+      ],
+      "platformTags": [],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 15,
+      "comments": 0,
+      "marketDate": "10-03",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_tietu-food-specialty",
+      "runtimeTargets": [],
+      "artifactSha256": "8746b489a4d8d22776f20cae96932361412951f106b6b86bd98ec85149f11923",
+      "ossPathAccount": "u818409",
+      "dependencyLock": [],
+      "dependsOn": [],
+      "allowShell": false,
+      "allowedTools": [],
+      "allowArbitraryHttp": false,
+      "allowArbitraryMcp": false,
+      "scriptsPresent": false,
+      "backupDir": "skills/tietu-food-specialty",
+      "zipFile": "skills/tietu-food-specialty/tietu-food-specialty-1.0.0.zip",
+      "fileCount": 34,
+      "hasScriptsDir": true,
+      "sha256Verified": true,
+      "archivedAt": "2026-10-24 21:44 +0800"
+    },
+    {
+      "packageId": "skl_tietu-marriage-family",
+      "code": "tietu-marriage-family",
+      "title": "婚姻家庭skill",
+      "author": "⃰辰风",
+      "uploaderUnionUserId": "818409",
+      "version": "1.0.0",
+      "guideStatus": "hosted",
+      "isOriginal": true,
+      "summary": "Use when 用户要创作、改写或检查贴图号婚姻家庭内容，素材涉及夫妻沟通、家庭分工、亲子关系、婆媳相处、婚后生活或中年情感；不用于性别战争、强行复合、伪造私生活或无来源的法律/心理诊断。",
+      "tagsVisible": [
+        "内容创作与个人 IP",
+        "内容制作",
+        "视觉与素材"
+      ],
+      "categoryTags": [
+        "内容创作与个人 IP"
+      ],
+      "taskTags": [
+        "内容制作",
+        "视觉与素材"
+      ],
+      "platformTags": [],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 13,
+      "comments": 0,
+      "marketDate": "10-03",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_tietu-marriage-family",
+      "runtimeTargets": [],
+      "artifactSha256": "8c3ee4214a2256821271c6ba4e6fb012b99c35a42ebbda445900a85105c31a81",
+      "ossPathAccount": "u818409",
+      "dependencyLock": [],
+      "dependsOn": [],
+      "allowShell": false,
+      "allowedTools": [],
+      "allowArbitraryHttp": false,
+      "allowArbitraryMcp": false,
+      "scriptsPresent": false,
+      "backupDir": "skills/tietu-marriage-family",
+      "zipFile": "skills/tietu-marriage-family/tietu-marriage-family-1.0.0.zip",
+      "fileCount": 34,
+      "hasScriptsDir": true,
+      "sha256Verified": true,
+      "archivedAt": "2026-10-24 21:44 +0800"
+    },
+    {
+      "packageId": "skl_wechat-longform-formatter",
+      "code": "wechat-longform-formatter",
+      "title": "长文章排版skill",
+      "author": "⃰辰风",
+      "uploaderUnionUserId": "818409",
+      "version": "1.0.0",
+      "guideStatus": "hosted",
+      "isOriginal": true,
+      "summary": "用户已有微信公众号长文，想选排版样式并得到标题、排版正文和可打开的 article.html 网页成品时使用；不用于重写文章。",
+      "tagsVisible": [
+        "内容创作与个人 IP",
+        "内容制作",
+        "公众号"
+      ],
+      "categoryTags": [
+        "内容创作与个人 IP"
+      ],
+      "taskTags": [
+        "内容制作"
+      ],
+      "platformTags": [
+        "公众号"
+      ],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 12,
+      "comments": 0,
+      "marketDate": "10-03",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_wechat-longform-formatter",
+      "runtimeTargets": [],
+      "artifactSha256": "f37f0c70147fd83898d3c018045029e83b07317bf0aecdb69234c73f2817cc32",
+      "ossPathAccount": "u818409",
+      "dependencyLock": [],
+      "dependsOn": [],
+      "allowShell": false,
+      "allowedTools": [],
+      "allowArbitraryHttp": false,
+      "allowArbitraryMcp": false,
+      "scriptsPresent": false,
+      "backupDir": "skills/wechat-longform-formatter",
+      "zipFile": "skills/wechat-longform-formatter/wechat-longform-formatter-1.0.0.zip",
+      "fileCount": 3,
+      "hasScriptsDir": true,
+      "sha256Verified": true,
+      "archivedAt": "2026-10-24 21:44 +0800"
+    },
+    {
+      "packageId": "skl_claude-reinstall-keep-data",
+      "code": "claude-reinstall-keep-data",
+      "title": "Claude 换号重装助手",
+      "author": "亦仁",
+      "uploaderUnionUserId": "36389",
+      "version": "0.1.5",
+      "guideStatus": "hosted",
+      "isOriginal": true,
+      "summary": "更换 Claude 账号时，清掉 Claude Code 登录状态和本地账号信息并重新安装，保留会话、记忆、Skill、MCP；支持 macOS 和 Windows。",
+      "tagsVisible": [
+        "AI 自动化与工作流",
+        "自动化与集成"
+      ],
+      "categoryTags": [
+        "AI 自动化与工作流"
+      ],
+      "taskTags": [
+        "自动化与集成"
+      ],
+      "platformTags": [],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 16,
+      "comments": 0,
+      "marketDate": "09-30",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_claude-reinstall-keep-data",
+      "runtimeTargets": [
+        "claude:global",
+        "codex:global"
+      ],
+      "artifactSha256": "0d79139073f9d1b10b1aac70227c089266699025a8fd9e3861c0e89fc1916aaa",
+      "ossPathAccount": "u6127423",
+      "dependencyLock": [],
+      "dependsOn": [],
+      "allowShell": false,
+      "allowedTools": [],
+      "allowArbitraryHttp": false,
+      "allowArbitraryMcp": false,
+      "scriptsPresent": false,
+      "backupDir": "skills/claude-reinstall-keep-data",
+      "zipFile": "skills/claude-reinstall-keep-data/claude-reinstall-keep-data-0.1.5.zip",
+      "fileCount": 5,
+      "hasScriptsDir": true,
+      "sha256Verified": true,
+      "archivedAt": "2026-10-24 21:44 +0800"
+    },
+    {
+      "packageId": "skl_xhs-product-picker",
+      "code": "xhs-product-picker",
+      "title": "小红书虚拟产品选品助手",
+      "author": "松月",
+      "uploaderUnionUserId": "456738",
+      "version": "1.0.0",
+      "guideStatus": "hosted",
+      "isOriginal": true,
+      "summary": "把你的工作和生活经验，经过 5 轮对话变成一个有付费场景、能上架验证的小红书虚拟产品方案。",
+      "tagsVisible": [
+        "小红书经营与虚拟产品",
+        "商品与选品",
+        "小红书"
+      ],
+      "categoryTags": [
+        "小红书经营与虚拟产品"
+      ],
+      "taskTags": [
+        "商品与选品"
+      ],
+      "platformTags": [
+        "小红书"
+      ],
+      "otherTags": [],
+      "hiddenTagCount": 1,
+      "installs": 13,
+      "comments": 0,
+      "marketDate": "09-30",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_xhs-product-picker",
+      "runtimeTargets": [
+        "claude_code",
+        "codex",
+        "hermes"
+      ],
+      "artifactSha256": "2863d3245cc44f74371dea527630179e168172cc7a1be974fac7f985d0fc8847",
+      "ossPathAccount": "u456738",
+      "dependencyLock": [],
+      "dependsOn": [],
+      "allowShell": false,
+      "allowedTools": [],
+      "allowArbitraryHttp": false,
+      "allowArbitraryMcp": false,
+      "scriptsPresent": false,
+      "backupDir": "skills/xhs-product-picker",
+      "zipFile": "skills/xhs-product-picker/xhs-product-picker-1.0.0.zip",
+      "fileCount": 4,
+      "hasScriptsDir": false,
+      "sha256Verified": true,
+      "archivedAt": "2026-10-24 21:44 +0800"
+    },
+    {
+      "packageId": "skl_opc-growth",
+      "code": "opc-growth",
+      "title": "OPC 一人公司流量诊断",
+      "author": "松月",
+      "uploaderUnionUserId": "456738",
+      "version": "1.0.0",
+      "guideStatus": "hosted",
+      "isOriginal": true,
+      "summary": "帮一人公司把“没流量、有曝光没成交、用户不留存”等问题拆成一个主瓶颈，并设计 7–14 天只改一件事的增长验证实验。",
+      "tagsVisible": [
+        "私域运营与成交",
+        "数据分析与复盘",
+        "判断与决策"
+      ],
+      "categoryTags": [
+        "私域运营与成交"
+      ],
+      "taskTags": [
+        "数据分析与复盘",
+        "判断与决策"
+      ],
+      "platformTags": [],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 7,
+      "comments": 0,
+      "marketDate": "09-30",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_opc-growth",
+      "runtimeTargets": [],
+      "artifactSha256": "15b0c7d94a84953b6dd3896c26722fb2a0e9b866bda319006d026f6308d93ebd",
+      "ossPathAccount": "u456738",
+      "dependencyLock": [],
+      "dependsOn": [],
+      "allowShell": false,
+      "allowedTools": [],
+      "allowArbitraryHttp": false,
+      "allowArbitraryMcp": false,
+      "scriptsPresent": false,
+      "backupDir": "skills/opc-growth",
+      "zipFile": "skills/opc-growth/opc-growth-1.0.0.zip",
+      "fileCount": 6,
+      "hasScriptsDir": false,
+      "sha256Verified": true,
+      "archivedAt": "2026-10-24 21:44 +0800"
+    },
+    {
+      "packageId": "skl_scys-deep-tutorial",
+      "code": "scys-deep-tutorial",
+      "title": "生财深度教程生成器",
+      "author": "飞猫",
+      "uploaderUnionUserId": "122662",
+      "version": "1.0.0",
+      "guideStatus": "hosted",
+      "isOriginal": true,
+      "summary": "生财深度调研教程工作流。把用户提出的一个问题/方向/人物/航海手册/项目案例，用生财 MCP（scys-mcp）检索站内一手资料，结合世界知识与必要的联网补充，结构化为「概念→逻辑关系→事实与概念知识→实操SOP→实战案例→总结」的图文并茂单文件 HTML 教程，并强制经过 AI 亦仁（商业判断）+ AI 刘小排（AI/产品/增长）双导师详细点评、逐条修订出终版。当用户说「把 XX 做成教程」「调研 XX 产出教程」「把XX生财资料整理成图文教程」「案例拆解教程」「深度调研教程」，或描述了「检索生财 + 结构化 + 双导师点评 + 图文产出」这类组合流程时使用。",
+      "tagsVisible": [
+        "内容创作与个人 IP",
+        "研究与选题",
+        "内容制作"
+      ],
+      "categoryTags": [
+        "内容创作与个人 IP"
+      ],
+      "taskTags": [
+        "研究与选题",
+        "内容制作"
+      ],
+      "platformTags": [],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 29,
+      "comments": 0,
+      "marketDate": "09-10",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_scys-deep-tutorial",
+      "runtimeTargets": [
+        "claude_code",
+        "codex",
+        "hermes"
+      ],
+      "artifactSha256": "284b2d67ee7d11b64332d4f628979b8ea4177a806c38acca5d096cce2dc93064",
+      "ossPathAccount": "u122662",
+      "dependencyLock": [],
+      "dependsOn": [],
+      "allowShell": false,
+      "allowedTools": [],
+      "allowArbitraryHttp": false,
+      "allowArbitraryMcp": false,
+      "scriptsPresent": false,
+      "backupDir": "skills/scys-deep-tutorial",
+      "zipFile": "skills/scys-deep-tutorial/scys-deep-tutorial-1.0.0.zip",
+      "fileCount": 8,
+      "hasScriptsDir": false,
+      "sha256Verified": true,
+      "archivedAt": "2026-10-24 21:44 +0800"
+    }
+  ]
+}

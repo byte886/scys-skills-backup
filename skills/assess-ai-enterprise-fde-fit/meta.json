@@ -1,0 +1,61 @@
+{
+  "packageId": "skl_assess-ai-enterprise-fde-fit",
+  "code": "assess-ai-enterprise-fde-fit",
+  "title": "乐阳AI企业服务FDE方向选择测评报告",
+  "author": "乐阳",
+  "uploaderUnionUserId": "54111",
+  "version": "2.1.0",
+  "guideStatus": "hosted",
+  "isOriginal": true,
+  "summary": "根据乐阳老师的方法论，判定使用者在AI企服FDE方向的能力定位、测评评分、产品选择与行动方案。",
+  "tags": {
+    "visible": [
+      "AI 自动化与工作流",
+      "判断与决策"
+    ],
+    "category": [
+      "AI 自动化与工作流"
+    ],
+    "task": [
+      "判断与决策"
+    ],
+    "platform": [],
+    "other": [],
+    "hiddenTagCount": 0
+  },
+  "installsOnMarket": 6,
+  "commentsOnMarket": 0,
+  "marketDate": "10-12",
+  "detailUrl": "https://scys.com/skillhub/skills/skl_assess-ai-enterprise-fde-fit",
+  "runtimeTargets": [],
+  "artifactSha256": "79414bbeebed66d82306d4438b0ff84d347c3747522269235e347a5aec7f4154",
+  "ossPathAccount": "u54111",
+  "dependencies": [],
+  "capabilityCard": {
+    "allowShell": false,
+    "allowedTools": [],
+    "allowArbitraryHttp": false,
+    "allowArbitraryMcp": false,
+    "scriptsPresent": false
+  },
+  "archive": {
+    "zipFile": "assess-ai-enterprise-fde-fit-2.1.0.zip",
+    "extractedDir": "extracted/",
+    "fileCount": 9,
+    "hasScriptsDir": true,
+    "hasManifest": true,
+    "sha256Verified": true,
+    "archivedAt": "2026-10-24 21:44 +0800"
+  },
+  "files": [
+    "SKILL.md",
+    "agents/openai.yaml",
+    "assets/report-template.html",
+    "manifest.json",
+    "references/guidance-playbook.md",
+    "references/question-bank.md",
+    "references/report-schema.md",
+    "references/scoring-model.md",
+    "scripts/render_report.py"
+  ]
+}

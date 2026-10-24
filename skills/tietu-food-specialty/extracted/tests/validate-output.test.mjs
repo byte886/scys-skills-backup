@@ -1,0 +1,186 @@
+import test, { after } from 'node:test';
+import assert from 'node:assert/strict';
+import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { spawnSync } from 'node:child_process';
+
+const testsDir = dirname(fileURLToPath(import.meta.url));
+const skillDir = dirname(testsDir);
+const validatorPath = join(skillDir, 'scripts', 'validate_output.mjs');
+const validPath = join(skillDir, 'examples', 'valid-output.json');
+const invalidReasonPath = join(skillDir, 'examples', 'invalid-image-exception.json');
+const baseValid = JSON.parse(readFileSync(validPath, 'utf8'));
+const workDir = mkdtempSync(join(tmpdir(), 'tietu-food-validate-'));
+let fixtureIndex = 0;
+
+after(() => rmSync(workDir, { recursive: true, force: true }));
+
+function cloneValid() {
+  return structuredClone(baseValid);
+}
+
+function writeFixture(data, name) {
+  fixtureIndex += 1;
+  const path = join(workDir, `${String(fixtureIndex).padStart(2, '0')}-${name}.json`);
+  writeFileSync(path, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
+  return path;
+}
+
+function runValidator(inputPath) {
+  return spawnSync(process.execPath, [validatorPath, '--input', inputPath], {
+    encoding: 'utf8'
+  });
+}
+
+function combinedOutput(result) {
+  return `${result.stdout ?? ''}${result.stderr ?? ''}`;
+}
+
+function expectFailure(data, name, pattern) {
+  const result = runValidator(writeFixture(data, name));
+  assert.notEqual(result.status, 0, combinedOutput(result));
+  assert.match(combinedOutput(result), pattern);
+}
+
+test('主有效夹具通过校验', () => {
+  const result = runValidator(validPath);
+  assert.equal(result.status, 0, combinedOutput(result));
+  assert.match(result.stdout, /校验通过/u);
+});
+
+test('泛化的扩展图片理由被拒绝', () => {
+  const result = runValidator(invalidReasonPath);
+  assert.notEqual(result.status, 0, combinedOutput(result));
+  assert.match(combinedOutput(result), /不能用.*更丰富/u);
+});
+
+test('每张图片都必须声明 source', () => {
+  const data = cloneValid();
+  delete data.images[1].source;
+  expectFailure(data, 'missing-source', /images\[1\]\.source/u);
+});
+
+test('原图来源必须提供真实性状态和说明', () => {
+  const data = cloneValid();
+  data.images[1].source = {
+    type: 'source_material',
+    historicalAuthenticity: 'verified',
+    note: '暂时占位的原图来源说明'
+  };
+  delete data.images[1].source.note;
+  expectFailure(data, 'source-material-missing-note', /images\[1\]\.source\.note/u);
+});
+
+test('visual illustration 必须明确不是历史证据', () => {
+  const data = cloneValid();
+  data.images[1].source = {
+    type: 'visual_illustration',
+    isHistoricalEvidence: true,
+    description: '只合成物件轮廓，不代表真实场景'
+  };
+  expectFailure(data, 'illustration-evidence-true', /isHistoricalEvidence.*false/u);
+});
+
+test('visual illustration 必须提供 description 或 notice', () => {
+  const data = cloneValid();
+  data.images[1].source = {
+    type: 'visual_illustration',
+    isHistoricalEvidence: false
+  };
+  expectFailure(data, 'illustration-missing-description', /description.*notice/u);
+});
+
+test('图片 role 只允许白名单值', () => {
+  const data = cloneValid();
+  data.images[1].role = 'atmosphere';
+  expectFailure(data, 'unknown-role', /role.*cover.*detail.*evidence.*process/u);
+});
+
+test('后续图片不得再次使用 cover role', () => {
+  const data = cloneValid();
+  data.images[1].role = 'cover';
+  expectFailure(data, 'second-cover', /images\[1\].*不得.*cover/u);
+});
+
+test('后续图片 hasTitle 必须为 false', () => {
+  const data = cloneValid();
+  data.images[1].hasTitle = true;
+  expectFailure(data, 'second-title', /images\[1\]\.hasTitle.*false/u);
+});
+
+test('每张图片 purpose 必须非空', () => {
+  const data = cloneValid();
+  data.images[1].purpose = '';
+  expectFailure(data, 'empty-purpose', /images\[1\]\.purpose/u);
+});
+
+test('detail 是合法的后续图片角色', () => {
+  const data = cloneValid();
+  data.images[1].role = 'detail';
+  const result = runValidator(writeFixture(data, 'allowed-detail'));
+  assert.equal(result.status, 0, combinedOutput(result));
+});
+
+test('只有“无字”二字的提示词不算完整否定语义', () => {
+  const data = cloneValid();
+  data.images[1].prompt = '保留原图物件，无字底图。';
+  expectFailure(data, 'vague-no-text', /中文.*标题.*标签.*箭头/u);
+});
+
+test('提示词拒绝要求模型生成中文标题的反向指令', () => {
+  const data = cloneValid();
+  data.images[1].prompt = '请生成中文标题，同时不生成文字、标题、标签和箭头文字。';
+  expectFailure(data, 'contradictory-text-command', /反向指令/u);
+});
+
+test('保留原图真实字迹且拒绝新增文字的自然表达可通过', () => {
+  const data = cloneValid();
+  data.images[1].prompt = '保持原图现有字迹和光线，不生成新增中文、标题、标签和箭头说明，不添加任何文字。';
+  const result = runValidator(writeFixture(data, 'natural-negative-prompt'));
+  assert.equal(result.status, 0, combinedOutput(result));
+});
+
+test('未提供品尝事实时拒绝第一人称口感', () => {
+  const data = cloneValid();
+  data.body = `${data.body}。我吃过，入口即化。`;
+  expectFailure(data, 'unsupported-tasting', /无来源第一人称品尝/u);
+});
+
+test('拒绝食物功效与危险热源做法', () => {
+  const data = cloneValid();
+  data.body = `${data.body} 这种食物还能降糖。塑料袋放在烤架旁边挡油。`;
+  expectFailure(data, 'unsafe-food-claim', /美食安全闸门/u);
+});
+
+test('地方标题不应使用空泛南北群体', () => {
+  const data = cloneValid();
+  data.title = '北方人都没见过的艾粑';
+  data.images[0].overlay.text = data.title;
+  expectFailure(data, 'regional-generalization', /地方或人群泛化/u);
+});
+
+test('候选标题也必须经过内容风险与 AI 腔扫描', () => {
+  const data = cloneValid();
+  data.titleCandidates[0] = '全国第一能降糖的艾粑';
+  expectFailure(data, 'candidate-risk-scan', /美食安全闸门/u);
+});
+
+test('没有五个候选标题时失败', () => {
+  const data = cloneValid();
+  data.titleCandidates = data.titleCandidates.slice(0, 3);
+  expectFailure(data, 'too-few-title-candidates', /至少需要 5 个候选标题/u);
+});
+
+test('多图必须声明同一食物 continuityKey', () => {
+  const data = cloneValid();
+  delete data.images[1].continuityKey;
+  expectFailure(data, 'missing-continuity-key', /continuityKey/u);
+});
+
+test('来源裁切必须明确说明裁切边界', () => {
+  const data = cloneValid();
+  delete data.images[1].source.note;
+  expectFailure(data, 'source-crop-without-note', /source\.note/u);
+});

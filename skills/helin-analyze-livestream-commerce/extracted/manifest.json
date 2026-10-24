@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "id": "skl_helin-analyze-livestream-commerce",
+  "type": "skill",
+  "code": "helin-analyze-livestream-commerce",
+  "displayName": "河林直播拆解",
+  "description": "把直播回放转写稿拆成五模块报告：货盘与出场台账、排品动线与憋卡踢促循环、主推品话术、带合规提示的可复用话术框架、操盘点评；适配视频号、抖音、小红书。",
+  "publisher": "河林",
+  "version": "2.1.0",
+  "uploaderUnionUserId": 215990,
+  "isOriginal": true,
+  "visibility": "public",
+  "examplePrompts": [
+    "附件是一场视频号直播的回放转写稿，帮我拆解直播",
+    "帮我扒一下这个对标直播间，看看人家怎么逼单的",
+    "这是一份小红书直播逐字稿，只看主推品的话术",
+    "复盘这场直播的货盘和排品，直播时长大约 3 小时"
+  ],
+  "itCanHelpYou": [
+    "用台账脚本计量长文稿，统计每个商品的出场、返场和累计时长",
+    "用 A–F 六项信号判定主推品、次推品和福利品，写明依据",
+    "逐轮拆解主推品的憋单、卡单、踢单、促单循环；小红书场次改拆信任转化链",
+    "整理主播回应过的用户问题，找出没被接住的高意向提问",
+    "整理主推品话术，标注极限词、虚构稀缺、功效宣称等合规风险",
+    "抽象出可复用的话术框架，给出有文稿依据的亮点和具体改法"
+  ],
+  "useCases": [],
+  "changelog": "v2.1.0：以“憋单—卡单—踢单—促单”为主框架，适配视频号、抖音、小红书；台账脚本支持时间戳、纯文本和 SRT/VTT 字幕；完整版方法论按 MIT 开源，源码见 GitHub：helin021798/helin-zhibodianshang。",
+  "files": [
+    {
+      "path": "references/analysis-rules.md",
+      "sha256": "21e4e93e00efb758e7de9f9fd4007a061d8345c9e766908e68ecba1a3b3fa280"
+    },
+    {
+      "path": "references/helin-method.md",
+      "sha256": "90b2674db0a9729983e433bea651a5b42ac167ed26258bdf493c24a123664ef2"
+    },
+    {
+      "path": "references/report-template.md",
+      "sha256": "e51abfb8f48b2a1ff00131a1beeecc7b6435f8d7f43d1de3ef33e34c6abcbd50"
+    },
+    {
+      "path": "references/example-report.md",
+      "sha256": "2ed76e442492c33ec43e4e95f67c14c1754b7f311508c78264fbf4e1dce77f03"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "3fd0e73a124b89f0043035f88ca33500e699c93ae93d60026fa4f7935e72aa72"
+    },
+    {
+      "path": "scripts/transcript_ledger.py",
+      "sha256": "3559f5d1e6badcc583c87274e5eb48434b67282bc100ee0015fed1d775c277df"
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "ca4286ce908868b3adcdf6dffab4603a14a50d7dcdcd0c7c50dc5bd62ea0932a"
+    }
+  ]
+}

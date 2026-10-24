@@ -1,0 +1,60 @@
+{
+  "packageId": "skl_claude-reinstall-keep-data",
+  "code": "claude-reinstall-keep-data",
+  "title": "Claude 换号重装助手",
+  "author": "亦仁",
+  "uploaderUnionUserId": "36389",
+  "version": "0.1.5",
+  "guideStatus": "hosted",
+  "isOriginal": true,
+  "summary": "更换 Claude 账号时，清掉 Claude Code 登录状态和本地账号信息并重新安装，保留会话、记忆、Skill、MCP；支持 macOS 和 Windows。",
+  "tags": {
+    "visible": [
+      "AI 自动化与工作流",
+      "自动化与集成"
+    ],
+    "category": [
+      "AI 自动化与工作流"
+    ],
+    "task": [
+      "自动化与集成"
+    ],
+    "platform": [],
+    "other": [],
+    "hiddenTagCount": 0
+  },
+  "installsOnMarket": 16,
+  "commentsOnMarket": 0,
+  "marketDate": "09-30",
+  "detailUrl": "https://scys.com/skillhub/skills/skl_claude-reinstall-keep-data",
+  "runtimeTargets": [
+    "claude:global",
+    "codex:global"
+  ],
+  "artifactSha256": "0d79139073f9d1b10b1aac70227c089266699025a8fd9e3861c0e89fc1916aaa",
+  "ossPathAccount": "u6127423",
+  "dependencies": [],
+  "capabilityCard": {
+    "allowShell": false,
+    "allowedTools": [],
+    "allowArbitraryHttp": false,
+    "allowArbitraryMcp": false,
+    "scriptsPresent": false
+  },
+  "archive": {
+    "zipFile": "claude-reinstall-keep-data-0.1.5.zip",
+    "extractedDir": "extracted/",
+    "fileCount": 5,
+    "hasScriptsDir": true,
+    "hasManifest": true,
+    "sha256Verified": true,
+    "archivedAt": "2026-10-24 21:44 +0800"
+  },
+  "files": [
+    "SKILL.md",
+    "manifest.json",
+    "scripts/claude-reinstall.mjs",
+    "scripts/run-mac.command",
+    "scripts/run-windows.cmd"
+  ]
+}

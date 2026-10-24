@@ -1,0 +1,12 @@
+{
+  "overlayMode": "title_and_annotations",
+  "title": "结婚17年后，餐桌上只剩孩子的作业",
+  "subtitle": "画面示意｜只展示家庭场景与生活物件",
+  "palette": "leaf",
+  "labels": [
+    {"text": "摊开的作业本", "x": 120, "y": 1170, "fontSize": 42, "fill": "#FAF7E9", "background": "#263B2D", "anchor": "start"}
+  ],
+  "arrows": [
+    {"x1": 330, "y1": 1120, "x2": 650, "y2": 900, "width": 8, "color": "#F5C85A", "label": "手机屏幕朝下"}
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "id": "skl_helin-livestream-planning-master",
+  "type": "skill",
+  "code": "helin-livestream-planning-master",
+  "displayName": "河林直播策划大师",
+  "description": "为抖音、视频号、小红书的带货直播和知识付费/线索直播出整场策划或单模块方案：流量、排品、玩法、话术、投流（策划层）、私域、节奏分工，附保本 ROI 与坑产测算和合规红线。",
+  "publisher": "河林",
+  "version": "2.1.0",
+  "uploaderUnionUserId": 215990,
+  "isOriginal": true,
+  "visibility": "public",
+  "examplePrompts": [
+    "视频号护肤品牌官号周年专场 3 小时，目标 GMV 18 万，帮我做直播策划",
+    "帮我把这 8 个品排一下货盘，主推放哪个",
+    "卖课直播怎么做？我想在视频号用 9.9 元体验课引流加微",
+    "直播间有人但不出单，帮我诊断一下",
+    "这是上一场的复盘数据，帮我做下一场方案"
+  ],
+  "itCanHelpYou": [
+    "写方案前先做可行性判断，算保本 ROI、坑产缺口和机制让利",
+    "先定主推爆品再组货盘，给每个品安排角色",
+    "设计成交循环和福袋、抽奖、满赠等玩法，并算清让利",
+    "写主推品的塑品与逼单话术（固定结构＋替换变量）",
+    "判断投不投流、分阶段怎么投，给出止损和加投规则",
+    "设计播前蓄水、播中导流、播后承接的私域联动",
+    "出节奏表、团队分工、风险预案和复盘表"
+  ],
+  "useCases": [],
+  "changelog": "v2.1.0 首次发布：覆盖三平台×两业态，七模块工作流、四种模式（整场策划、单模块速出、诊断救场、复盘校准）、live_calc.py 测算脚本和合规红线；按 MIT 开源，源码见 GitHub：helin021798/helin-zhibodianshang。",
+  "files": [
+    {
+      "path": "references/helin-method.md",
+      "sha256": "602f6f04851a7d3db1e01bf0b31f2dd4f0323f98cda93162b06a36cb6e132b4b"
+    },
+    {
+      "path": "references/platform-xhs.md",
+      "sha256": "0c4120378f7856979193fadeb8ee0e41155fc82100e5a04974aba4f648c72d09"
+    },
+    {
+      "path": "references/playbook-private.md",
+      "sha256": "359ed3e1bee0f1d20388331d3461c0dd1e2a573b5c54a9a6703b87091320afec"
+    },
+    {
+      "path": "references/model-knowledge-leads.md",
+      "sha256": "c1a8790598c1008a4ec160c576be6bfae66464623cd977c3885730530128633b"
+    },
+    {
+      "path": "references/playbook-ops-review.md",
+      "sha256": "09caecba16719c4d1f0a004b858604f33b32151bb91967c12105356bd68e6344"
+    },
+    {
+      "path": "references/playbook-scripts.md",
+      "sha256": "5e1355cd45387144616120f77efd68e0c68df1181e8952f24fdecf358894cac7"
+    },
+    {
+      "path": "references/example-plan.md",
+      "sha256": "42af7a184c601cfa5aa33d3299d14e79331478f2be2d116800685230247789e3"
+    },
+    {
+      "path": "references/compliance.md",
+      "sha256": "6135c9e2b28e22eb82663bbcaeff608382d8b9d481ea3357a560d7fe2b33c767"
+    },
+    {
+      "path": "references/platform-channels.md",
+      "sha256": "9ec183cfe4dd0aad3fd52d68b546f0884f50f64f126a2e4686daba124e103fa2"
+    },
+    {
+      "path": "references/platform-douyin.md",
+      "sha256": "22cf607f13dc4eba00b7d1993e559ea9b611fefabcc5c38b18496054c6c80804"
+    },
+    {
+      "path": "references/playbook-merch.md",
+      "sha256": "179338fbec780345754f802da0e754f1e339da0015abacd79fcc4d5c14ad9273"
+    },
+    {
+      "path": "references/playbook-traffic-ads.md",
+      "sha256": "ce6f79dfdb75f70526047cf1c6c27f649e8a371962de6e9d55191be2334f6d93"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "02d82598da12179dd2ff83c2df9318fb9bd337872ed21c3cf84bce3c45471ca7"
+    },
+    {
+      "path": "scripts/live_calc.py",
+      "sha256": "14214558224d31aedde348da9b63931eebbb48259dbd620d9a16b8ec472a7252"
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "6f7983343bf81ac67c60428518bab45837e4726feb5594affb99748fdec40c99"
+    }
+  ]
+}

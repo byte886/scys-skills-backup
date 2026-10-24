@@ -1,0 +1,57 @@
+{
+  "packageId": "skl_base-bili-script-review",
+  "code": "base-bili-script-review",
+  "title": "B站带货口播稿检查",
+  "author": "Lynn",
+  "uploaderUnionUserId": "848893",
+  "version": "0.1.0",
+  "guideStatus": "hosted",
+  "isOriginal": true,
+  "summary": "对照商品事实和排序表检查口播稿中的价格、参数、顺序与夸大表述，输出问题清单、可替换句子和使用结论。",
+  "tags": {
+    "visible": [
+      "短视频创作与带货",
+      "内容制作",
+      "B站"
+    ],
+    "category": [
+      "短视频创作与带货"
+    ],
+    "task": [
+      "内容制作"
+    ],
+    "platform": [
+      "B站"
+    ],
+    "other": [],
+    "hiddenTagCount": 0
+  },
+  "installsOnMarket": 5,
+  "commentsOnMarket": 0,
+  "marketDate": "10-09",
+  "detailUrl": "https://scys.com/skillhub/skills/skl_base-bili-script-review",
+  "runtimeTargets": [],
+  "artifactSha256": "27f020d9b5acd97de4ceb21e12f0c0a77b38e6ac470a70c96b49b01db6a94b8e",
+  "ossPathAccount": "u848893",
+  "dependencies": [],
+  "capabilityCard": {
+    "allowShell": false,
+    "allowedTools": [],
+    "allowArbitraryHttp": false,
+    "allowArbitraryMcp": false,
+    "scriptsPresent": false
+  },
+  "archive": {
+    "zipFile": "base-bili-script-review-0.1.0.zip",
+    "extractedDir": "extracted/",
+    "fileCount": 2,
+    "hasScriptsDir": false,
+    "hasManifest": true,
+    "sha256Verified": true,
+    "archivedAt": "2026-10-24 21:44 +0800"
+  },
+  "files": [
+    "SKILL.md",
+    "manifest.json"
+  ]
+}

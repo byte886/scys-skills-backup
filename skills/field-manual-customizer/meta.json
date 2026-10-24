@@ -1,0 +1,73 @@
+{
+  "packageId": "skl_field-manual-customizer",
+  "code": "field-manual-customizer",
+  "title": "实战手册定制",
+  "author": "亦仁",
+  "uploaderUnionUserId": "36389",
+  "version": "0.10.1",
+  "guideStatus": "hosted",
+  "isOriginal": true,
+  "summary": "告诉它你想做的项目和手头条件，它结合生财站内经验和平台规则，给你定制一份能照着做的实战手册。",
+  "tags": {
+    "visible": [
+      "研究与选题",
+      "判断与决策"
+    ],
+    "category": [],
+    "task": [
+      "研究与选题",
+      "判断与决策"
+    ],
+    "platform": [],
+    "other": [],
+    "hiddenTagCount": 0
+  },
+  "installsOnMarket": 56,
+  "commentsOnMarket": 0,
+  "marketDate": "10-05",
+  "detailUrl": "https://scys.com/skillhub/skills/skl_field-manual-customizer",
+  "runtimeTargets": [
+    "claude_code",
+    "codex"
+  ],
+  "artifactSha256": "899342d07c3c83db09e1af71e20076c5fcf91677bbb11521e68078f7267ed614",
+  "ossPathAccount": "u451723",
+  "dependencies": [],
+  "capabilityCard": {
+    "allowShell": false,
+    "allowedTools": [],
+    "allowArbitraryHttp": false,
+    "allowArbitraryMcp": false,
+    "scriptsPresent": false
+  },
+  "archive": {
+    "zipFile": "field-manual-customizer-0.10.1.zip",
+    "extractedDir": "extracted/",
+    "fileCount": 19,
+    "hasScriptsDir": true,
+    "hasManifest": true,
+    "sha256Verified": true,
+    "archivedAt": "2026-10-24 21:44 +0800"
+  },
+  "files": [
+    "README.md",
+    "SKILL.md",
+    "agents/openai.yaml",
+    "examples/fictional-zine-exchange.html",
+    "examples/fictional-zine-exchange.md",
+    "manifest.json",
+    "references/forbidden-practices.md",
+    "references/manual-outline.md",
+    "references/manual-review.md",
+    "references/records-and-review.md",
+    "references/scys-mcp-tools.md",
+    "references/web-delivery.md",
+    "references/writing-rules.md",
+    "scripts/check_manual.py",
+    "scripts/embed_avatar.py",
+    "scripts/export_pdf.py",
+    "scripts/fetch_images.py",
+    "scripts/render_diagram.py",
+    "templates/manual.html"
+  ]
+}

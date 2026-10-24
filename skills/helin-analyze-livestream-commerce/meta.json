@@ -1,0 +1,63 @@
+{
+  "packageId": "skl_helin-analyze-livestream-commerce",
+  "code": "helin-analyze-livestream-commerce",
+  "title": "河林直播拆解",
+  "author": "河林",
+  "uploaderUnionUserId": "215990",
+  "version": "2.1.0",
+  "guideStatus": "hosted",
+  "isOriginal": true,
+  "summary": "把直播回放转写稿拆成五模块报告：货盘与出场台账、排品动线与憋卡踢促循环、主推品话术、带合规提示的可复用话术框架、操盘点评；适配视频号、抖音、小红书。",
+  "tags": {
+    "visible": [
+      "电商经营与获客",
+      "数据分析与复盘",
+      "小红书"
+    ],
+    "category": [
+      "电商经营与获客"
+    ],
+    "task": [
+      "数据分析与复盘"
+    ],
+    "platform": [
+      "小红书"
+    ],
+    "other": [],
+    "hiddenTagCount": 2
+  },
+  "installsOnMarket": 8,
+  "commentsOnMarket": 0,
+  "marketDate": "10-17",
+  "detailUrl": "https://scys.com/skillhub/skills/skl_helin-analyze-livestream-commerce",
+  "runtimeTargets": [],
+  "artifactSha256": "8aadbb3d48d0788c34d620d1aefeccb510954af52616fbbbd4126fdfa6211eff",
+  "ossPathAccount": "u215990",
+  "dependencies": [],
+  "capabilityCard": {
+    "allowShell": false,
+    "allowedTools": [],
+    "allowArbitraryHttp": false,
+    "allowArbitraryMcp": false,
+    "scriptsPresent": false
+  },
+  "archive": {
+    "zipFile": "helin-analyze-livestream-commerce-2.1.0.zip",
+    "extractedDir": "extracted/",
+    "fileCount": 8,
+    "hasScriptsDir": true,
+    "hasManifest": true,
+    "sha256Verified": true,
+    "archivedAt": "2026-10-24 21:44 +0800"
+  },
+  "files": [
+    "SKILL.md",
+    "agents/openai.yaml",
+    "manifest.json",
+    "references/analysis-rules.md",
+    "references/example-report.md",
+    "references/helin-method.md",
+    "references/report-template.md",
+    "scripts/transcript_ledger.py"
+  ]
+}

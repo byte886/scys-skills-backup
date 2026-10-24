@@ -1,0 +1,558 @@
+{
+  "sourceUrl": "https://scys.com/skillhub/",
+  "fetchedAt": "2026-10-24 21:05:24",
+  "channel": "外部 Google Chrome（jacky 资料；账号「大海星」uid 13798784）AX 树只读浏览；未安装、未执行写操作",
+  "marketStats": {
+    "selectedCount": 19,
+    "installsTotal": 795,
+    "commentsTotal": 0,
+    "externalCount": 0
+  },
+  "coverageCheck": [
+    {
+      "filter": "全部来源 · 综合排序",
+      "cards": 19,
+      "evidence": "底部提示「已展示全部官方精选 Skill」"
+    },
+    {
+      "filter": "圈友原创",
+      "cards": 19,
+      "evidence": "与全部来源集合一致，无新增"
+    },
+    {
+      "filter": "外部收录",
+      "cards": 0,
+      "evidence": "页面空态「暂无精选 Skill」"
+    },
+    {
+      "filter": "全部来源 · 最新排序",
+      "cards": 19,
+      "evidence": "仅顺序变化，packageId 集合与综合排序相同"
+    }
+  ],
+  "categoryCountsOnPage": {
+    "内容创作与个人 IP": 6,
+    "电商经营与获客": 2,
+    "AI 自动化与工作流": 2,
+    "私域运营与成交": 1,
+    "短视频创作与带货": 6,
+    "小红书经营与虚拟产品": 1
+  },
+  "taskCountsOnPage": {
+    "判断与决策": 7,
+    "内容制作": 7,
+    "研究与选题": 2,
+    "商品与选品": 3,
+    "客户与成交": 1,
+    "数据分析与复盘": 3,
+    "视觉与素材": 3,
+    "自动化与集成": 1,
+    "发布与分发": 1
+  },
+  "platformCountsOnPage": {
+    "小红书": 3,
+    "公众号": 1,
+    "抖音": 2,
+    "视频号": 2,
+    "B站": 6
+  },
+  "notCollected": [
+    "技能版本号（需进详情页或经 scys-mcp skillhubinstallguide 取 manifest）",
+    "折叠「还有 N 个标签」的完整标签（卡片层未展开）",
+    "作者主页 uid 与作者简介、评论内容"
+  ],
+  "skills": [
+    {
+      "packageId": "skl_helin-analyze-livestream-commerce",
+      "title": "河林直播拆解",
+      "author": "河林",
+      "summary": "把直播回放转写稿拆成五模块报告：货盘与出场台账、排品动线与憋卡踢促循环、主推品话术、带合规提示的可复用话术框架、操盘点评；适配视频号、抖音、小红书。",
+      "tagsVisible": [
+        "电商经营与获客",
+        "数据分析与复盘",
+        "小红书"
+      ],
+      "categoryTags": [
+        "电商经营与获客"
+      ],
+      "taskTags": [
+        "数据分析与复盘"
+      ],
+      "platformTags": [
+        "小红书"
+      ],
+      "otherTags": [],
+      "hiddenTagCount": 2,
+      "installs": 8,
+      "comments": 0,
+      "date": "10-17",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_helin-analyze-livestream-commerce",
+      "candidateNote": ""
+    },
+    {
+      "packageId": "skl_helin-livestream-planning-master",
+      "title": "河林直播策划大师",
+      "author": "河林",
+      "summary": "为抖音、视频号、小红书的带货直播和知识付费/线索直播出整场策划或单模块方案：流量、排品、玩法、话术、投流（策划层）、私域、节奏分工，附保本 ROI 与坑产测算和合规红线。",
+      "tagsVisible": [
+        "电商经营与获客",
+        "客户与成交",
+        "小红书"
+      ],
+      "categoryTags": [
+        "电商经营与获客"
+      ],
+      "taskTags": [
+        "客户与成交"
+      ],
+      "platformTags": [
+        "小红书"
+      ],
+      "otherTags": [],
+      "hiddenTagCount": 3,
+      "installs": 5,
+      "comments": 0,
+      "date": "10-17",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_helin-livestream-planning-master",
+      "candidateNote": ""
+    },
+    {
+      "packageId": "skl_ai-self-media-coach",
+      "title": "自媒体商业定位教练skill",
+      "author": "竹子。",
+      "summary": "AI 自媒体商业定位教练。通过一对一采访，帮助想做自媒体、个人 IP、知识型 IP 但不确定定位的人，梳理个人优势、判断定位机会、输出完整的自媒体商业定位诊断报告。触发场景一（本人在线采访）：用户说「开始定位采访」「帮我做自媒体定位」「帮我找自媒体方向」「我不知道自己适合做什么账号」「帮我分析我的个人IP定位」「帮我设计一个可以变现的自媒体账号」。触发场景二（材料诊断）：用户不上来一问一答，而是直接给一份材料——可能是自己的自我介绍、简历、账号数据，也可能是教练手上的客户调研表、问卷、微信沟通记录、转介信息，要求「根据这些材料给一个定位和产品方向」，此时不启动采访，改走材料诊断模式。默认只输出一份给用户本人看的报告；内部判断与跟进版仅在明确索取时额外生成。",
+      "tagsVisible": [
+        "内容创作与个人 IP",
+        "判断与决策"
+      ],
+      "categoryTags": [
+        "内容创作与个人 IP"
+      ],
+      "taskTags": [
+        "判断与决策"
+      ],
+      "platformTags": [],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 19,
+      "comments": 0,
+      "date": "10-12",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_ai-self-media-coach",
+      "candidateNote": ""
+    },
+    {
+      "packageId": "skl_field-manual-customizer",
+      "title": "实战手册定制",
+      "author": "亦仁",
+      "summary": "告诉它你想做的项目和手头条件，它结合生财站内经验和平台规则，给你定制一份能照着做的实战手册。",
+      "tagsVisible": [
+        "研究与选题",
+        "判断与决策"
+      ],
+      "categoryTags": [],
+      "taskTags": [
+        "研究与选题",
+        "判断与决策"
+      ],
+      "platformTags": [],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 56,
+      "comments": 0,
+      "date": "10-05",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_field-manual-customizer",
+      "candidateNote": ""
+    },
+    {
+      "packageId": "skl_assess-ai-enterprise-fde-fit",
+      "title": "乐阳AI企业服务FDE方向选择测评报告",
+      "author": "乐阳",
+      "summary": "根据乐阳老师的方法论，判定使用者在AI企服FDE方向的能力定位、测评评分、产品选择与行动方案。",
+      "tagsVisible": [
+        "AI 自动化与工作流",
+        "判断与决策"
+      ],
+      "categoryTags": [
+        "AI 自动化与工作流"
+      ],
+      "taskTags": [
+        "判断与决策"
+      ],
+      "platformTags": [],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 6,
+      "comments": 0,
+      "date": "10-12",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_assess-ai-enterprise-fde-fit",
+      "candidateNote": ""
+    },
+    {
+      "packageId": "skl_media-transcriber",
+      "title": "音视频转录与长文整理",
+      "author": "亦仁",
+      "summary": "把音视频、播客、字幕或逐字稿整理成保留案例、数字和推理过程的中文长稿，可按需提供摘要、真实时间戳和原始逐字稿。",
+      "tagsVisible": [
+        "内容创作与个人 IP",
+        "内容制作"
+      ],
+      "categoryTags": [
+        "内容创作与个人 IP"
+      ],
+      "taskTags": [
+        "内容制作"
+      ],
+      "platformTags": [],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 564,
+      "comments": 0,
+      "date": "09-22",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_media-transcriber",
+      "candidateNote": "候选 B：本项目 1B 已完成静态对照（v1.1.0），见 media-transcriber-包对照笔记.md"
+    },
+    {
+      "packageId": "skl_base-bili-script-writing",
+      "title": "B站带货中文口播稿生成",
+      "author": "Lynn",
+      "summary": "把已排序的数码家电商品资料写成包含开场、商品段落和收尾的中文口播稿，保留使用场景、购买提醒及待确认信息。",
+      "tagsVisible": [
+        "短视频创作与带货",
+        "内容制作",
+        "B站"
+      ],
+      "categoryTags": [
+        "短视频创作与带货"
+      ],
+      "taskTags": [
+        "内容制作"
+      ],
+      "platformTags": [
+        "B站"
+      ],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 6,
+      "comments": 0,
+      "date": "10-09",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_base-bili-script-writing",
+      "candidateNote": ""
+    },
+    {
+      "packageId": "skl_base-bili-product-intake",
+      "title": "B站带货商品信息整理",
+      "author": "Lynn",
+      "summary": "把 1 到 5 个数码家电商品的零散资料整理成统一信息表，区分事实与推测、标出缺失项，为视频选品排序提供输入。",
+      "tagsVisible": [
+        "短视频创作与带货",
+        "商品与选品",
+        "B站"
+      ],
+      "categoryTags": [
+        "短视频创作与带货"
+      ],
+      "taskTags": [
+        "商品与选品"
+      ],
+      "platformTags": [
+        "B站"
+      ],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 6,
+      "comments": 0,
+      "date": "10-09",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_base-bili-product-intake",
+      "candidateNote": ""
+    },
+    {
+      "packageId": "skl_base-bili-publish-review",
+      "title": "B站带货发布检查与复盘",
+      "author": "Lynn",
+      "summary": "检查带货视频的标题、封面、口播和商品链接顺序是否一致，并结合发布数据与评论，形成下一条视频的具体优化动作。",
+      "tagsVisible": [
+        "短视频创作与带货",
+        "发布与分发",
+        "数据分析与复盘"
+      ],
+      "categoryTags": [
+        "短视频创作与带货"
+      ],
+      "taskTags": [
+        "发布与分发",
+        "数据分析与复盘"
+      ],
+      "platformTags": [],
+      "otherTags": [],
+      "hiddenTagCount": 1,
+      "installs": 5,
+      "comments": 0,
+      "date": "10-09",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_base-bili-publish-review",
+      "candidateNote": ""
+    },
+    {
+      "packageId": "skl_base-bili-visual-planning",
+      "title": "B站带货分镜与封面规划",
+      "author": "Lynn",
+      "summary": "将数码家电口播稿转成 PPT 或分镜表，为各段规划画面、标题和素材，并提供封面方向及素材缺口清单。",
+      "tagsVisible": [
+        "短视频创作与带货",
+        "视觉与素材",
+        "B站"
+      ],
+      "categoryTags": [
+        "短视频创作与带货"
+      ],
+      "taskTags": [
+        "视觉与素材"
+      ],
+      "platformTags": [
+        "B站"
+      ],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 5,
+      "comments": 0,
+      "date": "10-09",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_base-bili-visual-planning",
+      "candidateNote": ""
+    },
+    {
+      "packageId": "skl_base-bili-script-review",
+      "title": "B站带货口播稿检查",
+      "author": "Lynn",
+      "summary": "对照商品事实和排序表检查口播稿中的价格、参数、顺序与夸大表述，输出问题清单、可替换句子和使用结论。",
+      "tagsVisible": [
+        "短视频创作与带货",
+        "内容制作",
+        "B站"
+      ],
+      "categoryTags": [
+        "短视频创作与带货"
+      ],
+      "taskTags": [
+        "内容制作"
+      ],
+      "platformTags": [
+        "B站"
+      ],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 5,
+      "comments": 0,
+      "date": "10-09",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_base-bili-script-review",
+      "candidateNote": ""
+    },
+    {
+      "packageId": "skl_base-bili-product-ranking",
+      "title": "B站带货商品讲解排序",
+      "author": "Lynn",
+      "summary": "根据商品信息、视频主题和观众需求，从痛点、差异、价格、画面和风险五个维度评估商品，给出讲解顺序及取舍理由。",
+      "tagsVisible": [
+        "短视频创作与带货",
+        "商品与选品",
+        "B站"
+      ],
+      "categoryTags": [
+        "短视频创作与带货"
+      ],
+      "taskTags": [
+        "商品与选品"
+      ],
+      "platformTags": [
+        "B站"
+      ],
+      "otherTags": [],
+      "hiddenTagCount": 1,
+      "installs": 5,
+      "comments": 0,
+      "date": "10-09",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_base-bili-product-ranking",
+      "candidateNote": ""
+    },
+    {
+      "packageId": "skl_tietu-food-specialty",
+      "title": "美食贴图skill",
+      "author": "⃰辰风",
+      "summary": "Use when 用户要创作、改写或检查贴图号美食特产内容，素材涉及地方小吃、冷门食材、时令瓜果、制作过程、产销故事、家庭烹饪或日常食安；不用于无来源的医疗、功效或价格承诺。",
+      "tagsVisible": [
+        "内容创作与个人 IP",
+        "内容制作",
+        "视觉与素材"
+      ],
+      "categoryTags": [
+        "内容创作与个人 IP"
+      ],
+      "taskTags": [
+        "内容制作",
+        "视觉与素材"
+      ],
+      "platformTags": [],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 15,
+      "comments": 0,
+      "date": "10-03",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_tietu-food-specialty",
+      "candidateNote": ""
+    },
+    {
+      "packageId": "skl_tietu-marriage-family",
+      "title": "婚姻家庭skill",
+      "author": "⃰辰风",
+      "summary": "Use when 用户要创作、改写或检查贴图号婚姻家庭内容，素材涉及夫妻沟通、家庭分工、亲子关系、婆媳相处、婚后生活或中年情感；不用于性别战争、强行复合、伪造私生活或无来源的法律/心理诊断。",
+      "tagsVisible": [
+        "内容创作与个人 IP",
+        "内容制作",
+        "视觉与素材"
+      ],
+      "categoryTags": [
+        "内容创作与个人 IP"
+      ],
+      "taskTags": [
+        "内容制作",
+        "视觉与素材"
+      ],
+      "platformTags": [],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 13,
+      "comments": 0,
+      "date": "10-03",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_tietu-marriage-family",
+      "candidateNote": ""
+    },
+    {
+      "packageId": "skl_wechat-longform-formatter",
+      "title": "长文章排版skill",
+      "author": "⃰辰风",
+      "summary": "用户已有微信公众号长文，想选排版样式并得到标题、排版正文和可打开的 article.html 网页成品时使用；不用于重写文章。",
+      "tagsVisible": [
+        "内容创作与个人 IP",
+        "内容制作",
+        "公众号"
+      ],
+      "categoryTags": [
+        "内容创作与个人 IP"
+      ],
+      "taskTags": [
+        "内容制作"
+      ],
+      "platformTags": [
+        "公众号"
+      ],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 12,
+      "comments": 0,
+      "date": "10-03",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_wechat-longform-formatter",
+      "candidateNote": ""
+    },
+    {
+      "packageId": "skl_claude-reinstall-keep-data",
+      "title": "Claude 换号重装助手",
+      "author": "亦仁",
+      "summary": "更换 Claude 账号时，清掉 Claude Code 登录状态和本地账号信息并重新安装，保留会话、记忆、Skill、MCP；支持 macOS 和 Windows。",
+      "tagsVisible": [
+        "AI 自动化与工作流",
+        "自动化与集成"
+      ],
+      "categoryTags": [
+        "AI 自动化与工作流"
+      ],
+      "taskTags": [
+        "自动化与集成"
+      ],
+      "platformTags": [],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 16,
+      "comments": 0,
+      "date": "09-30",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_claude-reinstall-keep-data",
+      "candidateNote": ""
+    },
+    {
+      "packageId": "skl_xhs-product-picker",
+      "title": "小红书虚拟产品选品助手",
+      "author": "松月",
+      "summary": "把你的工作和生活经验，经过 5 轮对话变成一个有付费场景、能上架验证的小红书虚拟产品方案。",
+      "tagsVisible": [
+        "小红书经营与虚拟产品",
+        "商品与选品",
+        "小红书"
+      ],
+      "categoryTags": [
+        "小红书经营与虚拟产品"
+      ],
+      "taskTags": [
+        "商品与选品"
+      ],
+      "platformTags": [
+        "小红书"
+      ],
+      "otherTags": [],
+      "hiddenTagCount": 1,
+      "installs": 13,
+      "comments": 0,
+      "date": "09-30",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_xhs-product-picker",
+      "candidateNote": ""
+    },
+    {
+      "packageId": "skl_opc-growth",
+      "title": "OPC 一人公司流量诊断",
+      "author": "松月",
+      "summary": "帮一人公司把“没流量、有曝光没成交、用户不留存”等问题拆成一个主瓶颈，并设计 7–14 天只改一件事的增长验证实验。",
+      "tagsVisible": [
+        "私域运营与成交",
+        "数据分析与复盘",
+        "判断与决策"
+      ],
+      "categoryTags": [
+        "私域运营与成交"
+      ],
+      "taskTags": [
+        "数据分析与复盘",
+        "判断与决策"
+      ],
+      "platformTags": [],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 7,
+      "comments": 0,
+      "date": "09-30",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_opc-growth",
+      "candidateNote": ""
+    },
+    {
+      "packageId": "skl_scys-deep-tutorial",
+      "title": "生财深度教程生成器",
+      "author": "飞猫",
+      "summary": "生财深度调研教程工作流。把用户提出的一个问题/方向/人物/航海手册/项目案例，用生财 MCP（scys-mcp）检索站内一手资料，结合世界知识与必要的联网补充，结构化为「概念→逻辑关系→事实与概念知识→实操SOP→实战案例→总结」的图文并茂单文件 HTML 教程，并强制经过 AI 亦仁（商业判断）+ AI 刘小排（AI/产品/增长）双导师详细点评、逐条修订出终版。当用户说「把 XX 做成教程」「调研 XX 产出教程」「把XX生财资料整理成图文教程」「案例拆解教程」「深度调研教程」，或描述了「检索生财 + 结构化 + 双导师点评 + 图文产出」这类组合流程时使用。",
+      "tagsVisible": [
+        "内容创作与个人 IP",
+        "研究与选题",
+        "内容制作"
+      ],
+      "categoryTags": [
+        "内容创作与个人 IP"
+      ],
+      "taskTags": [
+        "研究与选题",
+        "内容制作"
+      ],
+      "platformTags": [],
+      "otherTags": [],
+      "hiddenTagCount": 0,
+      "installs": 29,
+      "comments": 0,
+      "date": "09-10",
+      "detailUrl": "https://scys.com/skillhub/skills/skl_scys-deep-tutorial",
+      "candidateNote": ""
+    }
+  ]
+}

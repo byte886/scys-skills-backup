@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!-- scys-deep-tutorial 教程骨架：复制后替换 {} 占位符并逐章填充。
+     版式约定见 references/tutorial-structure.md；主色 --acc 可按主题更换。 -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{教程标题}</title>
+<style>
+:root{--ink:#1f2430;--sub:#5a6472;--line:#e5e8ee;--bg:#f5f6fa;--card:#ffffff;--acc:#0d9488;--warn:#c2410c;--warnbg:#fff4ec;--gold:#92610a;--goldbg:#fdf6e3;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;font-size:16px;}
+.wrap{max-width:920px;margin:0 auto;padding:28px 20px 80px;}
+header.hero{background:linear-gradient(134deg,#134e4a,#0d9488 55%,#2dd4bf);color:#fff;border-radius:16px;padding:38px 34px;margin-bottom:26px;}
+header.hero h1{font-size:27px;line-height:1.4;margin-bottom:12px;}
+header.hero p{opacity:.92;font-size:14.5px;}
+.tag{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:2px 12px;font-size:12.5px;margin:6px 6px 0 0;}
+section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:30px 32px;margin-bottom:22px;}
+h2.ch{font-size:21px;padding-bottom:10px;border-bottom:2px solid var(--acc);margin-bottom:18px;}
+h2.ch .no{color:var(--acc);margin-right:8px;}
+h3{font-size:17.5px;margin:24px 0 10px;color:#0f766e;}
+h4{font-size:15.5px;margin:18px 0 8px;}
+p{margin:9px 0;}
+ul,ol{padding-left:24px;margin:8px 0;}
+li{margin:5px 0;}
+blockquote{background:#effcf9;border-left:4px solid var(--acc);border-radius:0 8px 8px 0;padding:12px 16px;margin:12px 0;color:#1c3d38;font-size:15px;}
+blockquote .src{display:block;margin-top:6px;font-size:12.5px;color:var(--sub);text-align:right;}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px;}
+th{background:#e6f7f3;color:#0f766e;}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top;}
+tr:nth-child(even) td{background:#fafdfd;}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin:14px 0;}
+.flow .step{flex:1 1 130px;background:#effcf9;border:1.5px solid #a7e3d8;border-radius:10px;padding:10px 12px;font-size:13.5px;text-align:center;}
+.flow .step b{display:block;color:#0f766e;font-size:14px;margin-bottom:3px;}
+.flow .arr{align-self:center;color:var(--acc);font-weight:700;font-size:18px;}
+.warnbox{background:var(--warnbg);border:1px solid #f3c9a8;border-radius:10px;padding:13px 16px;margin:14px 0;font-size:14.5px;}
+.warnbox b{color:var(--warn);}
+.goldbox{background:var(--goldbg);border:1px solid #e7d39a;border-radius:10px;padding:13px 16px;margin:14px 0;font-size:14.5px;}
+.goldbox b{color:var(--gold);}
+.note{font-size:13px;color:var(--sub);}
+.kw{background:#effcf9;border-bottom:2px solid #5eead4;padding:0 3px;font-weight:600;}
+code{font-family:ui-monospace,Menlo,monospace;background:#f1f3f7;border-radius:5px;padding:1px 6px;font-size:13.5px;}
+pre{background:#0f1e1c;color:#d7f0ea;border-radius:10px;padding:16px 18px;overflow-x:auto;font-size:13px;line-height:1.7;margin:12px 0;white-space:pre-wrap;}
+.toc{columns:2;column-gap:30px;font-size:14.5px;}
+.toc a{color:#0f766e;text-decoration:none;display:block;padding:3px 0;break-inside:avoid;}
+.card{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0;background:#fbfefd;}
+.card h4{margin-top:0;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:700px){.grid2{grid-template-columns:1fr}.toc{columns:1}}
+.badge{display:inline-block;border-radius:6px;padding:1px 9px;font-size:12px;font-weight:600;margin-right:6px;}
+.b-teal{background:#dcf5f0;color:#0f766e;}.b-gray{background:#eceff4;color:#4b5563;}
+.stat{display:inline-block;background:#e6f7f3;border-radius:8px;padding:2px 10px;margin:2px 4px 2px 0;font-size:13px;color:#0f766e;font-weight:600;}
+figure{margin:14px 0;text-align:center;}
+figure img{max-width:100%;border-radius:10px;border:1px solid var(--line);}
+figcaption{font-size:12.5px;color:var(--sub);margin-top:6px;}
+footer{color:var(--sub);font-size:13px;text-align:center;padding:20px 0;}
+</style>
+</head>
+<body><div class="wrap">
+
+<header class="hero">
+<h1>{主标题}<br>{副标题}</h1>
+<p>{一句话定位 + 素材声明（来源构成、检索时间窗、读不到的部分如何处理）}</p>
+<p>学习者定位：{匿名化背景；未提供则删除本行}</p>
+<div>
+<span class="tag">{素材范围，如「精华帖 N 篇检索」}</span><span class="tag">{深读篇数}</span><span class="tag">AI 亦仁 + AI 刘小排双导师点评修订</span><span class="tag">{YYYY-MM-DD}</span>
+</div>
+</header>
+
+<section id="s0">
+<h2 class="ch"><span class="no">第 0 章</span>导读：读者状态自检 + 素材声明</h2>
+<h3>0.1 读者状态自检</h3>
+<div class="card"><ul>
+<li><b>时间账</b>：{这件事每天/每周要投入什么、多少}——你能给吗？</li>
+<li><b>能力账</b>：{门槛技能与工具}——缺什么、补多久？</li>
+<li><b>预期账</b>：{中位数结果 vs 案例头部结果、正反馈时滞}——你能接受吗？</li>
+</ul></div>
+<h3>0.2 素材声明</h3>
+<p>{素材来源构成表或说明；锁定/未读到/【补充】内容在此交代}</p>
+<h3>0.3 目录</h3>
+<div class="toc">
+<a href="#s1">第 1 章 核心概念：…</a>
+<a href="#s2">第 2 章 逻辑关系：…</a>
+<a href="#s3">第 3 章 事实与概念知识：…</a>
+<a href="#s4">第 4 章 方法论与实操 SOP：…</a>
+<a href="#s5">第 5 章 实战案例（正反兼收 + 预期管理）：…</a>
+<a href="#s6">第 6 章 学习者定制（无则删）：…</a>
+<a href="#s7">第 7 章 总结：关键·难点·障碍·误区 + 行动清单</a>
+<a href="#s8">第 8 章 AI 双导师点评与修订记录</a>
+<a href="#appendix">附录 数据说明与素材链接</a>
+</div>
+</section>
+
+<!-- 第 1 章 核心概念：用概念表——概念 | 它是什么（事实性知识）| 为什么这样运转（概念性知识） -->
+<!-- 第 2 章 逻辑关系：用 .flow 组件（.step 步骤卡 + .arr 箭头）；闭环/飞轮用 CSS 网格绘制 -->
+<!-- 第 3 章 事实 vs 概念：事实=会变的数据/规则（标注刷新时间），概念=稳定运转逻辑 -->
+<!-- 第 4 章 SOP：每步给 动作/工具/耗时/产出物/判断标准；量化止损线用 .warnbox 组件 -->
+<!-- 第 5 章 案例：每个案例一张 .card——核心数据(.stat)+复盘+预期管理(warnbox)；正反案例兼收 -->
+<!-- 第 7 章 收尾四节：核心关键 / 难点 / 核心障碍 / 典型误区(≥10条，错误做法→正确做法) + N 天行动清单 -->
+
+<section id="s8">
+<h2 class="ch"><span class="no">第 8 章</span>AI 双导师点评与修订记录</h2>
+<p>{两位导师核心意见综述：共识 / 分歧（分歧并列呈现，标注裁定或留学习者拍板）}</p>
+<table>
+<tr><th>#</th><th>来源</th><th>意见</th><th>处理</th><th>改动位置</th></tr>
+<tr><td>R1</td><td>亦仁</td><td>{意见摘要}</td><td>采纳 / 部分采纳 / 核对后不采纳（附核对理由）</td><td>第 X 章</td></tr>
+<tr><td>R2</td><td>刘小排</td><td>{意见摘要}</td><td>…</td><td>…</td></tr>
+</table>
+<p class="note">点评全文与逐条核对备注存 notes/AI亦仁点评-*.md、notes/AI刘小排点评-*.md。</p>
+</section>
+
+<section id="appendix">
+<h2 class="ch">附录 数据说明与素材链接</h2>
+<p class="note">检索时间窗：{起止}；关键词：{清单}；深读 {N} 篇 + 要点级 {M} 篇；【补充】内容清单：{…}；图片失败/降级记录：{…}；输入参数：{范围/深读篇数/是否联网}。</p>
+<p>{素材链接清单，站内格式 https://scys.com/articleDetail/xq_topic/{entityId}}</p>
+</section>
+
+<footer>由 scys-deep-tutorial 工作流生成 · {YYYY-MM-DD}</footer>
+</div></body></html>

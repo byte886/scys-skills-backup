@@ -1,0 +1,15 @@
+{
+  "name": "参考范例-顶部居中描边",
+  "textStyle": "outlined-center",
+  "textStyleOptions": {
+    "placement": "top",
+    "align": "center",
+    "fontScale": 0.92,
+    "titleColor": "#FFFFFF",
+    "accentColor": "#FFB000",
+    "cardColor": "#FFFDF8"
+  },
+  "sourceNote": "示例配置；替换为参考图来源与授权说明",
+  "bestFor": ["短问题", "反常瞬间", "主体位于画面中下部"],
+  "avoidWhen": ["标题超过四行", "人物脸部位于画面上方"]
+}

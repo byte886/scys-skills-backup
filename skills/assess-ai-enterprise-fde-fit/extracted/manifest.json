@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "skl_assess-ai-enterprise-fde-fit",
+  "type": "skill",
+  "code": "assess-ai-enterprise-fde-fit",
+  "displayName": "乐阳AI企业服务FDE方向选择测评报告",
+  "description": "根据乐阳老师的方法论，判定使用者在AI企服FDE方向的能力定位、测评评分、产品选择与行动方案.",
+  "publisher": "乐阳",
+  "version": "2.1.0",
+  "uploaderUnionUserId": 54111,
+  "isOriginal": true,
+  "visibility": "public",
+  "examplePrompts": [
+    "调用访谈机器人开始测评",
+    "开始使用",
+    "开始提问"
+  ],
+  "itCanHelpYou": [
+    "FDE能力定位",
+    "企业服务测评评分",
+    "AI 企业服务产品选择",
+    "FDE 行动方案"
+  ],
+  "useCases": [],
+  "changelog": "首次发布",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "2f1814f61ac01c5a5398c0f16eac15ab44e26761205c8308cbae88d4ecd9e42f"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "f5096297ab05ca7e2b8ed30dbfb13000cc82360e4202820155f26f0aecc5a5c4"
+    },
+    {
+      "path": "assets/report-template.html",
+      "sha256": "f756f0e34e58666926f4ab8fb5b48fba12f5edf7d6c8deb9fcefbb8180a545ad"
+    },
+    {
+      "path": "references/guidance-playbook.md",
+      "sha256": "3036cfa40e34b27796b3ac093bd776538c65af530ea797dbe84f881eae170d24"
+    },
+    {
+      "path": "references/question-bank.md",
+      "sha256": "9d911d8dd4e34b5f8bad4640c10703495284c89c2ff477d4d5d254f7abdc1f72"
+    },
+    {
+      "path": "references/report-schema.md",
+      "sha256": "20dcfd136f6646fd9a3ae5dd041646b6e85ea8734377ea886dd3b370cc403767"
+    },
+    {
+      "path": "references/scoring-model.md",
+      "sha256": "b105a4cc71a7713c9f7ef31f2de682a5c7fcae5c603dc2ac189cdbba5ce817db"
+    },
+    {
+      "path": "scripts/render_report.py",
+      "sha256": "87785fe768bc4330f679e86a3ef11d482a557848064ead9491c18fde1e3e39f7"
+    }
+  ]
+}

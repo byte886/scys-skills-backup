@@ -1,0 +1,40 @@
+{
+  "code": "claude-reinstall-keep-data",
+  "version": "0.1.5",
+  "type": "skill",
+  "displayName": "Claude 换号重装助手",
+  "description": "更换 Claude 账号时，清掉 Claude Code 登录状态和本地账号信息并重新安装，保留会话、记忆、Skill、MCP；支持 macOS 和 Windows。",
+  "runtimeTargets": [
+    "claude:global",
+    "codex:global"
+  ],
+  "examplePrompts": [
+    "我的 Claude 账号被封了，帮我清掉登录状态重装 Claude Code，会话和 Skill 要保留",
+    "帮我先备份一下 Claude Code 的会话、记忆和 MCP 配置",
+    "我要换个 Claude 账号登录，帮我看看重装会动哪些文件"
+  ],
+  "itCanHelpYou": [
+    "备份 Claude Code 的会话、记忆、Skill、插件、全局配置、MCP 配置，以及 Claude Desktop 的 Cowork 会话，软链接也备份真实内容",
+    "退出旧账号并清理本地登录凭据，卸载 npm / 原生 / Homebrew / WinGet 安装的 Claude Code，重装后自动恢复数据",
+    "macOS 和 Windows 通用（Windows 上的 Claude Desktop 需手动卸载），移走的文件先放进废纸篓或单独目录，不直接删除",
+    "Codex 等非 Claude 的 AI 工具可在你同意后代为执行完整流程；在 Claude 里只能预览和备份，完整流程需退出 Claude 后自己运行（双击脚本即可）"
+  ],
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "8c19db6c26eb737b638cf8d3a5ae1454c006f41db3b19fc2dc1ca2a4dae0b8ba"
+    },
+    {
+      "path": "scripts/claude-reinstall.mjs",
+      "sha256": "e73c1a19c9fbf7896987ca1ea8618700f9f16b88b81e3b2e17b6f5af260cba32"
+    },
+    {
+      "path": "scripts/run-mac.command",
+      "sha256": "4bbd6d41ed91786defd3c047b8251c0edffbe59f8e608bb4142cff85ecaad633"
+    },
+    {
+      "path": "scripts/run-windows.cmd",
+      "sha256": "f3c126f173176ac18d66e41032b0e1b32f345786aea39816fbaccf9c21300dbc"
+    }
+  ]
+}

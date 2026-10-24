@@ -1,0 +1,60 @@
+{
+  "packageId": "skl_opc-growth",
+  "code": "opc-growth",
+  "title": "OPC 一人公司流量诊断",
+  "author": "松月",
+  "uploaderUnionUserId": "456738",
+  "version": "1.0.0",
+  "guideStatus": "hosted",
+  "isOriginal": true,
+  "summary": "帮一人公司把“没流量、有曝光没成交、用户不留存”等问题拆成一个主瓶颈，并设计 7–14 天只改一件事的增长验证实验。",
+  "tags": {
+    "visible": [
+      "私域运营与成交",
+      "数据分析与复盘",
+      "判断与决策"
+    ],
+    "category": [
+      "私域运营与成交"
+    ],
+    "task": [
+      "数据分析与复盘",
+      "判断与决策"
+    ],
+    "platform": [],
+    "other": [],
+    "hiddenTagCount": 0
+  },
+  "installsOnMarket": 7,
+  "commentsOnMarket": 0,
+  "marketDate": "09-30",
+  "detailUrl": "https://scys.com/skillhub/skills/skl_opc-growth",
+  "runtimeTargets": [],
+  "artifactSha256": "15b0c7d94a84953b6dd3896c26722fb2a0e9b866bda319006d026f6308d93ebd",
+  "ossPathAccount": "u456738",
+  "dependencies": [],
+  "capabilityCard": {
+    "allowShell": false,
+    "allowedTools": [],
+    "allowArbitraryHttp": false,
+    "allowArbitraryMcp": false,
+    "scriptsPresent": false
+  },
+  "archive": {
+    "zipFile": "opc-growth-1.0.0.zip",
+    "extractedDir": "extracted/",
+    "fileCount": 6,
+    "hasScriptsDir": false,
+    "hasManifest": true,
+    "sha256Verified": true,
+    "archivedAt": "2026-10-24 21:44 +0800"
+  },
+  "files": [
+    "SKILL.md",
+    "agents/openai.yaml",
+    "manifest.json",
+    "references/diagnostic-matrix.md",
+    "references/experiment-template.md",
+    "references/source-map.md"
+  ]
+}

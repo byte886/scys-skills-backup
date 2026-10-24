@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "skl_wechat-longform-formatter",
+  "type": "skill",
+  "code": "wechat-longform-formatter",
+  "displayName": "长文章排版skill",
+  "description": "用户已有微信公众号长文，想选排版样式并得到标题、排版正文和可打开的 article.html 网页成品时使用；不用于重写文章。",
+  "publisher": "⃰苇⃰岸⃰",
+  "version": "1.0.0",
+  "uploaderUnionUserId": 818409,
+  "isOriginal": true,
+  "visibility": "public",
+  "examplePrompts": [
+    "完成公众号排版",
+    "完成公众号排版",
+    "完成公众号排版"
+  ],
+  "itCanHelpYou": [
+    "完成公众号文章排版"
+  ],
+  "useCases": [],
+  "changelog": "首次发布",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "c433ce842911a57b334972d9f22ea9d081992961b3fe89967d151bfdcc5312db"
+    },
+    {
+      "path": "scripts/render_article.py",
+      "sha256": "519ac93627c7e55f0a6eea82c9726cea5478e524c336693fd3acaff61b390ba3"
+    }
+  ]
+}

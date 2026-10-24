@@ -1,0 +1,68 @@
+{
+  "packageId": "skl_media-transcriber",
+  "code": "media-transcriber",
+  "title": "音视频转录与长文整理",
+  "author": "亦仁",
+  "uploaderUnionUserId": "36389",
+  "version": "1.1.0",
+  "guideStatus": "hosted",
+  "isOriginal": true,
+  "summary": "把音视频、播客、字幕或逐字稿整理成保留案例、数字和推理过程的中文长稿，可按需提供摘要、真实时间戳和原始逐字稿。",
+  "tags": {
+    "visible": [
+      "内容创作与个人 IP",
+      "内容制作"
+    ],
+    "category": [
+      "内容创作与个人 IP"
+    ],
+    "task": [
+      "内容制作"
+    ],
+    "platform": [],
+    "other": [],
+    "hiddenTagCount": 0
+  },
+  "installsOnMarket": 564,
+  "commentsOnMarket": 0,
+  "marketDate": "09-22",
+  "detailUrl": "https://scys.com/skillhub/skills/skl_media-transcriber",
+  "runtimeTargets": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "F"
+  ],
+  "artifactSha256": "13be2aab46f1029a8eb697577203100c2d4099dd559403cdae45c0c8bfb18831",
+  "ossPathAccount": "u36389",
+  "dependencies": [],
+  "capabilityCard": {
+    "allowShell": false,
+    "allowedTools": [],
+    "allowArbitraryHttp": false,
+    "allowArbitraryMcp": false,
+    "scriptsPresent": false
+  },
+  "archive": {
+    "zipFile": "media-transcriber-1.1.0.zip",
+    "extractedDir": "extracted/",
+    "fileCount": 10,
+    "hasScriptsDir": true,
+    "hasManifest": true,
+    "sha256Verified": true,
+    "archivedAt": "2026-10-24 21:44 +0800"
+  },
+  "files": [
+    "README.md",
+    "SKILL.md",
+    "agents/openai.yaml",
+    "manifest.json",
+    "references/feishu-delivery.md",
+    "references/media-tools.md",
+    "references/writing-standard.md",
+    "scripts/check_environment.py",
+    "scripts/normalize_transcript.py",
+    "scripts/transcribe_local.py"
+  ]
+}

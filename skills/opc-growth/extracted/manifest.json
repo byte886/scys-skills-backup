@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "skl_opc-growth",
+  "type": "skill",
+  "code": "opc-growth",
+  "displayName": "OPC 一人公司流量诊断",
+  "description": "帮一人公司把“没流量、有曝光没成交、用户不留存”等问题拆成一个主瓶颈，并设计 7–14 天只改一件事的增长验证实验。",
+  "publisher": "松月",
+  "version": "1.0.0",
+  "uploaderUnionUserId": 456738,
+  "isOriginal": true,
+  "visibility": "public",
+  "examplePrompts": [
+    "我做的是个人咨询，服务职场人，最近有曝光但没有咨询，请帮我找出原因及我该怎么调整。",
+    "我刚开始做一人公司，平台是小红书，最近 30 天的数据是……请帮我判断问题出在曝光、精准度、承接还是转化。",
+    "我已经有成交，但没有复购和转介绍，请根据我的业务和数据，给我一个具体改进方案。"
+  ],
+  "itCanHelpYou": [
+    "区分曝光、精准访问、关注、加联系方式、留量、成交和复购，不把播放量直接当成增长。",
+    "根据业务、人群、平台和近 7–30 天数据，定位最影响收入的一个增长瓶颈。",
+    "输出基于证据的诊断结论、一个优先动作、主指标、辅助指标和停止条件。",
+    "针对冷启动、流量停滞、曝光无转化、用户不留存、成交无复购设计 7–14 天验证实验。"
+  ],
+  "useCases": [],
+  "changelog": "覆盖冷启动、流量停滞、曝光无转化、用户不留存、成交无复购 5 类经营场景，输出单一主瓶颈诊断和 7–14 天增长实验。",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "335dc5d201eff4c9d30e3556f296cb743a3d2b0eac0e58e6e7173a841d991a75"
+    },
+    {
+      "path": "references/diagnostic-matrix.md",
+      "sha256": "c04964bbff71094d0a0a74b41aea9a689f70682af8a6b435323b63339c34130b"
+    },
+    {
+      "path": "references/experiment-template.md",
+      "sha256": "1293fe95ec67908345921ca4f24567e4fcfec2e9b27366d6bd740ac4cc3d1c52"
+    },
+    {
+      "path": "references/source-map.md",
+      "sha256": "297a54357e75b6b324f72c241927010dafcd2cbdbe9928f2d5e10e89f34a52b4"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "f2c0cdfce00f83eee8c247f37a47775b934116dfad150d8181cf05261c6ecb2f"
+    }
+  ]
+}

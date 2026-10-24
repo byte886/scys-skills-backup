@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "trackId": "food-specialty",
+  "purpose": "公开网页只提交可调参数；核心提示词在服务端组装，不发送到浏览器。",
+  "allowedAdjustments": {
+    "lengthHint": {
+      "type": "enum",
+      "values": [
+        "short",
+        "standard",
+        "extended"
+      ],
+      "default": "standard"
+    },
+    "tone": {
+      "type": "enum",
+      "values": [
+        "plain",
+        "lively",
+        "restrained",
+        "warm"
+      ],
+      "default": "plain"
+    },
+    "emotion": {
+      "type": "string",
+      "maxChineseChars": 8,
+      "allowAuto": true
+    },
+    "titleMode": {
+      "type": "enum",
+      "values": [
+        "question",
+        "action",
+        "contrast",
+        "number",
+        "restrained-conclusion"
+      ],
+      "allowAuto": true
+    },
+    "imageCount": {
+      "type": "integer",
+      "min": 1,
+      "max": 2,
+      "default": 2,
+      "extendedRequiresServerException": true
+    },
+    "sceneFocus": {
+      "type": "string",
+      "maxChineseChars": 80,
+      "purpose": "允许用户指定更关注的真实场景，不覆盖事实边界。"
+    }
+  },
+  "lockedRules": [
+    "sourceBasis 分层",
+    "不伪造亲历和数据",
+    "高风险事实边界",
+    "AI 图示意标记",
+    "formattedText 与 breakdownAnalysis 双层交付"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "packageId": "skl_helin-livestream-planning-master",
+  "code": "helin-livestream-planning-master",
+  "title": "河林直播策划大师",
+  "author": "河林",
+  "uploaderUnionUserId": "215990",
+  "version": "2.1.0",
+  "guideStatus": "hosted",
+  "isOriginal": true,
+  "summary": "为抖音、视频号、小红书的带货直播和知识付费/线索直播出整场策划或单模块方案：流量、排品、玩法、话术、投流（策划层）、私域、节奏分工，附保本 ROI 与坑产测算和合规红线。",
+  "tags": {
+    "visible": [
+      "电商经营与获客",
+      "客户与成交",
+      "小红书"
+    ],
+    "category": [
+      "电商经营与获客"
+    ],
+    "task": [
+      "客户与成交"
+    ],
+    "platform": [
+      "小红书"
+    ],
+    "other": [],
+    "hiddenTagCount": 3
+  },
+  "installsOnMarket": 5,
+  "commentsOnMarket": 0,
+  "marketDate": "10-17",
+  "detailUrl": "https://scys.com/skillhub/skills/skl_helin-livestream-planning-master",
+  "runtimeTargets": [],
+  "artifactSha256": "217ab3bcf8b6d5edf919e350ccf45b44d73e92dbd122ab5525d86d5859ed83b8",
+  "ossPathAccount": "u215990",
+  "dependencies": [],
+  "capabilityCard": {
+    "allowShell": false,
+    "allowedTools": [],
+    "allowArbitraryHttp": false,
+    "allowArbitraryMcp": false,
+    "scriptsPresent": false
+  },
+  "archive": {
+    "zipFile": "helin-livestream-planning-master-2.1.0.zip",
+    "extractedDir": "extracted/",
+    "fileCount": 16,
+    "hasScriptsDir": true,
+    "hasManifest": true,
+    "sha256Verified": true,
+    "archivedAt": "2026-10-24 21:44 +0800"
+  },
+  "files": [
+    "SKILL.md",
+    "agents/openai.yaml",
+    "manifest.json",
+    "references/compliance.md",
+    "references/example-plan.md",
+    "references/helin-method.md",
+    "references/model-knowledge-leads.md",
+    "references/platform-channels.md",
+    "references/platform-douyin.md",
+    "references/platform-xhs.md",
+    "references/playbook-merch.md",
+    "references/playbook-ops-review.md",
+    "references/playbook-private.md",
+    "references/playbook-scripts.md",
+    "references/playbook-traffic-ads.md",
+    "scripts/live_calc.py"
+  ]
+}

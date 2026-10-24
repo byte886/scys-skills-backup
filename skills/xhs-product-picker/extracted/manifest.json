@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "skl_xhs-product-picker",
+  "type": "skill",
+  "code": "xhs-product-picker",
+  "displayName": "小红书虚拟产品选品助手",
+  "description": "把你的工作和生活经验，经过 5 轮对话变成一个有付费场景、能上架验证的小红书虚拟产品方案。",
+  "publisher": "松月",
+  "version": "1.0.0",
+  "uploaderUnionUserId": 456738,
+  "isOriginal": true,
+  "visibility": "public",
+  "runtimeTargets": [
+    "claude_code",
+    "codex",
+    "hermes"
+  ],
+  "examplePrompts": [
+    "我想在小红书卖虚拟产品，但不知道卖什么，请通过对话帮我从个人经历里挖出可卖的方向。",
+    "我做过很多年招聘/装修/跨境/育儿，但不知道如何产品化，请帮我判断适合做成什么产品。",
+    "我想面向一人公司创业者做一个虚拟产品，请帮我找到付费场景，并设计引流款、利润款和旗舰款产品矩阵。"
+  ],
+  "itCanHelpYou": [
+    "通过 5 轮对话挖掘个人经验和隐藏优势，找到适合变现的虚拟产品方向。",
+    "结合内置 350+ 小红书虚拟产品案例库，判断用户的经验适合做指南、清单、模板、知识库还是其他产品形态。",
+    "从付费场景、用户痛点和市场空白出发，输出产品标题、内容框架、差异化定位和产品矩阵。",
+    "设计“引流款、利润款、旗舰款”产品矩阵，并给出 7 天内可以执行的小红书需求验证动作。"
+  ],
+  "useCases": [],
+  "changelog": "支持通过 5 轮对话挖掘个人经验，结合案例库定位付费场景，输出虚拟产品形态、差异化产品骨架、三级产品矩阵和 7 天验证动作。",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "ea3a1cb18fc2df03a997a251882f493d96f856017e2f867e958e0a4a7017f030"
+    },
+    {
+      "path": "references/case-data.md",
+      "sha256": "06355d88928920af93d2b8665348b1f464d5b2b5430b89a1fdd0cb981f9f8de1"
+    },
+    {
+      "path": "references/setup-guide.md",
+      "sha256": "7c9e9f6e70412e678c16206306e2f4844e5905fb68a7aba5748efa6feef7cf8f"
+    }
+  ]
+}

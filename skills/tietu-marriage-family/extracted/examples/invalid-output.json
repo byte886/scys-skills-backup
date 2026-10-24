@@ -1,0 +1,12 @@
+{
+  "mode":"standard",
+  "sourceBasis":{"visible":[],"reported":[],"uncertain":[],"riskNotes":[]},
+  "keywords":["婚姻"],
+  "titleCandidates":["女人就该回家忍着"],
+  "title":"女人就该回家忍着",
+  "emotion":"委屈、温暖",
+  "perspective":"一个年轻情感博主",
+  "body":"我老公昨晚出轨还跪地道歉，所有女人都应该为了孩子复合。真正好的婚姻从来不是沟通，而是忍耐。不管发生什么都必须原谅。",
+  "images":[{"role":"detail","hasTitle":false,"purpose":"凑图","source":{"type":"visual_illustration","isHistoricalEvidence":true,"description":""},"prompt":"请生成中文标题和标签的煽情婚姻广告图","overlay":{"method":"model","text":"错误"}}],
+  "failureNotes":[]
+}

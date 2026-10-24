@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "defaultStyle": "top-gradient",
+  "styles": [
+    {
+      "id": "top-gradient",
+      "name": "顶部渐变大标题",
+      "visualCue": "上方深色渐变承托左对齐白色大字，带短强调线",
+      "bestFor": ["长问题", "观点入口", "现实选择"]
+    },
+    {
+      "id": "white-bars",
+      "name": "白底条分行",
+      "visualCue": "每行标题落在独立白色实底条上，画面仍保持可见",
+      "bestFor": ["生活实拍", "怀旧旧物", "步骤或清单"]
+    },
+    {
+      "id": "outlined-center",
+      "name": "居中描边大字",
+      "visualCue": "白色粗体居中，深色描边保证复杂底图上可读",
+      "bestFor": ["短标题", "反常瞬间", "强停留问题"]
+    },
+    {
+      "id": "keyword-accent",
+      "name": "关键词双色",
+      "visualCue": "第一行使用赛道强调色，其余行白色，形成阅读节奏",
+      "bestFor": ["数字或关键词开头", "健康判断", "利益冲突"]
+    },
+    {
+      "id": "note-card",
+      "name": "生活便签卡",
+      "visualCue": "下部实体浅色卡片配强调色竖线，像真实记录而非海报",
+      "bestFor": ["婚姻家庭", "女性成长", "中年感悟"]
+    }
+  ],
+  "referenceStyleOptions": {
+    "workflow": "收到参考图后，先识别标题区域、对齐、字号层级、配色和底板，再映射到最接近的预设，并把差异写入 textStyleOptions。",
+    "allowed": {
+      "placement": ["top", "middle", "bottom"],
+      "align": ["left", "center"],
+      "fontScale": [0.75, 1.25],
+      "colors": ["titleColor", "accentColor", "cardColor"]
+    }
+  }
+}

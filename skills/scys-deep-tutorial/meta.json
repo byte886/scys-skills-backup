@@ -1,0 +1,66 @@
+{
+  "packageId": "skl_scys-deep-tutorial",
+  "code": "scys-deep-tutorial",
+  "title": "生财深度教程生成器",
+  "author": "飞猫",
+  "uploaderUnionUserId": "122662",
+  "version": "1.0.0",
+  "guideStatus": "hosted",
+  "isOriginal": true,
+  "summary": "生财深度调研教程工作流。把用户提出的一个问题/方向/人物/航海手册/项目案例，用生财 MCP（scys-mcp）检索站内一手资料，结合世界知识与必要的联网补充，结构化为「概念→逻辑关系→事实与概念知识→实操SOP→实战案例→总结」的图文并茂单文件 HTML 教程，并强制经过 AI 亦仁（商业判断）+ AI 刘小排（AI/产品/增长）双导师详细点评、逐条修订出终版。当用户说「把 XX 做成教程」「调研 XX 产出教程」「把XX生财资料整理成图文教程」「案例拆解教程」「深度调研教程」，或描述了「检索生财 + 结构化 + 双导师点评 + 图文产出」这类组合流程时使用。",
+  "tags": {
+    "visible": [
+      "内容创作与个人 IP",
+      "研究与选题",
+      "内容制作"
+    ],
+    "category": [
+      "内容创作与个人 IP"
+    ],
+    "task": [
+      "研究与选题",
+      "内容制作"
+    ],
+    "platform": [],
+    "other": [],
+    "hiddenTagCount": 0
+  },
+  "installsOnMarket": 29,
+  "commentsOnMarket": 0,
+  "marketDate": "09-10",
+  "detailUrl": "https://scys.com/skillhub/skills/skl_scys-deep-tutorial",
+  "runtimeTargets": [
+    "claude_code",
+    "codex",
+    "hermes"
+  ],
+  "artifactSha256": "284b2d67ee7d11b64332d4f628979b8ea4177a806c38acca5d096cce2dc93064",
+  "ossPathAccount": "u122662",
+  "dependencies": [],
+  "capabilityCard": {
+    "allowShell": false,
+    "allowedTools": [],
+    "allowArbitraryHttp": false,
+    "allowArbitraryMcp": false,
+    "scriptsPresent": false
+  },
+  "archive": {
+    "zipFile": "scys-deep-tutorial-1.0.0.zip",
+    "extractedDir": "extracted/",
+    "fileCount": 8,
+    "hasScriptsDir": false,
+    "hasManifest": true,
+    "sha256Verified": true,
+    "archivedAt": "2026-10-24 21:44 +0800"
+  },
+  "files": [
+    "README.md",
+    "SKILL.md",
+    "assets/tutorial-skeleton.html",
+    "manifest.json",
+    "references/acceptance-and-pitfalls.md",
+    "references/mentor-review.md",
+    "references/research.md",
+    "references/tutorial-structure.md"
+  ]
+}

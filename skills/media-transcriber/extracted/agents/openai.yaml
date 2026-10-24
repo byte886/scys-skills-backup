@@ -1,0 +1,4 @@
+interface:
+  display_name: "音视频转录与长文整理"
+  short_description: "把音视频整理为保留细节的中文长稿，可按需附摘要、时间戳或原始逐字稿"
+  default_prompt: "使用 $media-transcriber，先检查本次任务所需的工具，再把这份音视频或逐字稿整理成忠实原意、保留细节的中文长稿。"

@@ -1,0 +1,65 @@
+{
+  "code": "media-transcriber",
+  "version": "1.1.0",
+  "type": "skill",
+  "displayName": "音视频转录与长文整理",
+  "description": "把音视频、播客、字幕或逐字稿整理成保留案例、数字和推理过程的中文长稿，可按需提供摘要、真实时间戳和原始逐字稿。",
+  "runtimeTargets": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "F"
+  ],
+  "examplePrompts": [
+    "帮我把这期播客整理成完整中文长稿，保留案例、数字和推理过程。",
+    "把这段访谈整理成长稿，并在开头加一段简短摘要。",
+    "把这段会议录音整理成带真实时间戳的长稿，方便回听核对。",
+    "只给我这段录音的原始逐字稿，保留原语言和发言顺序，不删口水话。",
+    "把这个视频整理成飞书文档，使用我已授权的飞书账号创建新文档。"
+  ],
+  "itCanHelpYou": [
+    "把播客、视频或会议逐字稿整理成保留细节的中文长稿。",
+    "按需生成简短摘要、带真实时间戳的整理稿或原始逐字稿。",
+    "首次使用时检查本次任务所需的工具，并说明缺少的依赖。",
+    "默认交付 Markdown；已授权时可创建并核对飞书文档。"
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "8d8c310925894ca0f27e2091897b1d6614b1e92b1ac0dc3e68dd49862ac9c36c"
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "00fdbd60599c143f921c3f0b5f6ef423b183378676f2198a5d94140d71d3c653"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "6f63e465368310eb2a87c560d46f07e6b127de334cdd996458cbff5bf33823cc"
+    },
+    {
+      "path": "references/feishu-delivery.md",
+      "sha256": "8dfdc1aca34363d73fcd57db5c87ea8dd412f44a62559e8eb280c9ccf0f89ff5"
+    },
+    {
+      "path": "references/media-tools.md",
+      "sha256": "fa591831303622b7e8a99e777b3b8afc0c0e0be42d5427cd3aef1b71d8f3bf06"
+    },
+    {
+      "path": "references/writing-standard.md",
+      "sha256": "e18088186ecd5f1daf1441e2a56e93bccda272aec21c99ad5ebfbac8ef078945"
+    },
+    {
+      "path": "scripts/check_environment.py",
+      "sha256": "2d3cebd99468bca97192ebbd6f271db08a75d49401ca7f9fd45a48b0c6bf37e4"
+    },
+    {
+      "path": "scripts/normalize_transcript.py",
+      "sha256": "a79e41482d68348df499d1cfff479635736b3a80bb6321607da7e6101b2e8c28"
+    },
+    {
+      "path": "scripts/transcribe_local.py",
+      "sha256": "c8558ea0689b1c5eb927b82befef832c2daa305e77e493ffeb9f5fd74bc24196"
+    }
+  ]
+}

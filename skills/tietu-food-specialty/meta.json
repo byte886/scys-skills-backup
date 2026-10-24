@@ -1,0 +1,88 @@
+{
+  "packageId": "skl_tietu-food-specialty",
+  "code": "tietu-food-specialty",
+  "title": "美食贴图skill",
+  "author": "⃰辰风",
+  "uploaderUnionUserId": "818409",
+  "version": "1.0.0",
+  "guideStatus": "hosted",
+  "isOriginal": true,
+  "summary": "Use when 用户要创作、改写或检查贴图号美食特产内容，素材涉及地方小吃、冷门食材、时令瓜果、制作过程、产销故事、家庭烹饪或日常食安；不用于无来源的医疗、功效或价格承诺。",
+  "tags": {
+    "visible": [
+      "内容创作与个人 IP",
+      "内容制作",
+      "视觉与素材"
+    ],
+    "category": [
+      "内容创作与个人 IP"
+    ],
+    "task": [
+      "内容制作",
+      "视觉与素材"
+    ],
+    "platform": [],
+    "other": [],
+    "hiddenTagCount": 0
+  },
+  "installsOnMarket": 15,
+  "commentsOnMarket": 0,
+  "marketDate": "10-03",
+  "detailUrl": "https://scys.com/skillhub/skills/skl_tietu-food-specialty",
+  "runtimeTargets": [],
+  "artifactSha256": "8746b489a4d8d22776f20cae96932361412951f106b6b86bd98ec85149f11923",
+  "ossPathAccount": "u818409",
+  "dependencies": [],
+  "capabilityCard": {
+    "allowShell": false,
+    "allowedTools": [],
+    "allowArbitraryHttp": false,
+    "allowArbitraryMcp": false,
+    "scriptsPresent": false
+  },
+  "archive": {
+    "zipFile": "tietu-food-specialty-1.0.0.zip",
+    "extractedDir": "extracted/",
+    "fileCount": 34,
+    "hasScriptsDir": true,
+    "hasManifest": true,
+    "sha256Verified": true,
+    "archivedAt": "2026-10-24 21:44 +0800"
+  },
+  "files": [
+    "SKILL.md",
+    "agents/openai.yaml",
+    "assets/adjustment-schema.json",
+    "assets/reference-layouts/README.md",
+    "assets/reference-layouts/example.json",
+    "assets/track-profile.json",
+    "assets/typography-styles.json",
+    "examples/acceptance-cases.md",
+    "examples/cover-input.json",
+    "examples/invalid-cover-input.json",
+    "examples/invalid-image-exception.json",
+    "examples/invalid-output.json",
+    "examples/valid-output.json",
+    "manifest.json",
+    "references/finished-image-execution.md",
+    "references/human-tone-and-anti-ai.md",
+    "references/output-contract-and-checklist.md",
+    "references/persona-and-audience.md",
+    "references/prompt-sealing-and-adjustments.md",
+    "references/reference-image-and-typography.md",
+    "references/table-source-links.md",
+    "references/topic-keywords-and-titles.md",
+    "references/visual-prompt-engine.md",
+    "references/writing-and-emotion.md",
+    "scripts/render_finished_image.mjs",
+    "scripts/render_title_cover.mjs",
+    "scripts/validate_output.mjs",
+    "tests/render-compatibility.test.mjs",
+    "tests/render-finished-image.test.mjs",
+    "tests/render-title-cover.test.mjs",
+    "tests/typography-styles.test.mjs",
+    "tests/validate-output.test.mjs",
+    "tests/visual-hook-matrix.test.mjs",
+    "tests/visual-routing.test.mjs"
+  ]
+}

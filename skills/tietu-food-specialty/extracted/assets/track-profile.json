@@ -1,0 +1,406 @@
+{
+  "schemaVersion": 1,
+  "skillName": "tietu-food-specialty",
+  "trackId": "food-specialty",
+  "trackName": "贴图号·美食特产",
+  "persona": {
+    "age": 46,
+    "gender": "女性",
+    "identity": "做过社区团购和小吃摊帮工的菜市场熟客",
+    "values": [
+      "尊重地方做法和摊贩劳动",
+      "先看食物状态与安全，再谈流量和好不好吃",
+      "诚实区分看着想尝、实际吃过、未吃过和不敢吃"
+    ]
+  },
+  "body": {
+    "countUnit": "CJK ideographs",
+    "absoluteMaxChineseChars": 1000,
+    "modes": {
+      "standard": {
+        "label": "标准模式",
+        "minChineseChars": 80,
+        "maxChineseChars": 1000,
+        "preferredMinChineseChars": 200,
+        "preferredMaxChineseChars": 300
+      },
+      "story": {
+        "label": "故事或来历模式",
+        "minChineseChars": 80,
+        "maxChineseChars": 1000,
+        "preferredMinChineseChars": 500,
+        "preferredMaxChineseChars": 800
+      }
+    }
+  },
+  "images": {
+    "visualStrategy": {
+      "selectionBasis": "topic-first",
+      "dynamicSelection": true,
+      "family": "source-first",
+      "defaultMode": "source_photo",
+      "allowedModes": [
+        "source_photo",
+        "source_crop",
+        "documentary_illustration",
+        "process_sequence"
+      ],
+      "defaultSourcePriority": "prefer_source",
+      "routingRule": "优先使用同一食物、同一批次的实拍原图和切面；没有来源图时只能生成明确标注为画面示意的普通食物场景。"
+    },
+    "finishedOutput": {
+      "directBitmap": true,
+      "format": "png",
+      "defaultOverlayMode": "none",
+      "allowedOverlayModes": [
+        "none",
+        "title",
+        "title_and_annotations"
+      ],
+      "overlayDecisionRule": "先判断本图靠真实画面成立，还是必须靠一句文字成立；实拍证据图选 none，观点或情绪入口才选 title，需要解释局部才选 title_and_annotations。默认值只是兜底，不得覆盖本次主题判断。"
+    },
+    "defaultMin": 1,
+    "defaultMax": 2,
+    "extendedMax": 5,
+    "exceptionKinds": [
+      "food_process",
+      "food_safety_comparison",
+      "origin_to_product"
+    ],
+    "visualHook": {
+      "stopReason": "第一眼先让食材产生食欲和好奇：要么单个食材饱满、有切面张力，要么丰富陈列琳琅满目。",
+      "hookVariants": [
+        {
+          "id": "single-ingredient-tension",
+          "useWhen": "单个瓜果、食材、点心或切面本身足够特别",
+          "visualHook": "主体大而饱满，突出表皮、切面、汁水、馅料或刚掰开的瞬间。"
+        },
+        {
+          "id": "rich-assortment",
+          "useWhen": "主题讲集市、时令、多品种或地方特产集合",
+          "visualHook": "不同颜色、大小和形状自然堆叠，形成琳琅满目的节奏，但保持真实摊位逻辑。"
+        },
+        {
+          "id": "handmade-action",
+          "useWhen": "主题讲制作或现做现卖",
+          "visualHook": "切、掰、翻、包、称重中的一个动作与食物质地同时出现。"
+        }
+      ],
+      "prioritySignals": [
+        "饱满体积与真实重量感",
+        "切面、裂口、汁水或馅料",
+        "食材自身形成的颜色对比",
+        "不完全一致的大小与形状",
+        "一只手正在切、掰、挑或称",
+        "丰富陈列的前后堆叠层次"
+      ],
+      "preferredMoments": [
+        "刚掰开或刚切开的瞬间",
+        "一筐食材自然溢满画面",
+        "不同品种在摊位上交错陈列",
+        "手从一堆食材中挑起一个",
+        "刚出锅后表面仍有真实油光或碎屑"
+      ],
+      "compositionBias": [
+        "单食材路线让主体占画面约三分之二以上并允许边缘被切到",
+        "丰富路线用前中后层堆叠而不是整齐网格摆盘",
+        "纯图铺满画面，不为标题预留空白"
+      ],
+      "authenticityTraces": [
+        "水珠或泥点",
+        "切板划痕",
+        "碎屑和不规则边缘",
+        "用过的竹筐或搪瓷盘",
+        "摊布褶皱与轻微凌乱"
+      ],
+      "avoidGenericScenes": [
+        "广告棚拍和高级餐厅摆盘",
+        "蜡质塑料食物与假蒸汽",
+        "所有食材同样大小且完美对称",
+        "重饱和重锐化和统一暖滤镜",
+        "为了好看凭空增加配菜、馅料或价签"
+      ],
+      "topicAdaptationRule": "先看当前主题的素材爆点属于单个食材张力、丰富陈列还是制作动作，再选择构图；食材、器皿、环境和动作都随主题变化，不固定餐桌或摊位。",
+      "colorRule": "颜色以食材真实自然色为主，可丰富但不过度饱和，不使用重滤镜、商业调色或塑料高光。",
+      "overlayBias": "默认纯图；食物本身能抓眼时禁止压标题，确需说明食安边界才代码添加短标签。",
+      "promptAssemblyOrder": [
+        "topicHook",
+        "subjectState",
+        "singleAction",
+        "evidenceDetail",
+        "ordinaryEnvironment",
+        "authenticityTraces",
+        "compositionGoal",
+        "overlayDecision",
+        "factBoundary",
+        "negativeConstraints"
+      ]
+    },
+    "referenceImageRouting": {
+      "modes": [
+        "use_original",
+        "light_transform",
+        "style_reference",
+        "similar_search"
+      ],
+      "defaultMode": "style_reference",
+      "decisionRule": "用户明确选择优先；未说明授权时不直接复用网络对标图，默认提取视觉规律后重新生成。",
+      "originalUseBoundary": "原图使用仅限用户自有、已授权或明确允许复用的素材。",
+      "similarSearchRule": "拆成主体、动作、环境、质感和构图检索词，保留来源与授权信息，再由用户选择。"
+    },
+    "typography": {
+      "defaultStyle": "top-gradient",
+      "allowedStyles": [
+        "top-gradient",
+        "white-bars",
+        "outlined-center",
+        "keyword-accent",
+        "note-card"
+      ],
+      "recommendedStyles": [
+        "outlined-center",
+        "white-bars"
+      ],
+      "userSelectable": true,
+      "customReferenceStyle": true,
+      "styleOptions": [
+        "placement",
+        "align",
+        "fontScale",
+        "titleColor",
+        "accentColor",
+        "cardColor"
+      ],
+      "rule": "只有 overlayMode 不是 none 时才选择文字样式；先避开主体，再匹配标题长度和情绪，不按赛道机械固定。"
+    },
+    "promptVisibility": {
+      "default": "internal_only",
+      "allowed": [
+        "internal_only",
+        "admin_debug"
+      ],
+      "returnInUserOutput": false,
+      "publicImageFields": [
+        "role",
+        "purpose",
+        "sourceNotice",
+        "overlayMode",
+        "finalImage"
+      ],
+      "rule": "画图提示词只用于内部调用生图模型和质量校验；普通用户只看到完成图、来源说明和必要失败原因。"
+    }
+  },
+  "emotion": {
+    "maxChineseChars": 8,
+    "examples": [
+      "好奇",
+      "馋",
+      "惊讶",
+      "心疼",
+      "可惜",
+      "犹豫",
+      "佩服",
+      "松一口气",
+      "哭笑不得"
+    ]
+  },
+  "visualPrompt": {
+    "requiredCoverSlots": {
+      "subject": [
+        "食物",
+        "食材",
+        "艾粑",
+        "瓜",
+        "粽",
+        "果",
+        "菜",
+        "成品"
+      ],
+      "action": [
+        "正在",
+        "手",
+        "掰",
+        "切",
+        "剁",
+        "拌",
+        "包",
+        "蒸",
+        "煎",
+        "烤",
+        "称",
+        "装",
+        "摆",
+        "拿",
+        "闻",
+        "翻"
+      ],
+      "foodEvidence": [
+        "切面",
+        "馅料",
+        "焦边",
+        "裂口",
+        "果皮",
+        "叶筋",
+        "糯米",
+        "艾草",
+        "颗粒",
+        "汁水",
+        "纹理",
+        "表皮"
+      ],
+      "environment": [
+        "菜市场",
+        "市场",
+        "餐桌",
+        "厨房",
+        "操作台",
+        "摊位",
+        "地头",
+        "产地",
+        "竹篮",
+        "盘",
+        "案板",
+        "锅",
+        "烤架",
+        "筐"
+      ],
+      "light": [
+        "自然光",
+        "窗光",
+        "室内光",
+        "阴天",
+        "白天",
+        "灯光",
+        "侧光"
+      ],
+      "lifeTraces": [
+        "水渍",
+        "碎屑",
+        "油渍",
+        "皱",
+        "磨",
+        "泥土",
+        "手印",
+        "不均",
+        "使用",
+        "杂物",
+        "蒸汽"
+      ],
+      "titleSpace": [
+        "留白",
+        "标题区",
+        "标题区域"
+      ],
+      "negative": [
+        "不要",
+        "避免",
+        "不生成",
+        "无字",
+        "无文字",
+        "无中文"
+      ]
+    },
+    "noTextSignals": [
+      "无字",
+      "无文字",
+      "不生成文字",
+      "不生成中文",
+      "不要文字"
+    ]
+  },
+  "aiTone": {
+    "blockedPatterns": [
+      {
+        "label": "真正……从来不是……而是……的绝对化模板",
+        "pattern": "真正[^。！？\\n]{0,28}从来不是[^。！？\\n]{0,60}而是"
+      },
+      {
+        "label": "不仅是……更是……的整齐升华",
+        "pattern": "不仅是[^。！？\\n]{0,32}更是"
+      }
+    ],
+    "warningPatterns": [
+      {
+        "label": "万能乡愁或文化传承",
+        "pattern": "(?:舌尖上的乡愁|承载着[^。！？\\n]{0,18}(?:乡愁|文化)|文化传承)"
+      },
+      {
+        "label": "模板祝福或治愈",
+        "pattern": "(?:愿(?:你|我们|每个|每一个|所有人)|治愈了?所有|温柔了?时光)"
+      },
+      {
+        "label": "地方或人群泛化",
+        "pattern": "(?:南方人|北方人|当地人都|家家户户|人人都|全省人|全国人)"
+      }
+    ]
+  },
+  "contentRisks": {
+    "blockedPatterns": [
+      {
+        "label": "无来源第一人称品尝或偏好",
+        "pattern": "(?:^|[，。；;！!？?])我(?:吃过|尝过|最爱|觉得好吃|吃得惯|一口下去)"
+      },
+      {
+        "label": "无依据功效、毒性或食用结论",
+        "pattern": "(?:降糖|补硒|防癌|抗癌|减肥|治病|一定有毒|一定能吃|切掉坏的就能吃)"
+      },
+      {
+        "label": "危险热源做法",
+        "pattern": "(?:塑料袋|报纸)[^。！？\\n]{0,18}(?:烤|加热|贴着热源|靠近电器|吹油烟)"
+      },
+      {
+        "label": "地方或人群泛化",
+        "pattern": "(?:南方人|北方人|当地人都|家家户户|人人都|全省人|全国人)"
+      }
+    ],
+    "warningPatterns": [
+      {
+        "label": "未经上下文的正宗或最高级",
+        "pattern": "(?:正宗|最地道|全国第一|全网第一|必吃|第一名|抢购一空|能发财)"
+      },
+      {
+        "label": "价格缺少时间地点单位或规格",
+        "pattern": "(?:\\d+|[一二三四五六七八九十]+)元(?![^。！？\\n]{0,24}(?:一斤|一袋|一份|一筐|规格|单位|当天|本地|地点|市场|年|月|日))"
+      },
+      {
+        "label": "把看图推成口感",
+        "pattern": "(?:入口即化|香甜可口|甜而不腻|清香扑鼻|软糯香甜|好吃到停不下来)"
+      }
+    ]
+  },
+  "cover": {
+    "width": 1200,
+    "height": 1600,
+    "defaultPalette": "market",
+    "palettes": {
+      "market": {
+        "backgroundStart": "#21333A",
+        "backgroundEnd": "#58706C",
+        "accent": "#F2B84B",
+        "text": "#FFF9ED",
+        "muted": "#DCE7DE"
+      },
+      "clay": {
+        "backgroundStart": "#44261D",
+        "backgroundEnd": "#9C6044",
+        "accent": "#F1C36C",
+        "text": "#FFF8E8",
+        "muted": "#EFD4B7"
+      },
+      "leaf": {
+        "backgroundStart": "#263B2D",
+        "backgroundEnd": "#70865A",
+        "accent": "#F5C85A",
+        "text": "#FAF7E9",
+        "muted": "#D9E2C7"
+      },
+      "slate": {
+        "backgroundStart": "#20292D",
+        "backgroundEnd": "#66777A",
+        "accent": "#E7B663",
+        "text": "#FAF7EF",
+        "muted": "#D6DFDE"
+      }
+    }
+  }
+}

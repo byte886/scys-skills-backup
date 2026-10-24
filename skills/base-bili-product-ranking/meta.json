@@ -1,0 +1,57 @@
+{
+  "packageId": "skl_base-bili-product-ranking",
+  "code": "base-bili-product-ranking",
+  "title": "B站带货商品讲解排序",
+  "author": "Lynn",
+  "uploaderUnionUserId": "848893",
+  "version": "0.1.0",
+  "guideStatus": "hosted",
+  "isOriginal": true,
+  "summary": "根据商品信息、视频主题和观众需求，从痛点、差异、价格、画面和风险五个维度评估商品，给出讲解顺序及取舍理由。",
+  "tags": {
+    "visible": [
+      "短视频创作与带货",
+      "商品与选品",
+      "B站"
+    ],
+    "category": [
+      "短视频创作与带货"
+    ],
+    "task": [
+      "商品与选品"
+    ],
+    "platform": [
+      "B站"
+    ],
+    "other": [],
+    "hiddenTagCount": 1
+  },
+  "installsOnMarket": 5,
+  "commentsOnMarket": 0,
+  "marketDate": "10-09",
+  "detailUrl": "https://scys.com/skillhub/skills/skl_base-bili-product-ranking",
+  "runtimeTargets": [],
+  "artifactSha256": "890e42316b421ce6c9949649777fc1c84a7930b1bc661a249c8ada980da602b8",
+  "ossPathAccount": "u848893",
+  "dependencies": [],
+  "capabilityCard": {
+    "allowShell": false,
+    "allowedTools": [],
+    "allowArbitraryHttp": false,
+    "allowArbitraryMcp": false,
+    "scriptsPresent": false
+  },
+  "archive": {
+    "zipFile": "base-bili-product-ranking-0.1.0.zip",
+    "extractedDir": "extracted/",
+    "fileCount": 2,
+    "hasScriptsDir": false,
+    "hasManifest": true,
+    "sha256Verified": true,
+    "archivedAt": "2026-10-24 21:44 +0800"
+  },
+  "files": [
+    "SKILL.md",
+    "manifest.json"
+  ]
+}

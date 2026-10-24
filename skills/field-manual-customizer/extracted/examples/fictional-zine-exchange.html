@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="zh-CN" data-manual-id="fictional-zine-exchange-v1">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; script-src 'sha256-BrL7WXSiyfI7MwASYd7axCQdk2D1WqC/ct/t1iYpdjU='; connect-src 'none'; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>虚构场景：周末小册交换试运行手册</title>
+  <style>
+    :root { color-scheme: light; --ink: #203137; --muted: #52646a; --line: #cbd9d9; --paper: #fffdf8; --surface: #f1f7f4; --accent: #1c655c; --accent-soft: #dceee8; --warn: #794a16; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.7 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    button, input, textarea { font: inherit; }
+    button { cursor: pointer; }
+    a { color: var(--accent); overflow-wrap: anywhere; }
+    img { display: block; max-width: 100%; height: auto; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid var(--line); padding: .55rem .7rem; text-align: left; vertical-align: top; }
+    th { background: var(--accent-soft); }
+    .shell { display: grid; grid-template-columns: minmax(12rem, 16rem) minmax(0, 52rem); gap: clamp(1.2rem, 3vw, 3rem); max-width: 78rem; margin: auto; padding: clamp(1rem, 3vw, 2.6rem); }
+    .sidebar { align-self: start; position: sticky; top: 1rem; max-height: calc(100vh - 2rem); overflow: auto; padding: 1.1rem; background: var(--surface); border: 1px solid var(--line); border-radius: .8rem; }
+    .sidebar h2 { margin: 0 0 .7rem; font-size: .95rem; letter-spacing: .05em; }
+    .toc { margin: 0; padding-left: 1.25rem; }
+    .toc li { margin: .4rem 0; }
+    .toc a { text-decoration: none; }
+    .toc a:hover, .toc a:focus-visible { text-decoration: underline; }
+    .print-toc { display: none; }
+    main { min-width: 0; }
+    .masthead { padding: .4rem 0 1.3rem; border-bottom: 3px solid var(--accent); }
+    h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.1rem); line-height: 1.2; }
+    .subtitle { margin: .7rem 0 0; color: var(--muted); font-size: 1.08rem; }
+    .updated { margin: .6rem 0 0; color: var(--muted); font-size: .88rem; }
+    .page-tools { display: flex; flex-wrap: wrap; align-items: flex-start; gap: .65rem; max-width: 78rem; margin: auto; padding: clamp(1rem, 3vw, 2.6rem) clamp(1rem, 3vw, 2.6rem) 0; }
+    .search-dock { position: relative; z-index: 20; flex: 1 1 24rem; min-width: 0; padding: .55rem; background: var(--surface); border: 1px solid var(--line); border-radius: .7rem; }
+    .search-bar { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem; }
+    .search-bar label { font-weight: 650; }
+    #manual-search { flex: 1 1 14rem; min-width: 0; padding: .5rem .7rem; border: 1px solid #91aaa5; border-radius: .4rem; background: #fff; color: var(--ink); }
+    .search-bar button { padding: .38rem .55rem; border: 1px solid var(--line); border-radius: .4rem; background: #fff; color: var(--accent); }
+    .search-bar button:disabled { cursor: default; opacity: .48; }
+    .search-count { color: var(--muted); white-space: nowrap; font-size: .9rem; }
+    .search-popover { position: absolute; top: calc(100% - 1px); left: 0; right: 0; max-height: min(55vh, 31rem); overflow: auto; overscroll-behavior-y: contain; -webkit-overflow-scrolling: touch; touch-action: pan-y; background: #fff; border: 1px solid var(--line); border-radius: 0 0 .7rem .7rem; box-shadow: 0 .8rem 1.7rem #20313724; }
+    .search-popover .status { position: sticky; top: 0; z-index: 1; padding: .55rem .8rem; background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+    .search-list { margin: 0; padding: .35rem; list-style: none; }
+    .search-list li { margin: 0; }
+    .search-result { display: block; width: 100%; padding: .55rem .65rem; text-align: left; border: 0; border-radius: .4rem; background: #fff; color: var(--ink); }
+    .search-result:hover, .search-result:focus-visible, .search-result.is-selected { background: var(--surface); outline: 2px solid var(--accent); outline-offset: -2px; }
+    .result-title, .result-snippet { display: block; }
+    .result-title { color: var(--accent); font-weight: 700; font-size: .9rem; }
+    .result-snippet { color: var(--ink); font-size: .93rem; line-height: 1.5; }
+    .result-snippet mark, mark.search-target { padding: 0 .08em; background: #ffe39b; color: #392b08; }
+    mark.search-target { outline: 2px solid #9a5a00; border-radius: .15rem; }
+    .search-empty { padding: .7rem; color: var(--muted); }
+    .export-tools { display: grid; grid-template-columns: auto minmax(0, 1fr); flex: 0 0 26rem; align-items: center; column-gap: .8rem; min-width: 0; padding: .45rem .65rem; background: var(--surface); border: 1px solid var(--line); border-radius: .7rem; }
+    .export-copy { min-width: 0; color: var(--muted); font-size: .79rem; line-height: 1.4; }
+    .export-copy p { margin: 0; }
+    .export-copy p:first-child { color: var(--ink); font-weight: 650; }
+    .export-tools .status { grid-column: 1 / -1; }
+    .export-tools .status:empty { display: none; }
+    #print-button { padding: .45rem .8rem; border: 1px solid var(--accent); border-radius: .4rem; background: var(--accent); color: #fff; }
+    #print-button:hover, #print-button:focus-visible { background: #124c45; }
+    .share-overlay { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: 1rem; background: #203137b8; }
+    .share-panel { width: min(100%, 36rem); padding: 1.25rem; background: #fff; border: 1px solid var(--line); border-radius: .8rem; box-shadow: 0 1rem 3rem #0005; }
+    .share-panel h2 { margin: 0 0 .6rem; color: var(--accent); font-size: 1.25rem; }
+    .share-panel p { margin: .45rem 0 1rem; }
+    .share-panel label { display: block; margin-bottom: .35rem; font-weight: 650; }
+    #share-folder-path, #share-ai-prompt { width: 100%; padding: .55rem; border: 1px solid var(--line); border-radius: .35rem; background: #fff; color: var(--ink); }
+    .share-ai { margin-top: 1rem; }
+    #share-ai-prompt { display: block; resize: vertical; min-height: 5rem; }
+    #share-ai-copy { margin-top: .5rem; padding: .35rem .7rem; border: 1px solid var(--accent); border-radius: .35rem; background: var(--accent); color: #fff; }
+    .share-close { float: right; padding: .25rem .65rem; border: 1px solid var(--line); border-radius: .35rem; background: #fff; color: var(--accent); }
+    .share-close:focus-visible, #share-folder-path:focus-visible, #share-ai-prompt:focus-visible, #share-ai-copy:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .status { width: 100%; margin: 0; color: var(--muted); font-size: .88rem; }
+    .notice { margin: 1.2rem 0; padding: .9rem 1rem; background: #fff3de; border-left: 4px solid #a26721; color: var(--warn); }
+    .intro, .sources { margin: 1.4rem 0 2rem; }
+    .manual-section { margin: 1rem 0; border: 1px solid var(--line); border-radius: .7rem; background: #fff; overflow: clip; scroll-margin-top: 1rem; }
+    .manual-section > summary { padding: .85rem 1rem; background: var(--surface); color: var(--accent); font-size: 1.22rem; font-weight: 700; cursor: pointer; }
+    .manual-section > summary::marker { color: var(--accent); }
+    .section-body { padding: .1rem 1.1rem 1rem; }
+    .section-body h3 { margin-top: 1.35rem; }
+    [data-pdf-heading="3"] { margin: 1.35rem 0 1em; font-size: 1.17em; font-weight: 700; break-after: avoid-page; }
+    [data-pdf-heading="4"] { margin: 1.35rem 0 1em; font-size: 1em; font-weight: 700; break-after: avoid-page; }
+    .section-body p, .intro p, .sources p { max-width: 72ch; }
+    .section-body figure { margin: 1.4rem 0; padding: .6rem; border: 1px solid var(--line); background: var(--surface); }
+    figcaption { margin-top: .5rem; color: var(--muted); font-size: .9rem; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace; }
+    :not(pre) > code { padding: .1em .3em; border-radius: .25rem; background: var(--accent-soft); color: var(--ink); overflow-wrap: anywhere; }
+    pre { max-width: 100%; margin: 1.1rem 0; padding: .85rem 1rem; border: 1px solid var(--line); border-radius: .5rem; background: var(--surface); color: var(--ink); font: .92rem/1.65 ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace; white-space: pre-wrap; overflow-wrap: anywhere; tab-size: 4; }
+    pre code { font: inherit; white-space: inherit; overflow-wrap: inherit; }
+    .zoomable-image { cursor: zoom-in; }
+    .zoomable-image:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    .image-zoom-overlay { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; padding: 1rem; background: #203137e8; }
+    .image-zoom-panel { position: relative; display: grid; place-items: center; width: 100%; height: 100%; }
+    .image-zoom-panel img { max-width: calc(100vw - 2rem); max-height: calc(100vh - 2rem); width: auto; height: auto; object-fit: contain; }
+    .image-zoom-close { position: absolute; top: 0; right: 0; z-index: 1; padding: .35rem .7rem; border: 1px solid #fff; border-radius: .35rem; background: #fff; color: var(--ink); }
+    .image-zoom-close:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    .source-markers { white-space: nowrap; font-size: .88em; font-weight: 650; }
+    .source-markers a { text-decoration: underline; text-underline-offset: .12em; }
+    .source-entry { scroll-margin-top: 1rem; }
+    .source-backref { font-size: .86em; white-space: nowrap; }
+    .step-goal { font-weight: 650; }
+    .step-done { padding: .45rem .65rem; background: var(--accent-soft); border-left: 3px solid var(--accent); }
+    .case-card { padding: .8rem 1rem; border: 1px solid var(--line); border-radius: .45rem; background: var(--surface); }
+    .source-credit { display: inline-flex; align-items: center; gap: .45rem; max-width: 100%; vertical-align: middle; }
+    .source-credit img { width: 1.7rem; height: 1.7rem; flex: none; border-radius: 50%; object-fit: cover; }
+    .checklist { list-style: none; padding: 0; }
+    .checklist li { margin: .55rem 0; }
+    .check-item { display: flex; gap: .55rem; align-items: baseline; padding: .4rem .6rem; border-radius: .35rem; background: var(--surface); cursor: pointer; }
+    .check-item input { accent-color: var(--accent); transform: scale(1.15); }
+    .check-item input:checked + span { text-decoration: line-through; color: var(--muted); }
+    .check-item input:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .table-wrap { overflow-x: auto; }
+    [hidden] { display: none !important; }
+    @media (max-width: 760px) {
+      .page-tools { display: block; }
+      .export-tools { margin-top: .5rem; }
+      .shell { display: block; }
+      .sidebar { position: static; max-height: none; margin-bottom: 1.2rem; }
+      .toc { columns: 2; }
+    }
+    @media print {
+      @page { size: A5; margin: 0; }
+      *, *::before, *::after { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      html { scroll-behavior: auto; }
+      body { background: #fff !important; color: var(--ink) !important; font-size: 12pt; line-height: 1.55; }
+      .shell { display: block; max-width: none; margin: 0; padding: 10mm 10mm; background: #fff !important; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+      .sidebar, .page-tools, .share-overlay, .image-zoom-overlay { display: none !important; }
+      .print-toc { display: block; break-after: page; page-break-after: always; }
+      .print-toc-title { margin: 1.5rem 0 1rem; font-size: 1.5em; font-weight: 700; }
+      .print-toc li { margin: .65rem 0; break-inside: avoid; }
+      .manual-section > summary h2.section-title { display: inline; margin: 0; font-size: inherit; }
+      mark.search-target { background: transparent !important; outline: 0 !important; color: inherit !important; }
+      .intro[hidden], .sources[hidden], .manual-section[hidden] { display: block !important; }
+      .masthead { padding-top: 0; }
+      .manual-section { overflow: visible; border: 0; margin: 1.3rem 0; break-inside: auto; }
+      .manual-section > summary { padding: .25rem 1rem; background: var(--accent-soft) !important; break-after: avoid-page; list-style: none; }
+      .manual-section > summary::marker { content: ""; }
+      .section-body { padding: .1rem 0 .5rem; display: block !important; }
+      pre { max-width: 100%; overflow: visible !important; white-space: pre-wrap !important; overflow-wrap: anywhere !important; break-inside: avoid-page; page-break-inside: avoid; }
+      pre code { white-space: inherit !important; overflow-wrap: inherit !important; }
+      details:not([open]) > .section-body { display: block !important; }
+      h1, h2, h3, h4, summary { break-after: avoid-page; }
+      p, li, figure, img, blockquote, .notice, .check-item, table, tr { break-inside: avoid-page; page-break-inside: avoid; }
+      .section-body figure { break-inside: avoid-page; page-break-inside: avoid; }
+      .section-body figure > img { display: block; width: auto; max-width: 100%; max-height: 150mm; height: auto; margin-inline: auto; object-fit: contain; }
+      table { width: 100%; table-layout: fixed; font-size: 9.5pt; }
+      th, td { overflow-wrap: anywhere; word-break: break-word; padding: .35rem .4rem; }
+      .source-markers { white-space: normal; }
+      .case-card { break-inside: avoid-page; }
+      thead { display: table-header-group; }
+      .table-wrap { overflow: visible; }
+      .check-item input { display: none; }
+      .check-item::before { content: "□"; flex: 0 0 1em; text-decoration: none; }
+      .check-item:has(> input:checked)::before { content: "☑"; }
+      a { color: var(--accent); text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-tools">
+    <div class="search-dock" id="search-dock" role="search">
+      <div class="search-bar">
+        <label for="manual-search">全文搜索</label>
+        <input id="manual-search" type="search" placeholder="输入关键词，查看每处命中" autocomplete="off" aria-controls="search-results" aria-expanded="false">
+        <span class="search-count" id="search-count" hidden></span>
+        <button id="search-previous" type="button" disabled>上一处</button>
+        <button id="search-next" type="button" disabled>下一处</button>
+      </div>
+      <div class="search-popover" id="search-results" hidden>
+        <p class="status" id="search-status" role="status" aria-live="polite"></p>
+        <ol class="search-list" id="search-list"></ol>
+      </div>
+    </div>
+    <div class="export-tools">
+      <button id="print-button" type="button" data-pdf-name="">分享</button>
+      <div class="export-copy" aria-label="PDF 分享说明">
+        <p id="export-primary">导出为PDF文件进行分享</p>
+        <p id="export-secondary">选择「另存为 PDF」，并在浏览器打印设置里关闭页眉和页脚</p>
+      </div>
+      <p class="status" id="print-status" role="status" aria-live="polite"></p>
+      <p class="status" id="storage-status" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+  <div class="shell">
+    <nav class="sidebar" aria-label="手册目录">
+      <h2>实战手册目录</h2>
+      <ol class="toc" id="toc"></ol>
+    </nav>
+    <main>
+      <header class="masthead">
+        <h1>虚构场景：周末小册交换试运行手册</h1>
+        <p class="subtitle">合成样例，展示条件、动作、来源与缺口；没有真实检索或用户试用</p>
+        <p class="updated">更新：2026-09-29</p>
+      </header>
+      <nav class="print-toc" id="print-toc" aria-label="打印目录">
+        <p class="print-toc-title">目录</p>
+        <ol class="print-toc-list" id="print-toc-list"></ol>
+      </nav>
+      <section class="intro" id="overview" aria-label="阅读前先看">
+        <!-- INTRO_HTML_START: Markdown 一级书名后第三行写手册类型；阅读说明、路线图和画像/条件均为 Markdown ##，HTML 视觉层级如下：先写 <h2>阅读说明</h2>，集中说明作者自述数字、规则时效、无结果承诺和虚构示例；紧接 <h2>路线图</h2>（标题可写“30 天路线图”等），按周或阶段列出要做的事，每一步链到对应 #section-...，表下一句写这一阶段先不做什么、以后再看什么并链到附录；然后用 <h3> 写定制版的本次条件，或通用版的“本手册按以下读者画像编写”和“条件不同时怎么调”。不要另写“目录”：侧栏与打印目录由模板自动生成。只填可信、已转义的 HTML；不得放脚本、事件属性、远程资源。 -->
+        <h2>阅读说明</h2>
+        <div class="notice">合成样例，仅展示版式。数字、材料、地点和作者均虚构；作者自述数字不代表普遍结果，实际规则会变化，本文不承诺结果，也未做真实用户试用。</div>
+        <p>先看下方路线图，再按顺序打开对应步骤。</p>
+        <h2>试运行路线图</h2>
+        <div class="table-wrap"><table><thead><tr><th>阶段</th><th>这一步做什么</th><th>点开对应章节</th></tr></thead><tbody><tr><td>第 1 步：核规则</td><td>确认场地许可与匿名反馈记录边界</td><td><a href="#section-rules">步骤 1 确认交换规则</a></td></tr><tr><td>第 2 步：备样本</td><td>编号三份样本，写说明卡，准备匿名计数表</td><td><a href="#section-samples">步骤 2 准备三份样本</a></td></tr><tr><td>第 3 步：试运行</td><td>获许可后做两小时试运行，否则做桌面模拟；收摊后复盘</td><td><a href="#section-trial">步骤 3 试运行与复盘</a></td></tr></tbody></table></div>
+        <p>这一轮先不做：固定摊位、收费交换、收集联系方式；本示例没有附录，以后再看的内容不在本手册范围。</p>
+        <h3>本手册按以下读者画像编写</h3>
+        <p>纸风镇中已有三份自制小册、想做两小时交换试运行的组织者。</p>
+        <p><strong>条件不同时怎么调：</strong>未获许可时只做桌面模拟；人数、预算或时间不同，先调整样本和计数表，再重算流程。</p>
+        <!-- INTRO_HTML_END -->
+      </section>
+      <div id="sections">
+        <!-- SECTIONS_HTML_START: 每章用 <details class="manual-section" id="section-唯一安全ID" open><summary><span class="section-title">标题</span></summary><div class="section-body">正文</div></details>。步骤标题用“步骤 1 …”，S1 仅为站内来源；操作与判断步骤都写一句话目标 <p class="step-goal">、3–5 条动作清单（判断步骤包含输入/理由/反例/下一动作）、<p class="step-done">可观察的做完标准；代表性案例用 <div class="case-card"> 写起点/做法/自述结果/来源，可套用模板的占位须注明虚构。正文来源标记用一个 <span class="source-markers">[<a class="source-ref" id="cite-o1-1" href="#source-o1">O1</a>、<a class="source-ref" id="cite-s1-1" href="#source-s1">S1</a>]</span> 组，重复引用的 cite ID 必须唯一。清单用 <label class="check-item"><input type="checkbox" data-check-id="全书唯一且稳定的安全ID"><span>事项</span></label>。章节互引只指向已有 #section-...；有真实来源 URL 时外链用 target="_blank" rel="noopener noreferrer"。案例作者有已核对头像时在引用旁使用 <span class="source-credit"><img src="data:image/png;base64,..." alt="作者昵称">作者昵称</span>，无头像则只留昵称。代码块用 <pre><code class="language-可选语言">已做 HTML 文本转义的代码或提示词</code></pre>，无语言时省略 class；行内代码用 <code>已转义文本</code>，不得把 Markdown 的 ``` 围栏原样写进 HTML。图片只用同目录相对路径或 data:image/png/jpeg/webp;base64,...；相对图片须和 HTML 一起交付。不要插入远程资源、script、iframe 或内联事件属性。 -->
+        <details class="manual-section" id="section-rules" open><summary><span class="section-title">步骤 1 确认交换规则</span></summary><div class="section-body">
+          <p>这一章解决能不能公开摆放的问题。做完后，三项许可问题各有答复或明确的未核实状态。</p>
+          <p class="step-goal"><strong>目标：</strong>得到场地许可和反馈边界的明确状态。</p>
+          <ol><li>列出是否允许摆放、是否需要预约、能否记录匿名数量三项问题。</li><li>找到实际场地管理方，记录每项答复和日期。</li><li>若仍无答复，标记“未核实”，改做室内桌面模拟。</li></ol>
+          <p class="step-done"><strong>做完的标准：</strong>三项各有答复或明确未核实状态；公开摆放仅在获许可后执行。</p>
+          <p>依据 <span class="source-markers">[<a class="source-ref" id="cite-s01-1" href="#source-s01">S01</a>、<a class="source-ref" id="cite-s02-1" href="#source-s02">S02</a>]</span> 是合成输入与示例建议，不是真实平台规则。</p>
+          <ul class="checklist"><li><label class="check-item"><input type="checkbox" data-check-id="s1-placement"><span>记录摆放许可状态</span></label></li><li><label class="check-item"><input type="checkbox" data-check-id="s1-booking"><span>记录预约要求</span></label></li><li><label class="check-item"><input type="checkbox" data-check-id="s1-feedback"><span>记录反馈记录边界</span></label></li></ul>
+        </div></details>
+        <details class="manual-section" id="section-samples" open><summary><span class="section-title">步骤 2 准备三份样本</span></summary><div class="section-body">
+          <p>这一章解决交换时摆什么、怎么记。做完后，样本、说明卡和计数表都能直接拿去用。</p>
+          <p class="step-goal"><strong>目标：</strong>备齐能供翻阅的样本与匿名记录工具。</p>
+          <ol><li>把已有三份自制小册编号为 A、B、C。</li><li>在说明卡写“可翻阅、可交换、无需留下姓名”。</li><li>准备只记日期、访问次数和交换次数的空白表。</li><li>内容使用权未核清的样本先移除。</li></ol>
+          <p class="step-done"><strong>做完的标准：</strong>三份编号样本、一张说明卡和一张空白计数表可用。</p>
+          <p>依据 <span class="source-markers">[<a class="source-ref" id="cite-s02-2" href="#source-s02">S02</a>]</span>。</p>
+          <div class="case-card"><strong>案例卡（虚构演示）</strong><p>起点：<span class="source-credit"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIj48Y2lyY2xlIGN4PSI0MCIgY3k9IjQwIiByPSI0MCIgZmlsbD0iIzFjNjU1YyIvPjx0ZXh0IHg9IjQwIiB5PSI1MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzYiIGZpbGw9IndoaXRlIj5aPC90ZXh0Pjwvc3ZnPg==" alt="纸风镇作者 Z"><span>纸风镇作者 Z</span></span>有一份小册样本。</p><p>做法：用编号和说明卡展示样本；这里只演示版式。</p><p>结果（作者自述）：未披露，不能推断交换成效。</p><p>来源：<a href="https://example.invalid/fictional-zine-source" target="_blank" rel="noopener noreferrer">合成来源演示链接</a>；<code>.invalid</code> 域名不可访问，头像是虚构首字母图。<span class="source-markers">[<a class="source-ref" id="cite-s03-1" href="#source-s03">S03</a>]</span></p></div>
+          <p><strong>可套用的说明卡模板（占位均虚构，使用前填写并核实）：</strong>样本编号：〔待填编号〕；可翻阅方式：〔待填，先核场地规则〕；交换条件：〔待填，先核实际许可〕；不收集姓名或联系方式。</p>
+          <p>无头像演示：<span class="source-credit"><span>纸风镇记录员</span></span>只显示昵称。</p>
+          <ul class="checklist"><li><label class="check-item"><input type="checkbox" data-check-id="s2-numbered"><span>三份样本已编号</span></label></li><li><label class="check-item"><input type="checkbox" data-check-id="s2-card"><span>说明卡已写好</span></label></li><li><label class="check-item"><input type="checkbox" data-check-id="s2-count"><span>匿名计数表已准备</span></label></li></ul>
+        </div></details>
+        <details class="manual-section" id="section-trial" open><summary><span class="section-title">步骤 3 试运行与复盘</span></summary><div class="section-body">
+          <p>这一章解决怎么跑一次并留下记录。做完后，手上有可复盘的方式、耗时和匿名计数。</p>
+          <p class="step-goal"><strong>目标：</strong>在许可允许时完成两小时试运行并留下可复盘记录。</p>
+          <ol><li>核对 <a href="#section-rules">步骤 1 确认交换规则</a> 的许可状态；未获许可时只做桌面模拟。</li><li>用前 20 分钟布置并检查说明卡。</li><li>展示样本，记录匿名访问与交换次数，不收集姓名。</li><li>收摊后写下下次保留或修改的一件事。</li></ol>
+          <p class="step-done"><strong>做完的标准：</strong>留下实际方式、总耗时、匿名计数和下一次调整决定。</p>
+          <div class="table-wrap"><table><thead><tr><th>阶段</th><th>动作</th><th>留下的结果</th></tr></thead><tbody><tr><td>布置</td><td>检查说明卡</td><td>布置状态</td></tr><tr><td>展示</td><td>翻阅与交换</td><td>匿名计数</td></tr><tr><td>收尾</td><td>复盘</td><td>下一次决定</td></tr></tbody></table></div>
+          <ul class="checklist"><li><label class="check-item"><input type="checkbox" data-check-id="s3-permission"><span>许可状态已记录</span></label></li><li><label class="check-item"><input type="checkbox" data-check-id="s3-mode"><span>已记录实际方式</span></label></li><li><label class="check-item"><input type="checkbox" data-check-id="s3-totals"><span>已记录总耗时与匿名计数</span></label></li><li><label class="check-item"><input type="checkbox" data-check-id="s3-next"><span>已写出下次调整</span></label></li></ul>
+        </div></details>
+        <!-- SECTIONS_HTML_END -->
+      </div>
+      <section class="sources" id="sources" aria-label="来源、缺口与验证范围">
+        <!-- SOURCES_HTML_START: 每条来源设与正文标记相符的 id="source-o1" 等，并放 <a class="source-backref" href="#cite-o1-1">回到正文</a>（重复引用至少回首次出现处）；保留来源定位、适用范围、未核缺口与真实试用状态；签名链接不得写入网页。 -->
+        <h2>来源、缺口与验证范围</h2>
+        <div class="table-wrap"><table><thead><tr><th>编号</th><th>类型</th><th>内容与用途</th><th>验证状态</th></tr></thead><tbody>
+          <tr class="source-entry" id="source-s01"><td>S01</td><td>合成示例输入</td><td>虚构目标、阶段、投入条件；<a class="source-backref" href="#cite-s01-1">回到正文</a></td><td>为展示而编造</td></tr>
+          <tr class="source-entry" id="source-s02"><td>S02</td><td>助手示例建议</td><td>编号、说明卡、匿名计数与时间表；<a class="source-backref" href="#cite-s02-1">回到正文</a></td><td>未经真实试用</td></tr>
+          <tr class="source-entry" id="source-s03"><td>S03</td><td>虚构链接与头像</td><td>保留域名链接、首字母头像；<a class="source-backref" href="#cite-s03-1">回到正文</a></td><td>不代表真实会员</td></tr>
+        </tbody></table></div>
+        <p><strong>阻断缺口：</strong>没有真实场地许可与反馈记录规则。现实使用时须向实际管理方核实。</p>
+        <p><strong>文件与试用状态：</strong>仅作模板展示，没有真实检索、内容核对或新手试用记录。</p>
+        <!-- SOURCES_HTML_END -->
+      </section>
+    </main>
+  </div>
+  <div id="image-zoom-overlay" class="image-zoom-overlay" hidden>
+    <div class="image-zoom-panel" role="dialog" aria-modal="true" aria-label="放大查看正文图片">
+      <button id="image-zoom-close" class="image-zoom-close" type="button" aria-label="关闭放大图片">关闭</button>
+    </div>
+  </div>
+  <div id="share-overlay" class="share-overlay" hidden>
+    <div class="share-panel" role="dialog" aria-modal="true" aria-labelledby="share-title" aria-describedby="share-instruction">
+      <button id="share-close" class="share-close" type="button" aria-label="关闭分享窗口">关闭</button>
+      <h2 id="share-title"></h2>
+      <p id="share-instruction"></p>
+      <label for="share-folder-path">PDF 所在文件夹</label>
+      <input id="share-folder-path" type="text" readonly aria-label="PDF 所在文件夹路径">
+      <div class="share-ai">
+        <label for="share-ai-prompt">让 AI 帮忙</label>
+        <textarea id="share-ai-prompt" readonly rows="3" aria-label="让 AI 先复制 PDF 文件，失败时打开文件夹并选中它的提示词"></textarea>
+        <button id="share-ai-copy" type="button">复制提示词</button>
+        <p class="status" id="share-ai-status" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </div>
+  <script>
+/*
+The MIT License (MIT)
+
+Copyright (c) 2014–2018 Julian Kühnel
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+/*!***************************************************
+* mark.js v8.11.1
+* https://markjs.io/
+* Copyright (c) 2014–2018, Julian Kühnel
+* Released under the MIT license https://git.io/vwTVl
+*****************************************************/
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):e.Mark=t()}(this,function(){"use strict";var e="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},t=function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")},n=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},i=function(){function e(n){var r=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:[],o=arguments.length>3&&void 0!==arguments[3]?arguments[3]:5e3;t(this,e),this.ctx=n,this.iframes=r,this.exclude=i,this.iframesTimeout=o}return n(e,[{key:"getContexts",value:function(){var e=[];return(void 0!==this.ctx&&this.ctx?NodeList.prototype.isPrototypeOf(this.ctx)?Array.prototype.slice.call(this.ctx):Array.isArray(this.ctx)?this.ctx:"string"==typeof this.ctx?Array.prototype.slice.call(document.querySelectorAll(this.ctx)):[this.ctx]:[]).forEach(function(t){var n=e.filter(function(e){return e.contains(t)}).length>0;-1!==e.indexOf(t)||n||e.push(t)}),e}},{key:"getIframeContents",value:function(e,t){var n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:function(){},r=void 0;try{var i=e.contentWindow;if(r=i.document,!i||!r)throw new Error("iframe inaccessible")}catch(e){n()}r&&t(r)}},{key:"isIframeBlank",value:function(e){var t=e.getAttribute("src").trim();return"about:blank"===e.contentWindow.location.href&&"about:blank"!==t&&t}},{key:"observeIframeLoad",value:function(e,t,n){var r=this,i=!1,o=null,a=function a(){if(!i){i=!0,clearTimeout(o);try{r.isIframeBlank(e)||(e.removeEventListener("load",a),r.getIframeContents(e,t,n))}catch(e){n()}}};e.addEventListener("load",a),o=setTimeout(a,this.iframesTimeout)}},{key:"onIframeReady",value:function(e,t,n){try{"complete"===e.contentWindow.document.readyState?this.isIframeBlank(e)?this.observeIframeLoad(e,t,n):this.getIframeContents(e,t,n):this.observeIframeLoad(e,t,n)}catch(e){n()}}},{key:"waitForIframes",value:function(e,t){var n=this,r=0;this.forEachIframe(e,function(){return!0},function(e){r++,n.waitForIframes(e.querySelector("html"),function(){--r||t()})},function(e){e||t()})}},{key:"forEachIframe",value:function(t,n,r){var i=this,o=arguments.length>3&&void 0!==arguments[3]?arguments[3]:function(){},a=t.querySelectorAll("iframe"),s=a.length,c=0;a=Array.prototype.slice.call(a);var u=function(){--s<=0&&o(c)};s||u(),a.forEach(function(t){e.matches(t,i.exclude)?u():i.onIframeReady(t,function(e){n(t)&&(c++,r(e)),u()},u)})}},{key:"createIterator",value:function(e,t,n){return document.createNodeIterator(e,t,n,!1)}},{key:"createInstanceOnIframe",value:function(t){return new e(t.querySelector("html"),this.iframes)}},{key:"compareNodeIframe",value:function(e,t,n){if(e.compareDocumentPosition(n)&Node.DOCUMENT_POSITION_PRECEDING){if(null===t)return!0;if(t.compareDocumentPosition(n)&Node.DOCUMENT_POSITION_FOLLOWING)return!0}return!1}},{key:"getIteratorNode",value:function(e){var t=e.previousNode();return{prevNode:t,node:null===t?e.nextNode():e.nextNode()&&e.nextNode()}}},{key:"checkIframeFilter",value:function(e,t,n,r){var i=!1,o=!1;return r.forEach(function(e,t){e.val===n&&(i=t,o=e.handled)}),this.compareNodeIframe(e,t,n)?(!1!==i||o?!1===i||o||(r[i].handled=!0):r.push({val:n,handled:!0}),!0):(!1===i&&r.push({val:n,handled:!1}),!1)}},{key:"handleOpenIframes",value:function(e,t,n,r){var i=this;e.forEach(function(e){e.handled||i.getIframeContents(e.val,function(e){i.createInstanceOnIframe(e).forEachNode(t,n,r)})})}},{key:"iterateThroughNodes",value:function(e,t,n,r,i){for(var o,a=this,s=this.createIterator(t,e,r),c=[],u=[],l=void 0,h=void 0;void 0,o=a.getIteratorNode(s),h=o.prevNode,l=o.node;)this.iframes&&this.forEachIframe(t,function(e){return a.checkIframeFilter(l,h,e,c)},function(t){a.createInstanceOnIframe(t).forEachNode(e,function(e){return u.push(e)},r)}),u.push(l);u.forEach(function(e){n(e)}),this.iframes&&this.handleOpenIframes(c,e,n,r),i()}},{key:"forEachNode",value:function(e,t,n){var r=this,i=arguments.length>3&&void 0!==arguments[3]?arguments[3]:function(){},o=this.getContexts(),a=o.length;a||i(),o.forEach(function(o){var s=function(){r.iterateThroughNodes(e,o,t,n,function(){--a<=0&&i()})};r.iframes?r.waitForIframes(o,s):s()})}}],[{key:"matches",value:function(e,t){var n="string"==typeof t?[t]:t,r=e.matches||e.matchesSelector||e.msMatchesSelector||e.mozMatchesSelector||e.oMatchesSelector||e.webkitMatchesSelector;if(r){var i=!1;return n.every(function(t){return!r.call(e,t)||(i=!0,!1)}),i}return!1}}]),e}(),o=function(){function o(e){t(this,o),this.ctx=e,this.ie=!1;var n=window.navigator.userAgent;(n.indexOf("MSIE")>-1||n.indexOf("Trident")>-1)&&(this.ie=!0)}return n(o,[{key:"log",value:function(t){var n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"debug",r=this.opt.log;this.opt.debug&&"object"===(void 0===r?"undefined":e(r))&&"function"==typeof r[n]&&r[n]("mark.js: "+t)}},{key:"escapeStr",value:function(e){return e.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g,"\\$&")}},{key:"createRegExp",value:function(e){return"disabled"!==this.opt.wildcards&&(e=this.setupWildcardsRegExp(e)),e=this.escapeStr(e),Object.keys(this.opt.synonyms).length&&(e=this.createSynonymsRegExp(e)),(this.opt.ignoreJoiners||this.opt.ignorePunctuation.length)&&(e=this.setupIgnoreJoinersRegExp(e)),this.opt.diacritics&&(e=this.createDiacriticsRegExp(e)),e=this.createMergedBlanksRegExp(e),(this.opt.ignoreJoiners||this.opt.ignorePunctuation.length)&&(e=this.createJoinersRegExp(e)),"disabled"!==this.opt.wildcards&&(e=this.createWildcardsRegExp(e)),e=this.createAccuracyRegExp(e)}},{key:"createSynonymsRegExp",value:function(e){var t=this.opt.synonyms,n=this.opt.caseSensitive?"":"i",r=this.opt.ignoreJoiners||this.opt.ignorePunctuation.length?"\0":"";for(var i in t)if(t.hasOwnProperty(i)){var o=t[i],a="disabled"!==this.opt.wildcards?this.setupWildcardsRegExp(i):this.escapeStr(i),s="disabled"!==this.opt.wildcards?this.setupWildcardsRegExp(o):this.escapeStr(o);""!==a&&""!==s&&(e=e.replace(new RegExp("("+this.escapeStr(a)+"|"+this.escapeStr(s)+")","gm"+n),r+"("+this.processSynomyms(a)+"|"+this.processSynomyms(s)+")"+r))}return e}},{key:"processSynomyms",value:function(e){return(this.opt.ignoreJoiners||this.opt.ignorePunctuation.length)&&(e=this.setupIgnoreJoinersRegExp(e)),e}},{key:"setupWildcardsRegExp",value:function(e){return(e=e.replace(/(?:\\)*\?/g,function(e){return"\\"===e.charAt(0)?"?":""})).replace(/(?:\\)*\*/g,function(e){return"\\"===e.charAt(0)?"*":""})}},{key:"createWildcardsRegExp",value:function(e){var t="withSpaces"===this.opt.wildcards;return e.replace(/\u0001/g,t?"[\\S\\s]?":"\\S?").replace(/\u0002/g,t?"[\\S\\s]*?":"\\S*")}},{key:"setupIgnoreJoinersRegExp",value:function(e){return e.replace(/[^(|)\\]/g,function(e,t,n){var r=n.charAt(t+1);return/[(|)\\]/.test(r)||""===r?e:e+"\0"})}},{key:"createJoinersRegExp",value:function(e){var t=[],n=this.opt.ignorePunctuation;return Array.isArray(n)&&n.length&&t.push(this.escapeStr(n.join(""))),this.opt.ignoreJoiners&&t.push("\\u00ad\\u200b\\u200c\\u200d"),t.length?e.split(/\u0000+/).join("["+t.join("")+"]*"):e}},{key:"createDiacriticsRegExp",value:function(e){var t=this.opt.caseSensitive?"":"i",n=this.opt.caseSensitive?["aàáảãạăằắẳẵặâầấẩẫậäåāą","AÀÁẢÃẠĂẰẮẲẴẶÂẦẤẨẪẬÄÅĀĄ","cçćč","CÇĆČ","dđď","DĐĎ","eèéẻẽẹêềếểễệëěēę","EÈÉẺẼẸÊỀẾỂỄỆËĚĒĘ","iìíỉĩịîïī","IÌÍỈĨỊÎÏĪ","lł","LŁ","nñňń","NÑŇŃ","oòóỏõọôồốổỗộơởỡớờợöøō","OÒÓỎÕỌÔỒỐỔỖỘƠỞỠỚỜỢÖØŌ","rř","RŘ","sšśșş","SŠŚȘŞ","tťțţ","TŤȚŢ","uùúủũụưừứửữựûüůū","UÙÚỦŨỤƯỪỨỬỮỰÛÜŮŪ","yýỳỷỹỵÿ","YÝỲỶỸỴŸ","zžżź","ZŽŻŹ"]:["aàáảãạăằắẳẵặâầấẩẫậäåāąAÀÁẢÃẠĂẰẮẲẴẶÂẦẤẨẪẬÄÅĀĄ","cçćčCÇĆČ","dđďDĐĎ","eèéẻẽẹêềếểễệëěēęEÈÉẺẼẸÊỀẾỂỄỆËĚĒĘ","iìíỉĩịîïīIÌÍỈĨỊÎÏĪ","lłLŁ","nñňńNÑŇŃ","oòóỏõọôồốổỗộơởỡớờợöøōOÒÓỎÕỌÔỒỐỔỖỘƠỞỠỚỜỢÖØŌ","rřRŘ","sšśșşSŠŚȘŞ","tťțţTŤȚŢ","uùúủũụưừứửữựûüůūUÙÚỦŨỤƯỪỨỬỮỰÛÜŮŪ","yýỳỷỹỵÿYÝỲỶỸỴŸ","zžżźZŽŻŹ"],r=[];return e.split("").forEach(function(i){n.every(function(n){if(-1!==n.indexOf(i)){if(r.indexOf(n)>-1)return!1;e=e.replace(new RegExp("["+n+"]","gm"+t),"["+n+"]"),r.push(n)}return!0})}),e}},{key:"createMergedBlanksRegExp",value:function(e){return e.replace(/[\s]+/gim,"[\\s]+")}},{key:"createAccuracyRegExp",value:function(e){var t=this,n=this.opt.accuracy,r="string"==typeof n?n:n.value,i="";switch(("string"==typeof n?[]:n.limiters).forEach(function(e){i+="|"+t.escapeStr(e)}),r){case"partially":default:return"()("+e+")";case"complementary":return"()([^"+(i="\\s"+(i||this.escapeStr("!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~¡¿")))+"]*"+e+"[^"+i+"]*)";case"exactly":return"(^|\\s"+i+")("+e+")(?=$|\\s"+i+")"}}},{key:"getSeparatedKeywords",value:function(e){var t=this,n=[];return e.forEach(function(e){t.opt.separateWordSearch?e.split(" ").forEach(function(e){e.trim()&&-1===n.indexOf(e)&&n.push(e)}):e.trim()&&-1===n.indexOf(e)&&n.push(e)}),{keywords:n.sort(function(e,t){return t.length-e.length}),length:n.length}}},{key:"isNumeric",value:function(e){return Number(parseFloat(e))==e}},{key:"checkRanges",value:function(e){var t=this;if(!Array.isArray(e)||"[object Object]"!==Object.prototype.toString.call(e[0]))return this.log("markRanges() will only accept an array of objects"),this.opt.noMatch(e),[];var n=[],r=0;return e.sort(function(e,t){return e.start-t.start}).forEach(function(e){var i=t.callNoMatchOnInvalidRanges(e,r),o=i.start,a=i.end;i.valid&&(e.start=o,e.length=a-o,n.push(e),r=a)}),n}},{key:"callNoMatchOnInvalidRanges",value:function(e,t){var n=void 0,r=void 0,i=!1;return e&&void 0!==e.start?(r=(n=parseInt(e.start,10))+parseInt(e.length,10),this.isNumeric(e.start)&&this.isNumeric(e.length)&&r-t>0&&r-n>0?i=!0:(this.log("Ignoring invalid or overlapping range: "+JSON.stringify(e)),this.opt.noMatch(e))):(this.log("Ignoring invalid range: "+JSON.stringify(e)),this.opt.noMatch(e)),{start:n,end:r,valid:i}}},{key:"checkWhitespaceRanges",value:function(e,t,n){var r=void 0,i=!0,o=n.length,a=t-o,s=parseInt(e.start,10)-a;return(r=(s=s>o?o:s)+parseInt(e.length,10))>o&&(r=o,this.log("End range automatically set to the max value of "+o)),s<0||r-s<0||s>o||r>o?(i=!1,this.log("Invalid range: "+JSON.stringify(e)),this.opt.noMatch(e)):""===n.substring(s,r).replace(/\s+/g,"")&&(i=!1,this.log("Skipping whitespace only range: "+JSON.stringify(e)),this.opt.noMatch(e)),{start:s,end:r,valid:i}}},{key:"getTextNodes",value:function(e){var t=this,n="",r=[];this.iterator.forEachNode(NodeFilter.SHOW_TEXT,function(e){r.push({start:n.length,end:(n+=e.textContent).length,node:e})},function(e){return t.matchesExclude(e.parentNode)?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT},function(){e({value:n,nodes:r})})}},{key:"matchesExclude",value:function(e){return i.matches(e,this.opt.exclude.concat(["script","style","title","head","html"]))}},{key:"wrapRangeInTextNode",value:function(e,t,n){var r=this.opt.element?this.opt.element:"mark",i=e.splitText(t),o=i.splitText(n-t),a=document.createElement(r);return a.setAttribute("data-markjs","true"),this.opt.className&&a.setAttribute("class",this.opt.className),a.textContent=i.textContent,i.parentNode.replaceChild(a,i),o}},{key:"wrapRangeInMappedTextNode",value:function(e,t,n,r,i){var o=this;e.nodes.every(function(a,s){var c=e.nodes[s+1];if(void 0===c||c.start>t){if(!r(a.node))return!1;var u=t-a.start,l=(n>a.end?a.end:n)-a.start,h=e.value.substr(0,a.start),f=e.value.substr(l+a.start);if(a.node=o.wrapRangeInTextNode(a.node,u,l),e.value=h+f,e.nodes.forEach(function(t,n){n>=s&&(e.nodes[n].start>0&&n!==s&&(e.nodes[n].start-=l),e.nodes[n].end-=l)}),n-=l,i(a.node.previousSibling,a.start),!(n>a.end))return!1;t=a.end}return!0})}},{key:"wrapMatches",value:function(e,t,n,r,i){var o=this,a=0===t?0:t+1;this.getTextNodes(function(t){t.nodes.forEach(function(t){t=t.node;for(var i=void 0;null!==(i=e.exec(t.textContent))&&""!==i[a];)if(n(i[a],t)){var s=i.index;if(0!==a)for(var c=1;c<a;c++)s+=i[c].length;t=o.wrapRangeInTextNode(t,s,s+i[a].length),r(t.previousSibling),e.lastIndex=0}}),i()})}},{key:"wrapMatchesAcrossElements",value:function(e,t,n,r,i){var o=this,a=0===t?0:t+1;this.getTextNodes(function(t){for(var s=void 0;null!==(s=e.exec(t.value))&&""!==s[a];){var c=s.index;if(0!==a)for(var u=1;u<a;u++)c+=s[u].length;var l=c+s[a].length;o.wrapRangeInMappedTextNode(t,c,l,function(e){return n(s[a],e)},function(t,n){e.lastIndex=n,r(t)})}i()})}},{key:"wrapRangeFromIndex",value:function(e,t,n,r){var i=this;this.getTextNodes(function(o){var a=o.value.length;e.forEach(function(e,r){var s=i.checkWhitespaceRanges(e,a,o.value),c=s.start,u=s.end;s.valid&&i.wrapRangeInMappedTextNode(o,c,u,function(n){return t(n,e,o.value.substring(c,u),r)},function(t){n(t,e)})}),r()})}},{key:"unwrapMatches",value:function(e){for(var t=e.parentNode,n=document.createDocumentFragment();e.firstChild;)n.appendChild(e.removeChild(e.firstChild));t.replaceChild(n,e),this.ie?this.normalizeTextNode(t):t.normalize()}},{key:"normalizeTextNode",value:function(e){if(e){if(3===e.nodeType)for(;e.nextSibling&&3===e.nextSibling.nodeType;)e.nodeValue+=e.nextSibling.nodeValue,e.parentNode.removeChild(e.nextSibling);else this.normalizeTextNode(e.firstChild);this.normalizeTextNode(e.nextSibling)}}},{key:"markRegExp",value:function(e,t){var n=this;this.opt=t,this.log('Searching with expression "'+e+'"');var r=0,i="wrapMatches";this.opt.acrossElements&&(i="wrapMatchesAcrossElements"),this[i](e,this.opt.ignoreGroups,function(e,t){return n.opt.filter(t,e,r)},function(e){r++,n.opt.each(e)},function(){0===r&&n.opt.noMatch(e),n.opt.done(r)})}},{key:"mark",value:function(e,t){var n=this;this.opt=t;var r=0,i="wrapMatches",o=this.getSeparatedKeywords("string"==typeof e?[e]:e),a=o.keywords,s=o.length,c=this.opt.caseSensitive?"":"i";this.opt.acrossElements&&(i="wrapMatchesAcrossElements"),0===s?this.opt.done(r):function e(t){var o=new RegExp(n.createRegExp(t),"gm"+c),u=0;n.log('Searching with expression "'+o+'"'),n[i](o,1,function(e,i){return n.opt.filter(i,t,r,u)},function(e){u++,r++,n.opt.each(e)},function(){0===u&&n.opt.noMatch(t),a[s-1]===t?n.opt.done(r):e(a[a.indexOf(t)+1])})}(a[0])}},{key:"markRanges",value:function(e,t){var n=this;this.opt=t;var r=0,i=this.checkRanges(e);i&&i.length?(this.log("Starting to mark with the following ranges: "+JSON.stringify(i)),this.wrapRangeFromIndex(i,function(e,t,r,i){return n.opt.filter(e,t,r,i)},function(e,t){r++,n.opt.each(e,t)},function(){n.opt.done(r)})):this.opt.done(r)}},{key:"unmark",value:function(e){var t=this;this.opt=e;var n=this.opt.element?this.opt.element:"*";n+="[data-markjs]",this.opt.className&&(n+="."+this.opt.className),this.log('Removal selector "'+n+'"'),this.iterator.forEachNode(NodeFilter.SHOW_ELEMENT,function(e){t.unwrapMatches(e)},function(e){var r=i.matches(e,n),o=t.matchesExclude(e);return!r||o?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT},this.opt.done)}},{key:"opt",set:function(e){this._opt=r({},{element:"",className:"",exclude:[],iframes:!1,iframesTimeout:5e3,separateWordSearch:!0,diacritics:!0,synonyms:{},accuracy:"partially",acrossElements:!1,caseSensitive:!1,ignoreJoiners:!1,ignoreGroups:0,ignorePunctuation:[],wildcards:"disabled",each:function(){},noMatch:function(){},filter:function(){return!0},done:function(){},debug:!1,log:window.console},e)},get:function(){return this._opt}},{key:"iterator",get:function(){return new i(this.ctx,this.opt.iframes,this.opt.exclude,this.opt.iframesTimeout)}}]),o}();return function(e){var t=this,n=new o(e);return this.mark=function(e,r){return n.mark(e,r),t},this.markRegExp=function(e,r){return n.markRegExp(e,r),t},this.markRanges=function(e,r){return n.markRanges(e,r),t},this.unmark=function(e){return n.unmark(e),t},this}});
+(() => {
+  'use strict';
+  const sections = [...document.querySelectorAll('#sections > details.manual-section')];
+  const blocks = [...document.querySelectorAll('.intro, #sections > details.manual-section, .sources')];
+  const toc = document.getElementById('toc');
+  const printToc = document.getElementById('print-toc-list');
+  const searchDock = document.getElementById('search-dock');
+  const search = document.getElementById('manual-search');
+  const searchResults = document.getElementById('search-results');
+  const searchList = document.getElementById('search-list');
+  const searchStatus = document.getElementById('search-status');
+  const searchCount = document.getElementById('search-count');
+  const previousButton = document.getElementById('search-previous');
+  const nextButton = document.getElementById('search-next');
+  const printStatus = document.getElementById('print-status');
+  const storageStatus = document.getElementById('storage-status');
+  for (const block of blocks) {
+    const title = block.matches('details') ? block.querySelector(':scope > summary .section-title') : block.querySelector('h2');
+    if (!title || !block.id) continue;
+    const item = document.createElement('li');
+    const link = document.createElement('a');
+    link.href = '#' + encodeURIComponent(block.id);
+    link.textContent = title.textContent.trim();
+    link.addEventListener('click', () => { if (block.matches('details')) block.open = true; });
+    item.append(link);
+    toc.append(item);
+    const printItem = document.createElement('li');
+    const printLink = document.createElement('a');
+    printLink.href = link.href;
+    printLink.textContent = link.textContent;
+    printItem.append(printLink);
+    if (!printToc.children.length || printToc.children.length < blocks.length) printToc.append(printItem);
+  }
+
+  // Search only the manual, never the page tools, directory or result snippets.
+  const searchable = [document.querySelector('.masthead'), ...blocks].map(element => {
+    const heading = element.matches('.masthead') ? element.querySelector('h1') :
+      element.matches('details') ? element.querySelector(':scope > summary .section-title') : element.querySelector('h2');
+    return { element, title: heading?.textContent.trim() || '手册正文', text: element.textContent };
+  });
+  // ASCII case folding preserves offsets for mark.js; Chinese remains an exact substring.
+  const fold = text => text.replace(/[A-Z]/g, character => character.toLowerCase());
+  let hits = [];
+  let activeIndex = -1;
+  let markedBlock = null;
+  let clearTimer = null;
+  function closeResults() {
+    searchResults.hidden = true;
+    search.setAttribute('aria-expanded', 'false');
+  }
+  function openResults() {
+    if (!search.value.trim()) return;
+    searchResults.hidden = false;
+    search.setAttribute('aria-expanded', 'true');
+  }
+  function clearHighlight() {
+    clearTimeout(clearTimer);
+    if (markedBlock) {
+      new Mark(markedBlock).unmark({ className: 'search-target' });
+      markedBlock = null;
+    }
+  }
+  function setActive(index) {
+    activeIndex = index;
+    updatePosition();
+    for (const [itemIndex, button] of [...searchList.querySelectorAll('button')].entries()) {
+      const selected = itemIndex === index;
+      button.classList.toggle('is-selected', selected);
+      button.setAttribute('aria-current', selected ? 'true' : 'false');
+      if (selected && !searchResults.hidden) button.scrollIntoView({ block: 'nearest' });
+    }
+  }
+  function updatePosition() {
+    searchCount.textContent = hits.length ? (activeIndex < 0 ? `未定位 · 共 ${hits.length} 处` : `${activeIndex + 1} / ${hits.length}`) : '共 0 处';
+    searchStatus.textContent = `共命中 ${hits.length} 处` + (hits.length ? (activeIndex < 0 ? ' · 尚未定位' : ` · 当前第 ${activeIndex + 1} 处`) : '');
+  }
+  function jumpTo(index) {
+    const hit = hits[index];
+    if (!hit) return;
+    setActive(index);
+    const section = hit.element.closest('details.manual-section');
+    if (section) section.open = true;
+    closeResults();
+    clearHighlight();
+    let firstMark = null;
+    new Mark(hit.element).markRanges([{ start: hit.start, length: hit.length }], {
+      className: 'search-target',
+      each: element => { if (!firstMark) firstMark = element; },
+      done: () => {
+        if (!firstMark) return;
+        markedBlock = hit.element;
+        search.focus({ preventScroll: true });
+        closeResults();
+        requestAnimationFrame(() => {
+          const top = firstMark.getBoundingClientRect().top + window.scrollY - 16;
+          window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+        });
+        clearTimer = setTimeout(clearHighlight, 3000);
+      }
+    });
+  }
+  function appendSnippet(button, hit) {
+    const context = 32;
+    const snippet = document.createElement('span');
+    snippet.className = 'result-snippet';
+    const left = Math.max(0, hit.start - context);
+    const right = Math.min(hit.text.length, hit.start + hit.length + context);
+    const before = hit.text.slice(left, hit.start).replace(/\s+/g, ' ');
+    const after = hit.text.slice(hit.start + hit.length, right).replace(/\s+/g, ' ');
+    snippet.append(document.createTextNode((left ? '…' : '') + before));
+    const keyword = document.createElement('mark');
+    keyword.textContent = hit.text.slice(hit.start, hit.start + hit.length);
+    snippet.append(keyword, document.createTextNode(after + (right < hit.text.length ? '…' : '')));
+    button.append(snippet);
+  }
+  function renderResults() {
+    searchList.replaceChildren();
+    updatePosition();
+    searchCount.hidden = false;
+    previousButton.disabled = nextButton.disabled = hits.length === 0;
+    for (const [index, hit] of hits.entries()) {
+      const item = document.createElement('li');
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'search-result';
+      button.dataset.resultIndex = index;
+      button.setAttribute('aria-current', 'false');
+      const title = document.createElement('span');
+      title.className = 'result-title';
+      title.textContent = hit.title;
+      button.append(title);
+      appendSnippet(button, hit);
+      button.addEventListener('click', () => jumpTo(index));
+      item.append(button);
+      searchList.append(item);
+    }
+    if (!hits.length) {
+      const empty = document.createElement('li');
+      empty.className = 'search-empty';
+      empty.textContent = '没有匹配内容，请换一个关键词。';
+      searchList.append(empty);
+    }
+  }
+  search.addEventListener('input', () => {
+    clearHighlight();
+    const query = search.value.trim();
+    hits = [];
+    activeIndex = -1;
+    if (!query) {
+      closeResults();
+      searchList.replaceChildren();
+      searchStatus.textContent = '';
+      searchCount.hidden = true;
+      previousButton.disabled = nextButton.disabled = true;
+      return;
+    }
+    const needle = fold(query);
+    for (const block of searchable) {
+      const haystack = fold(block.text);
+      for (let start = haystack.indexOf(needle); start !== -1; start = haystack.indexOf(needle, start + 1)) {
+        hits.push({ ...block, start, length: query.length });
+      }
+    }
+    renderResults();
+    openResults();
+  });
+  search.addEventListener('focus', openResults);
+  search.addEventListener('click', openResults);
+  // WebKit needs explicit edge cancellation in addition to overscroll-behavior.
+  function atScrollEdge(delta) {
+    if (searchResults.hidden) return false;
+    const top = searchResults.scrollTop <= 1;
+    const bottom = searchResults.scrollTop + searchResults.clientHeight >= searchResults.scrollHeight - 1;
+    return searchResults.scrollHeight <= searchResults.clientHeight || (delta < 0 && top) || (delta > 0 && bottom);
+  }
+  searchResults.addEventListener('wheel', event => {
+    if (atScrollEdge(event.deltaY)) event.preventDefault();
+  }, { passive: false });
+  let lastTouchY = 0;
+  searchResults.addEventListener('touchstart', event => {
+    if (event.touches.length) lastTouchY = event.touches[0].clientY;
+  }, { passive: true });
+  searchResults.addEventListener('touchmove', event => {
+    if (!event.touches.length) return;
+    const nextY = event.touches[0].clientY;
+    if (atScrollEdge(lastTouchY - nextY)) event.preventDefault();
+    lastTouchY = nextY;
+  }, { passive: false });
+  searchDock.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      closeResults();
+      search.focus({ preventScroll: true });
+      event.preventDefault();
+    } else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+      if (!hits.length) return;
+      const direction = event.key === 'ArrowDown' ? 1 : -1;
+      const next = activeIndex < 0 ? (direction > 0 ? 0 : hits.length - 1) : (activeIndex + direction + hits.length) % hits.length;
+      jumpTo(next);
+      event.preventDefault();
+    } else if (event.key === 'Enter' && hits.length) {
+      const focusedResult = event.target.closest?.('.search-result');
+      jumpTo(focusedResult ? Number(focusedResult.dataset.resultIndex) : activeIndex < 0 ? 0 : activeIndex);
+      event.preventDefault();
+    }
+  });
+  previousButton.addEventListener('click', () => jumpTo(activeIndex < 0 ? hits.length - 1 : (activeIndex - 1 + hits.length) % hits.length));
+  nextButton.addEventListener('click', () => jumpTo((activeIndex + 1) % hits.length));
+
+  const storageKey = 'field-manual-checks:v1:' + document.documentElement.dataset.manualId;
+  let saved = {};
+  let storageAvailable = true;
+  try {
+    const value = JSON.parse(localStorage.getItem(storageKey) || '{}');
+    if (value && typeof value === 'object' && !Array.isArray(value)) saved = value;
+  } catch (_) {
+    storageAvailable = false;
+  }
+  for (const checkbox of document.querySelectorAll('input[type="checkbox"][data-check-id]')) {
+    const id = checkbox.dataset.checkId;
+    if (Object.prototype.hasOwnProperty.call(saved, id)) checkbox.checked = saved[id] === true;
+    checkbox.addEventListener('change', () => {
+      saved[id] = checkbox.checked;
+      try { localStorage.setItem(storageKey, JSON.stringify(saved)); }
+      catch (_) {
+        storageAvailable = false;
+        storageStatus.textContent = '当前浏览器无法保存勾选状态，重新打开后可能丢失。';
+      }
+    });
+  }
+  if (!storageAvailable) storageStatus.textContent = '当前浏览器无法读取本地勾选状态，重新打开后可能丢失。';
+
+  // 浏览器解码失败时只隐藏头像；自动 PDF 禁用脚本，没有这层兜底。
+  for (const avatar of document.querySelectorAll('.source-credit img')) {
+    const hideBrokenAvatar = () => { avatar.hidden = true; };
+    const checkAvatar = () => {
+      if (!avatar.complete) return;
+      if (!avatar.naturalWidth) { hideBrokenAvatar(); return; }
+      if (typeof avatar.decode === 'function') avatar.decode().catch(hideBrokenAvatar);
+    };
+    avatar.addEventListener('error', hideBrokenAvatar);
+    avatar.addEventListener('load', checkAvatar);
+    checkAvatar();
+  }
+
+  const zoomOverlay = document.getElementById('image-zoom-overlay');
+  const zoomPanel = zoomOverlay.querySelector('.image-zoom-panel');
+  const zoomClose = document.getElementById('image-zoom-close');
+  const zoomImage = document.createElement('img');
+  zoomPanel.appendChild(zoomImage);
+  let zoomTrigger = null;
+  function closeImageZoom() {
+    zoomOverlay.hidden = true;
+    zoomImage.removeAttribute('src');
+    if (zoomTrigger) zoomTrigger.focus();
+    zoomTrigger = null;
+  }
+  function openImageZoom(image) {
+    zoomTrigger = image;
+    zoomImage.src = image.src;
+    zoomImage.alt = image.alt;
+    zoomOverlay.hidden = false;
+    zoomClose.focus();
+  }
+  for (const image of document.querySelectorAll('.section-body img')) {
+    if (image.closest('.source-credit')) continue;
+    image.classList.add('zoomable-image');
+    image.tabIndex = 0;
+    image.setAttribute('role', 'button');
+    image.setAttribute('aria-haspopup', 'dialog');
+    image.setAttribute('aria-label', '放大查看图片：' + image.alt);
+    image.addEventListener('click', event => {
+      event.preventDefault();
+      openImageZoom(image);
+    });
+    image.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openImageZoom(image);
+      }
+    });
+  }
+  zoomClose.addEventListener('click', closeImageZoom);
+  zoomOverlay.addEventListener('click', event => {
+    if (event.target === zoomImage || event.target === zoomClose) return;
+    closeImageZoom();
+  });
+  document.addEventListener('keydown', event => {
+    if (zoomOverlay.hidden) return;
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      closeImageZoom();
+    } else if (event.key === 'Tab') {
+      event.preventDefault();
+      zoomClose.focus();
+    }
+  });
+
+  // SHARE_HELPER_START
+  function folderFromFileURL(href) {
+    let file;
+    try { file = new URL(href); }
+    catch (_) { return null; }
+    if (file.protocol !== 'file:') return null;
+    const encodedPath = file.pathname;
+    const lastSlash = encodedPath.lastIndexOf('/');
+    if (lastSlash < 0) return null;
+    let folder;
+    try { folder = decodeURIComponent(encodedPath.slice(0, lastSlash) || '/'); }
+    catch (_) { return null; }
+    if (/^\/[A-Za-z]:(?:\/|$)/.test(folder)) {
+      const windowsFolder = folder.slice(1).replace(/\//g, '\\');
+      return /^[A-Za-z]:$/.test(windowsFolder) ? windowsFolder + '\\' : windowsFolder;
+    }
+    if (file.hostname && file.hostname !== 'localhost') {
+      return '\\\\' + file.hostname + folder.replace(/\//g, '\\');
+    }
+    return folder;
+  }
+
+  function aiPromptForPdf(folder, name) {
+    const separator = folder.startsWith('\\\\') || /^[A-Za-z]:\\/.test(folder) ? '\\' : '/';
+    const filePath = folder + (folder.endsWith(separator) ? '' : separator) + name;
+    return `请先将本机 PDF 文件“${filePath}”本身复制到剪贴板，供我粘贴到聊天窗口。如果无法复制文件本身，再打开其所在文件夹“${folder}”，并在文件管理器中选中该文件。`;
+  }
+
+  async function copyFolderPath(folder) {
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+      try { await navigator.clipboard.writeText(folder); return true; }
+      catch (_) { /* 继续尝试浏览器的传统复制方式。 */ }
+    }
+    const helper = document.createElement('textarea');
+    helper.value = folder;
+    helper.readOnly = true;
+    helper.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
+    document.body.appendChild(helper);
+    helper.select();
+    try { return document.execCommand('copy') === true; }
+    catch (_) { return false; }
+    finally { helper.remove(); }
+  }
+  // SHARE_HELPER_END
+
+  const printButton = document.getElementById('print-button');
+  const pdfName = printButton.getAttribute('data-pdf-name') || '';
+  const hasPdf = /\.pdf$/i.test(pdfName) && !/[\/\\]/.test(pdfName) && !/^[A-Za-z]:/.test(pdfName);
+  const unsupported = '请用 Chrome、Safari 或 Edge 打开这个文件后再导出';
+  const inAppBrowser = /MicroMessenger|WeChat|wxwork|Feishu|Lark|DingTalk/i.test(navigator.userAgent || '');
+  const overlay = document.getElementById('share-overlay');
+  const shareTitle = document.getElementById('share-title');
+  const shareInstruction = document.getElementById('share-instruction');
+  const sharePath = document.getElementById('share-folder-path');
+  const shareAiPrompt = document.getElementById('share-ai-prompt');
+  const shareAiCopy = document.getElementById('share-ai-copy');
+  const shareAiStatus = document.getElementById('share-ai-status');
+  const shareClose = document.getElementById('share-close');
+  if (hasPdf) {
+    document.getElementById('export-primary').textContent = '已生成 PDF：' + pdfName;
+    document.getElementById('export-secondary').textContent = '点「分享」可将 PDF 文件分享给他人';
+  }
+  function closeShareDialog() {
+    overlay.hidden = true;
+    printButton.focus();
+  }
+  function openShareDialog(folder, copied) {
+    sharePath.value = folder || '';
+    shareAiPrompt.value = folder ? aiPromptForPdf(folder, pdfName) : '';
+    shareAiCopy.disabled = !folder;
+    shareAiStatus.textContent = '';
+    shareTitle.textContent = copied ? '已复制文件夹路径' : '自动复制失败，请手动复制下面的路径';
+    shareInstruction.textContent = '也可以手动打开该文件夹。';
+    overlay.hidden = false;
+    if (copied) shareClose.focus();
+    else { sharePath.focus(); sharePath.select(); }
+  }
+  shareClose.addEventListener('click', closeShareDialog);
+  shareAiCopy.addEventListener('click', async () => {
+    const copied = await copyFolderPath(shareAiPrompt.value);
+    shareAiStatus.textContent = copied ? '已复制提示词' : '自动复制失败，请手动复制提示词';
+    if (!copied) { shareAiPrompt.focus(); shareAiPrompt.select(); }
+  });
+  overlay.addEventListener('click', event => {
+    if (event.target === overlay) closeShareDialog();
+  });
+  document.addEventListener('keydown', event => {
+    if (overlay.hidden) return;
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      closeShareDialog();
+    } else if (event.key === 'Tab') {
+      const first = shareClose;
+      const last = shareAiCopy.disabled ? sharePath : shareAiCopy;
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  });
+  let previouslyClosed = [];
+  addEventListener('beforeprint', () => {
+    clearHighlight();
+    previouslyClosed = sections.filter(section => !section.open);
+    for (const section of sections) section.open = true;
+  });
+  addEventListener('afterprint', () => {
+    for (const section of previouslyClosed) section.open = false;
+    previouslyClosed = [];
+  });
+  printButton.addEventListener('click', async () => {
+    if (hasPdf) {
+      const folder = folderFromFileURL(window.location.href);
+      openShareDialog(folder, folder ? await copyFolderPath(folder) : false);
+      return;
+    }
+    if (inAppBrowser || typeof window.print !== 'function') {
+      printStatus.textContent = unsupported;
+      return;
+    }
+    try { window.print(); }
+    catch (_) { printStatus.textContent = unsupported; }
+  });
+})();
+  </script>
+</body>
+</html>

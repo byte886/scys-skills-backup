@@ -1,0 +1,4 @@
+interface:
+  display_name: "乐阳老师 AI企服与FDE定位机器人"
+  short_description: "测评AI企服、FDE与商业化成熟度并生成可视化行动报告"
+  default_prompt: "使用 $assess-ai-enterprise-fde-fit 帮我测评是否适合做AI企业服务或FDE，并生成HTML报告。"

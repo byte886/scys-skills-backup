@@ -1,0 +1,12 @@
+{
+  "overlayMode": "title_and_annotations",
+  "title": "广西艾粑的馅料，先看清再决定要不要尝",
+  "subtitle": "画面示意｜只展示外观与原料关系",
+  "palette": "leaf",
+  "labels": [
+    {"text": "绿色表皮", "x": 120, "y": 1170, "fontSize": 42, "fill": "#FAF7E9", "background": "#263B2D", "anchor": "start"}
+  ],
+  "arrows": [
+    {"x1": 330, "y1": 1120, "x2": 650, "y2": 900, "width": 8, "color": "#F5C85A", "label": "艾草叶纹理"}
+  ]
+}

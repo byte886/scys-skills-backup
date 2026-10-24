@@ -1,0 +1,6 @@
+interface:
+  display_name: "贴图号·婚姻家庭"
+  short_description: "把夫妻、亲子和家庭分工中的真实生活瞬间写成可传播的贴图稿"
+  default_prompt: "Use $tietu-marriage-family 根据我提供的婚姻家庭照片或素材，围绕一个关系节点选择不重复的正文结构，完成标题、正文、图片方案和 PNG 完成图；同时输出可直接复制的 formattedText（首行标题、空行分段、候选标题）和独立 breakdownAnalysis；常规稿约200—300字仅作参考，任何正文不超过1000字。 默认直接生成并交付1—2张PNG完成图，不只给提示词；图片类型按本次主题和素材动态选择；实物或动作本身成立时可用纯图，不强制叠标题，怀旧、美食等默认优先纯图；需要叠字时，中文由代码完成。"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,57 @@
+{
+  "packageId": "skl_base-bili-visual-planning",
+  "code": "base-bili-visual-planning",
+  "title": "B站带货分镜与封面规划",
+  "author": "Lynn",
+  "uploaderUnionUserId": "848893",
+  "version": "0.1.0",
+  "guideStatus": "hosted",
+  "isOriginal": true,
+  "summary": "将数码家电口播稿转成 PPT 或分镜表，为各段规划画面、标题和素材，并提供封面方向及素材缺口清单。",
+  "tags": {
+    "visible": [
+      "短视频创作与带货",
+      "视觉与素材",
+      "B站"
+    ],
+    "category": [
+      "短视频创作与带货"
+    ],
+    "task": [
+      "视觉与素材"
+    ],
+    "platform": [
+      "B站"
+    ],
+    "other": [],
+    "hiddenTagCount": 0
+  },
+  "installsOnMarket": 5,
+  "commentsOnMarket": 0,
+  "marketDate": "10-09",
+  "detailUrl": "https://scys.com/skillhub/skills/skl_base-bili-visual-planning",
+  "runtimeTargets": [],
+  "artifactSha256": "e8e7e0f3fe609ac80d052987e0b943c91ae69daf80dde1ed66ca880c165dc14c",
+  "ossPathAccount": "u848893",
+  "dependencies": [],
+  "capabilityCard": {
+    "allowShell": false,
+    "allowedTools": [],
+    "allowArbitraryHttp": false,
+    "allowArbitraryMcp": false,
+    "scriptsPresent": false
+  },
+  "archive": {
+    "zipFile": "base-bili-visual-planning-0.1.0.zip",
+    "extractedDir": "extracted/",
+    "fileCount": 2,
+    "hasScriptsDir": false,
+    "hasManifest": true,
+    "sha256Verified": true,
+    "archivedAt": "2026-10-24 21:44 +0800"
+  },
+  "files": [
+    "SKILL.md",
+    "manifest.json"
+  ]
+}

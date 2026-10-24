@@ -1,0 +1,56 @@
+{
+  "packageId": "skl_base-bili-publish-review",
+  "code": "base-bili-publish-review",
+  "title": "B站带货发布检查与复盘",
+  "author": "Lynn",
+  "uploaderUnionUserId": "848893",
+  "version": "0.1.0",
+  "guideStatus": "hosted",
+  "isOriginal": true,
+  "summary": "检查带货视频的标题、封面、口播和商品链接顺序是否一致，并结合发布数据与评论，形成下一条视频的具体优化动作。",
+  "tags": {
+    "visible": [
+      "短视频创作与带货",
+      "发布与分发",
+      "数据分析与复盘"
+    ],
+    "category": [
+      "短视频创作与带货"
+    ],
+    "task": [
+      "发布与分发",
+      "数据分析与复盘"
+    ],
+    "platform": [],
+    "other": [],
+    "hiddenTagCount": 1
+  },
+  "installsOnMarket": 5,
+  "commentsOnMarket": 0,
+  "marketDate": "10-09",
+  "detailUrl": "https://scys.com/skillhub/skills/skl_base-bili-publish-review",
+  "runtimeTargets": [],
+  "artifactSha256": "ca29b8e5c4723199d7a5e4bfb68ddaf036d213af0c574e2e6a7e6f4d79286fde",
+  "ossPathAccount": "u848893",
+  "dependencies": [],
+  "capabilityCard": {
+    "allowShell": false,
+    "allowedTools": [],
+    "allowArbitraryHttp": false,
+    "allowArbitraryMcp": false,
+    "scriptsPresent": false
+  },
+  "archive": {
+    "zipFile": "base-bili-publish-review-0.1.0.zip",
+    "extractedDir": "extracted/",
+    "fileCount": 2,
+    "hasScriptsDir": false,
+    "hasManifest": true,
+    "sha256Verified": true,
+    "archivedAt": "2026-10-24 21:44 +0800"
+  },
+  "files": [
+    "SKILL.md",
+    "manifest.json"
+  ]
+}

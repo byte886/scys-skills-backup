@@ -1,0 +1,7 @@
+interface:
+  display_name: "OPC-Growth｜一人公司增长诊断"
+  short_description: "一人公司从流量到留量的瓶颈诊断与行动实验"
+  default_prompt: "使用 $opc-growth，帮我诊断一人公司的增长瓶颈，并设计一个 7-14 天验证实验。"
+
+policy:
+  allow_implicit_invocation: true

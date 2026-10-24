@@ -1,0 +1,15 @@
+{
+  "mode": "standard",
+  "sourceBasis": {"visible": ["绿色团状食物"], "reported": ["素材称为广西艾粑"], "uncertain": ["馅料和口感未知"]},
+  "keywords": ["广西艾粑", "艾草叶", "糯米粉"],
+  "titleCandidates": ["广西艾粑是什么馅", "绿团子叫艾粑", "艾草和糯米粉怎么做", "艾粑你们那儿怎么叫", "这团绿色食物先看原料"],
+  "title": "广西艾粑是什么馅",
+  "emotion": "好奇",
+  "body": "我第一眼只认出它是一团绿色食物，素材把它叫作广西艾粑。说明提到艾草叶和糯米粉，也列了几种可能的馅料，但没有当前切面，不能替这一只做决定。看图能写的是表皮颜色和团状外形，口感、甜度和实际馅料都要等更清楚的来源。你们那儿通常怎么做？",
+  "imageException": {"kind": "food_process", "reason": "画面更丰富"},
+  "images": [
+    {"role": "cover", "hasTitle": true, "continuityKey": "aipa-green-batch-01", "purpose": "展示完整艾粑外观", "source": {"type": "visual_illustration", "isHistoricalEvidence": false, "description": "一般外观示意"}, "prompt": "画面示意，绿色艾粑正在普通厨房操作台上摆放，突出表皮和糯米碎屑，环境有自然窗光和水渍，上方留标题区；无字底图，不生成中文或其他文字；不生成标题；不生成标签；不生成箭头文字；不生成数字、Logo或水印。", "overlay": {"method": "code", "text": "广西艾粑是什么馅", "position": "top-left", "palette": "leaf"}},
+    {"role": "process", "hasTitle": false, "continuityKey": "aipa-green-batch-01", "purpose": "展示原料", "source": {"type": "visual_illustration", "isHistoricalEvidence": false, "description": "原料示意"}, "prompt": "画面示意，艾草叶和糯米粉放在普通厨房台面，自然光；无字底图，不生成中文或其他文字；不生成标题；不生成标签；不生成箭头文字；不生成数字、Logo或水印。"},
+    {"role": "process", "hasTitle": false, "continuityKey": "aipa-green-batch-01", "purpose": "展示成形", "source": {"type": "visual_illustration", "isHistoricalEvidence": false, "description": "成形示意"}, "prompt": "画面示意，绿色团子成形动作，自然光；无字底图，不生成中文或其他文字；不生成标题；不生成标签；不生成箭头文字；不生成数字、Logo或水印。"}
+  ]
+}

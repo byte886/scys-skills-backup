@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "id": "skl_tietu-marriage-family",
+  "type": "skill",
+  "code": "tietu-marriage-family",
+  "displayName": "婚姻家庭skill",
+  "description": "Use when 用户要创作、改写或检查贴图号婚姻家庭内容，素材涉及夫妻沟通、家庭分工、亲子关系、婆媳相处、婚后生活或中年情感；不用于性别战争、强行复合、伪造私生活或无来源的法律/心理诊断。",
+  "publisher": "⃰苇⃰岸⃰",
+  "version": "1.0.0",
+  "uploaderUnionUserId": 818409,
+  "isOriginal": true,
+  "visibility": "public",
+  "examplePrompts": [
+    "帮我写xx话题",
+    "帮我制作婚姻相关的图片",
+    "帮我写一条贴图作品，主题是：xx"
+  ],
+  "itCanHelpYou": [
+    "写婚姻家庭相关的贴图笔记"
+  ],
+  "useCases": [],
+  "changelog": "首次发布",
+  "files": [
+    {
+      "path": "references/persona-and-audience.md",
+      "sha256": "6fdb1646711bb27de3e3267993790db111b27d425a066053b4f1f3f8ab8d751e"
+    },
+    {
+      "path": "references/finished-image-execution.md",
+      "sha256": "d6e4de801f6259130070359dbeb242a3da42f40791c9d1904d7114a2a5cc20e9"
+    },
+    {
+      "path": "references/writing-and-emotion.md",
+      "sha256": "9a1326a1822814701b5bcb6f39d1cac45eaf43c894734145da386d9d8dcaeb54"
+    },
+    {
+      "path": "references/table-source-links.md",
+      "sha256": "b084772532d2169238e243db9a9a869303343ff24e12988294cad5e530ee7ea4"
+    },
+    {
+      "path": "references/topic-keywords-and-titles.md",
+      "sha256": "3cf4b180103c4918843370b8eb4a6b17808329f4578f45a302888513846b78b8"
+    },
+    {
+      "path": "references/visual-prompt-engine.md",
+      "sha256": "3c6aa0d5ae6f4fa478f6842148acd34554947b93f7bdab67a42c28ccd884bc41"
+    },
+    {
+      "path": "references/output-contract-and-checklist.md",
+      "sha256": "cf73acdf7e0b7a0eaf75a4824ee39c2cb3d8fa931dd9805f8a97c05c61cbf072"
+    },
+    {
+      "path": "references/prompt-sealing-and-adjustments.md",
+      "sha256": "f05bf3aaafcf589c1e1bf84768e84e0ed5b4b8b9cde62d0465f2a1d565327c04"
+    },
+    {
+      "path": "references/reference-image-and-typography.md",
+      "sha256": "66573628e4c953b15e33effbd51dffd2077ebe77c3214337263b00529101404b"
+    },
+    {
+      "path": "references/human-tone-and-anti-ai.md",
+      "sha256": "85fe8352e3fb46c5251c5768e318a63a6a4b9ca9df2f6fc32d1063c0996144b7"
+    },
+    {
+      "path": "tests/render-finished-image.test.mjs",
+      "sha256": "e4f096faa8dbd7b5fbfbb18f87d45edc7ce976bff5e287ff43c7642dbeb28772"
+    },
+    {
+      "path": "tests/validate-output.test.mjs",
+      "sha256": "9e949cb131a8d9babaf29a26a7f6d1f180f287d90d3b2d7b32719cd40a9cdbe9"
+    },
+    {
+      "path": "tests/typography-styles.test.mjs",
+      "sha256": "d4986507c83f5203d4ed213e66626ff0c029e409b36a789eecf3f774699b446a"
+    },
+    {
+      "path": "tests/render-title-cover.test.mjs",
+      "sha256": "dc3197d70ae527ecdb37ff6a6f770cfb3aed9879afb287addadc4ebab3f2bb1b"
+    },
+    {
+      "path": "tests/visual-routing.test.mjs",
+      "sha256": "abf55331c96d805ff9eba062d54469d761d1af1f61ecc9be77d231f6c66715ee"
+    },
+    {
+      "path": "tests/render-compatibility.test.mjs",
+      "sha256": "c5a5bd3e32f2f84148bb7a1aadf5d479c0a8469a55b0c1509b520fb24b858467"
+    },
+    {
+      "path": "tests/visual-hook-matrix.test.mjs",
+      "sha256": "93e14a875647f2fa560ffdd01fa912151a7e864a97879ee3a44c2e2ce69f7e36"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "8b573b3ec0e9d36c12c01d1ddc759d80c694baca3b79b7f298d572ddc6c59aa7"
+    },
+    {
+      "path": "examples/invalid-cover-input.json",
+      "sha256": "c35139d834b4d5cca03523a312d934f1a99c45b8c11518c33bf7b38cbfd4a532"
+    },
+    {
+      "path": "examples/valid-output.json",
+      "sha256": "9a984cdf3b82679ed349b51665b88d76a9a83e271bd060a0976b6a3bd7140098"
+    },
+    {
+      "path": "examples/invalid-image-exception.json",
+      "sha256": "d2cc3181d4ed101c8ccce23696315307128c1d72692df3c9d2c2b3e9bbee2519"
+    },
+    {
+      "path": "examples/cover-input.json",
+      "sha256": "ebb75b5bf4f2bb0f8c3e19a038023a0b03dae1ffac2adca4edd66fd11490e139"
+    },
+    {
+      "path": "examples/acceptance-cases.md",
+      "sha256": "943d53dd6a5530f1abaaa43cd3c9b68e939ac2eed551e6f6ab44648bce2fb547"
+    },
+    {
+      "path": "examples/invalid-output.json",
+      "sha256": "375d4494acdb68083e1d192e296844522d224ff6130903d8df04431a9b8adfcf"
+    },
+    {
+      "path": "scripts/render_finished_image.mjs",
+      "sha256": "3a6435e9bdbad1f15415d3fd46b403d5da8a71809524b4dcbe83ce2a7b896c1f"
+    },
+    {
+      "path": "scripts/validate_output.mjs",
+      "sha256": "cd87335a4c79250287cae3c5b897c3bc897dee741a538b689ba750582439ab05"
+    },
+    {
+      "path": "scripts/render_title_cover.mjs",
+      "sha256": "ca303b42f5780bbdd84f7c2283c34d71dd16e7cb1992ee1b4ad72860fc657822"
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "ac6f4f941cc55cb82e4016fc6d30afa2615a0e3a05e0b5d1b6737b511551d1ec"
+    },
+    {
+      "path": "assets/typography-styles.json",
+      "sha256": "df9adec5c30e178354ba18457b03da9c3dd5d086d13a35b574eb5aa7b2779072"
+    },
+    {
+      "path": "assets/track-profile.json",
+      "sha256": "12094e4267692910d0bdde58cfd866643fe6788d83100b684717318118bacf09"
+    },
+    {
+      "path": "assets/adjustment-schema.json",
+      "sha256": "69499275396e310263d21055d1ca52b791fd5174caaa8cf7c22696b4e8f664a3"
+    },
+    {
+      "path": "assets/reference-layouts/example.json",
+      "sha256": "e9409a089922cd0efcd2b6f1334a5f76e3ea2b7a55d9a1f5c825800655013ab0"
+    },
+    {
+      "path": "assets/reference-layouts/README.md",
+      "sha256": "814d5de54b0c49c0abbfcffb48b0dcdbf04fbb6e067856f8169de4b5aa690459"
+    }
+  ]
+}

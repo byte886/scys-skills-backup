@@ -1,0 +1,7 @@
+.DS_Store
+*.crdownload
+*.tmp
+*.part
+__MACOSX/
+*.swp
+.DS_Store

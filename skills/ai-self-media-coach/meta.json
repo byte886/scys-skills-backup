@@ -1,0 +1,54 @@
+{
+  "packageId": "skl_ai-self-media-coach",
+  "code": "ai-self-media-coach",
+  "title": "自媒体商业定位教练skill",
+  "author": "竹子。",
+  "uploaderUnionUserId": "724673",
+  "version": "3.0.0",
+  "guideStatus": "hosted",
+  "isOriginal": true,
+  "summary": "AI 自媒体商业定位教练。通过一对一采访，帮助想做自媒体、个人 IP、知识型 IP 但不确定定位的人，梳理个人优势、判断定位机会、输出完整的自媒体商业定位诊断报告。触发场景一（本人在线采访）：用户说「开始定位采访」「帮我做自媒体定位」「帮我找自媒体方向」「我不知道自己适合做什么账号」「帮我分析我的个人IP定位」「帮我设计一个可以变现的自媒体账号」。触发场景二（材料诊断）：用户不上来一问一答，而是直接给一份材料——可能是自己的自我介绍、简历、账号数据，也可能是教练手上的客户调研表、问卷、微信沟通记录、转介信息，要求「根据这些材料给一个定位和产品方向」，此时不启动采访，改走材料诊断模式。默认只输出一份给用户本人看的报告；内部判断与跟进版仅在明确索取时额外生成。",
+  "tags": {
+    "visible": [
+      "内容创作与个人 IP",
+      "判断与决策"
+    ],
+    "category": [
+      "内容创作与个人 IP"
+    ],
+    "task": [
+      "判断与决策"
+    ],
+    "platform": [],
+    "other": [],
+    "hiddenTagCount": 0
+  },
+  "installsOnMarket": 19,
+  "commentsOnMarket": 0,
+  "marketDate": "10-12",
+  "detailUrl": "https://scys.com/skillhub/skills/skl_ai-self-media-coach",
+  "runtimeTargets": [],
+  "artifactSha256": "24b2c2d809c3cf198e229fcc3eb2ef1c2b844cc982a5ebb2388b67d0ee57c785",
+  "ossPathAccount": "u724673",
+  "dependencies": [],
+  "capabilityCard": {
+    "allowShell": false,
+    "allowedTools": [],
+    "allowArbitraryHttp": false,
+    "allowArbitraryMcp": false,
+    "scriptsPresent": false
+  },
+  "archive": {
+    "zipFile": "ai-self-media-coach-3.0.0.zip",
+    "extractedDir": "extracted/",
+    "fileCount": 2,
+    "hasScriptsDir": false,
+    "hasManifest": true,
+    "sha256Verified": true,
+    "archivedAt": "2026-10-24 21:44 +0800"
+  },
+  "files": [
+    "SKILL.md",
+    "manifest.json"
+  ]
+}

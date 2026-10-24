@@ -1,0 +1,58 @@
+{
+  "packageId": "skl_wechat-longform-formatter",
+  "code": "wechat-longform-formatter",
+  "title": "长文章排版skill",
+  "author": "⃰辰风",
+  "uploaderUnionUserId": "818409",
+  "version": "1.0.0",
+  "guideStatus": "hosted",
+  "isOriginal": true,
+  "summary": "用户已有微信公众号长文，想选排版样式并得到标题、排版正文和可打开的 article.html 网页成品时使用；不用于重写文章。",
+  "tags": {
+    "visible": [
+      "内容创作与个人 IP",
+      "内容制作",
+      "公众号"
+    ],
+    "category": [
+      "内容创作与个人 IP"
+    ],
+    "task": [
+      "内容制作"
+    ],
+    "platform": [
+      "公众号"
+    ],
+    "other": [],
+    "hiddenTagCount": 0
+  },
+  "installsOnMarket": 12,
+  "commentsOnMarket": 0,
+  "marketDate": "10-03",
+  "detailUrl": "https://scys.com/skillhub/skills/skl_wechat-longform-formatter",
+  "runtimeTargets": [],
+  "artifactSha256": "f37f0c70147fd83898d3c018045029e83b07317bf0aecdb69234c73f2817cc32",
+  "ossPathAccount": "u818409",
+  "dependencies": [],
+  "capabilityCard": {
+    "allowShell": false,
+    "allowedTools": [],
+    "allowArbitraryHttp": false,
+    "allowArbitraryMcp": false,
+    "scriptsPresent": false
+  },
+  "archive": {
+    "zipFile": "wechat-longform-formatter-1.0.0.zip",
+    "extractedDir": "extracted/",
+    "fileCount": 3,
+    "hasScriptsDir": true,
+    "hasManifest": true,
+    "sha256Verified": true,
+    "archivedAt": "2026-10-24 21:44 +0800"
+  },
+  "files": [
+    "SKILL.md",
+    "manifest.json",
+    "scripts/render_article.py"
+  ]
+}

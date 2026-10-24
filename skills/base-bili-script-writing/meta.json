@@ -1,0 +1,57 @@
+{
+  "packageId": "skl_base-bili-script-writing",
+  "code": "base-bili-script-writing",
+  "title": "B站带货中文口播稿生成",
+  "author": "Lynn",
+  "uploaderUnionUserId": "848893",
+  "version": "0.1.0",
+  "guideStatus": "hosted",
+  "isOriginal": true,
+  "summary": "把已排序的数码家电商品资料写成包含开场、商品段落和收尾的中文口播稿，保留使用场景、购买提醒及待确认信息。",
+  "tags": {
+    "visible": [
+      "短视频创作与带货",
+      "内容制作",
+      "B站"
+    ],
+    "category": [
+      "短视频创作与带货"
+    ],
+    "task": [
+      "内容制作"
+    ],
+    "platform": [
+      "B站"
+    ],
+    "other": [],
+    "hiddenTagCount": 0
+  },
+  "installsOnMarket": 6,
+  "commentsOnMarket": 0,
+  "marketDate": "10-09",
+  "detailUrl": "https://scys.com/skillhub/skills/skl_base-bili-script-writing",
+  "runtimeTargets": [],
+  "artifactSha256": "8c1bf709311bfc399eed20b20df95a2a67a5a98db567b739c5f1b00d365e39cc",
+  "ossPathAccount": "u848893",
+  "dependencies": [],
+  "capabilityCard": {
+    "allowShell": false,
+    "allowedTools": [],
+    "allowArbitraryHttp": false,
+    "allowArbitraryMcp": false,
+    "scriptsPresent": false
+  },
+  "archive": {
+    "zipFile": "base-bili-script-writing-0.1.0.zip",
+    "extractedDir": "extracted/",
+    "fileCount": 2,
+    "hasScriptsDir": false,
+    "hasManifest": true,
+    "sha256Verified": true,
+    "archivedAt": "2026-10-24 21:44 +0800"
+  },
+  "files": [
+    "SKILL.md",
+    "manifest.json"
+  ]
+}
